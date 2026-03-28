@@ -83,14 +83,14 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
     <h2 class="text-2xl font-semibold mb-4">Skeleton Loading</h2>
     <ComponentPreview title="Loading States">
       <div class="space-y-4 max-w-sm">
-        <div class="monarch-skeleton h-4 w-3/4"></div>
-        <div class="monarch-skeleton h-4 w-full"></div>
-        <div class="monarch-skeleton h-4 w-5/6"></div>
+        <div class="rounded-md h-4 w-3/4" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite;"></div>
+        <div class="rounded-md h-4 w-full" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.1s;"></div>
+        <div class="rounded-md h-4 w-5/6" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.2s;"></div>
         <div class="flex gap-3 mt-6">
-          <div class="monarch-skeleton w-10 h-10 rounded-full"></div>
+          <div class="w-10 h-10 rounded-full shrink-0" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite;"></div>
           <div class="flex-1 space-y-2">
-            <div class="monarch-skeleton h-3 w-1/2"></div>
-            <div class="monarch-skeleton h-3 w-3/4"></div>
+            <div class="rounded-md h-3 w-1/2" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.15s;"></div>
+            <div class="rounded-md h-3 w-3/4" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.25s;"></div>
           </div>
         </div>
       </div>
