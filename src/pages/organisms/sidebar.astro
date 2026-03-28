@@ -6,81 +6,91 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
 <DocsLayout title="Sidebar" description="The primary navigation structure — grouped sections, collapsible areas, and user profile.">
 
   <section class="mb-12">
-    <ComponentPreview title="Application Sidebar">
-      <div class="w-60 bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] rounded-xl overflow-hidden">
-        <!-- Logo -->
-        <div class="flex items-center gap-2.5 px-5 py-4 border-b border-[var(--monarch-border-subtle)]">
-          <div class="shrink-0 flex items-center justify-center" style="width: 28px; height: 28px; border-radius: 7px; background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);">
+    <ComponentPreview title="Application Sidebar" code='<aside class="monarch-sidebar">
+  <div class="monarch-sidebar__header">
+    <!-- Logo -->
+  </div>
+  <nav class="monarch-sidebar__nav">
+    <div class="monarch-nav-section">
+      <div class="monarch-nav-section__title">Intelligence</div>
+      <div class="monarch-nav-section__items">
+        <a class="monarch-nav-item monarch-nav-item--active" href="#">
+          <svg class="monarch-nav-item__icon">...</svg>
+          <span class="monarch-nav-item__label">Dashboard</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="monarch-sidebar__footer">...</div>
+</aside>'>
+      <div class="monarch-sidebar" style="border-radius: 12px; overflow: hidden; width: 240px;">
+        <div class="monarch-sidebar__header">
+          <div style="width: 28px; height: 28px; border-radius: 7px; background: linear-gradient(135deg, #6366f1, #818cf8); display: flex; align-items: center; justify-content: center;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" /><path d="M5 21h14" /></svg>
           </div>
-          <span class="text-base font-semibold">Monarch</span>
+          <span style="font-size: var(--monarch-text-base); font-weight: 600;">Monarch</span>
         </div>
 
-        <div class="py-3 px-3 space-y-4">
-          <!-- Intelligence -->
-          <div>
-            <p class="px-3 py-1 text-[10px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-[0.1em]">Intelligence</p>
-            <div class="space-y-0.5">
-              <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[rgba(99,102,241,0.1)] text-[var(--monarch-brand-purple)] border-l-2 border-[var(--monarch-brand-purple)] font-medium text-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
-                Dashboard
+        <nav class="monarch-sidebar__nav">
+          <div class="monarch-nav-section">
+            <div class="monarch-nav-section__title">Intelligence</div>
+            <div class="monarch-nav-section__items">
+              <a class="monarch-nav-item monarch-nav-item--active" href="#" style="text-decoration:none;">
+                <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                <span class="monarch-nav-item__label">Dashboard</span>
               </a>
-              <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                Morning Brief
+              <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+                <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                <span class="monarch-nav-item__label">Morning Brief</span>
               </a>
-              <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                Signal Graph
-              </a>
-            </div>
-          </div>
-
-          <!-- Data Engine -->
-          <div>
-            <p class="px-3 py-1 text-[10px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-[0.1em]">Data Engine</p>
-            <div class="space-y-0.5">
-              <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-                Accounts
+              <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+                <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                <span class="monarch-nav-item__label">Signal Graph</span>
               </a>
             </div>
           </div>
 
-          <!-- Revenue -->
-          <div>
-            <p class="px-3 py-1 text-[10px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-[0.1em]">Revenue</p>
-            <div class="space-y-0.5">
-              <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-                Deal Board
-              </a>
-              <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                Analytics
+          <div class="monarch-nav-section">
+            <div class="monarch-nav-section__title">Data Engine</div>
+            <div class="monarch-nav-section__items">
+              <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+                <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                <span class="monarch-nav-item__label">Accounts</span>
               </a>
             </div>
           </div>
 
-          <!-- Engagement -->
-          <div>
-            <p class="px-3 py-1 text-[10px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-[0.1em]">Engagement</p>
-            <div class="space-y-0.5">
-              <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-                <span class="flex-1">Agent Feed</span>
-                <span class="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-[#EF4444] text-white">3</span>
+          <div class="monarch-nav-section">
+            <div class="monarch-nav-section__title">Revenue</div>
+            <div class="monarch-nav-section__items">
+              <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+                <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+                <span class="monarch-nav-item__label">Deal Board</span>
+              </a>
+              <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+                <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                <span class="monarch-nav-item__label">Analytics</span>
               </a>
             </div>
           </div>
-        </div>
 
-        <!-- User -->
-        <div class="flex items-center gap-3 px-5 py-3 border-t border-[var(--monarch-border-subtle)]">
-          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold text-white" style="background: var(--monarch-brand-gradient);">JY</div>
-          <div class="flex-1 min-w-0">
-            <p class="text-sm font-medium text-[var(--monarch-text-primary)] truncate">Joe Yared</p>
-            <p class="text-xs text-[var(--monarch-text-muted)]">CEO</p>
+          <div class="monarch-nav-section">
+            <div class="monarch-nav-section__title">Engagement</div>
+            <div class="monarch-nav-section__items">
+              <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+                <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2" /></svg>
+                <span class="monarch-nav-item__label">Agent Feed</span>
+                <span class="monarch-nav-item__badge">3</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="monarch-sidebar__footer">
+          <div class="monarch-avatar monarch-avatar-sm monarch-avatar-brand">JY</div>
+          <div>
+            <div style="font-size: var(--monarch-text-sm); font-weight: 500;">Joe Yared</div>
+            <div style="font-size: var(--monarch-text-xs); color: var(--monarch-text-muted);">CEO</div>
           </div>
         </div>
       </div>

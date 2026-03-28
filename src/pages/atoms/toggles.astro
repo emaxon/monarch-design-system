@@ -8,33 +8,41 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Switch Toggle</h2>
 
-    <ComponentPreview title="Toggle Switches">
-      <div class="space-y-6">
-        <div class="flex items-center justify-between max-w-sm">
+    <ComponentPreview title="Toggle Switches" code='<div class="monarch-toggle-row">
+  <div>
+    <div class="monarch-toggle-row__label">Auto-enrich</div>
+    <div class="monarch-toggle-row__description">Enrich new accounts</div>
+  </div>
+  <div class="monarch-toggle monarch-toggle--active">
+    <span class="monarch-toggle__thumb"></span>
+  </div>
+</div>'>
+      <div class="space-y-6 max-w-sm">
+        <div class="monarch-toggle-row">
           <div>
-            <p class="text-sm font-medium text-[var(--monarch-text-primary)]">Auto-enrich new accounts</p>
-            <p class="text-xs text-[var(--monarch-text-muted)]">Automatically run data enrichment on incoming accounts</p>
+            <div class="monarch-toggle-row__label">Auto-enrich new accounts</div>
+            <div class="monarch-toggle-row__description">Automatically run data enrichment on incoming accounts</div>
           </div>
-          <div class="relative inline-flex h-6 w-11 items-center rounded-full" style="background-color: #6366f1;">
-            <span class="inline-block h-4 w-4 rounded-full bg-white transition-transform duration-200" style="transform: translateX(24px);"></span>
+          <div class="monarch-toggle monarch-toggle--active">
+            <span class="monarch-toggle__thumb"></span>
           </div>
         </div>
-        <div class="flex items-center justify-between max-w-sm">
+        <div class="monarch-toggle-row">
           <div>
-            <p class="text-sm font-medium text-[var(--monarch-text-primary)]">Email notifications</p>
-            <p class="text-xs text-[var(--monarch-text-muted)]">Send email alerts for deal status changes</p>
+            <div class="monarch-toggle-row__label">Email notifications</div>
+            <div class="monarch-toggle-row__description">Send email alerts for deal status changes</div>
           </div>
-          <div class="relative inline-flex h-6 w-11 items-center rounded-full" style="background-color: #334155;">
-            <span class="inline-block h-4 w-4 rounded-full bg-white transition-transform duration-200" style="transform: translateX(4px);"></span>
+          <div class="monarch-toggle">
+            <span class="monarch-toggle__thumb"></span>
           </div>
         </div>
-        <div class="flex items-center justify-between max-w-sm opacity-50">
+        <div class="monarch-toggle-row" style="opacity: 0.5;">
           <div>
-            <p class="text-sm font-medium text-[var(--monarch-text-primary)]">Ghost Rep mode</p>
-            <p class="text-xs text-[var(--monarch-text-muted)]">Requires Enterprise plan</p>
+            <div class="monarch-toggle-row__label">Ghost Rep mode</div>
+            <div class="monarch-toggle-row__description">Requires Enterprise plan</div>
           </div>
-          <div class="relative inline-flex h-6 w-11 items-center rounded-full cursor-not-allowed" style="background-color: #334155;">
-            <span class="inline-block h-4 w-4 rounded-full bg-white transition-transform duration-200" style="transform: translateX(4px);"></span>
+          <div class="monarch-toggle monarch-toggle--disabled">
+            <span class="monarch-toggle__thumb"></span>
           </div>
         </div>
       </div>
@@ -44,54 +52,58 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Checkboxes</h2>
 
-    <ComponentPreview title="Styled Checkboxes">
+    <ComponentPreview title="Styled Checkboxes" code='<label class="monarch-checkbox">
+  <div class="monarch-checkbox__box monarch-checkbox__box--checked">
+    <svg>✓</svg>
+  </div>
+  <span class="monarch-checkbox__label">Intelligence Agent</span>
+</label>'>
       <div class="space-y-3 max-w-sm">
-        <label class="flex items-center gap-3 cursor-pointer group">
-          <div class="relative w-5 h-5 rounded flex items-center justify-center" style="background-color: #6366f1;">
-            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+        <label class="monarch-checkbox">
+          <div class="monarch-checkbox__box monarch-checkbox__box--checked">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
           </div>
-          <span class="text-sm text-[var(--monarch-text-primary)] group-hover:text-[var(--monarch-brand-purple-light)] transition-colors duration-200">Intelligence Agent</span>
+          <span class="monarch-checkbox__label">Intelligence Agent</span>
         </label>
-        <label class="flex items-center gap-3 cursor-pointer group">
-          <div class="relative w-5 h-5 rounded flex items-center justify-center" style="background-color: #6366f1;">
-            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+        <label class="monarch-checkbox">
+          <div class="monarch-checkbox__box monarch-checkbox__box--checked">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
           </div>
-          <span class="text-sm text-[var(--monarch-text-primary)] group-hover:text-[var(--monarch-brand-purple-light)] transition-colors duration-200">Engagement Agent</span>
+          <span class="monarch-checkbox__label">Engagement Agent</span>
         </label>
-        <label class="flex items-center gap-3 cursor-pointer group">
-          <div class="relative w-5 h-5 rounded" style="border: 2px solid #334155; background: transparent;"></div>
-          <span class="text-sm text-[var(--monarch-text-secondary)]">Revenue Agent</span>
+        <label class="monarch-checkbox">
+          <div class="monarch-checkbox__box"></div>
+          <span class="monarch-checkbox__label monarch-checkbox__label--unchecked">Revenue Agent</span>
         </label>
-        <label class="flex items-center gap-3 cursor-pointer group">
-          <div class="relative w-5 h-5 rounded" style="border: 2px solid #334155; background: transparent;"></div>
-          <span class="text-sm text-[var(--monarch-text-secondary)]">Success Agent</span>
+        <label class="monarch-checkbox">
+          <div class="monarch-checkbox__box"></div>
+          <span class="monarch-checkbox__label monarch-checkbox__label--unchecked">Success Agent</span>
         </label>
       </div>
     </ComponentPreview>
   </section>
 
   <section class="mb-12">
-    <h2 class="text-2xl font-semibold mb-4">Toggle Interaction</h2>
+    <h2 class="text-2xl font-semibold mb-4">Interactive Toggle</h2>
 
-    <ComponentPreview title="Interactive Toggle">
+    <ComponentPreview title="Click to Toggle">
       <div class="flex items-center gap-4">
-        <div id="demo-toggle" class="relative inline-flex h-7 w-12 items-center rounded-full cursor-pointer" style="background-color: #334155;" onclick="const thumb = this.querySelector('span'); const isOn = thumb.style.transform === 'translateX(22px)'; thumb.style.transform = isOn ? 'translateX(4px)' : 'translateX(22px)'; this.style.backgroundColor = isOn ? '#334155' : '#6366f1';">
-          <span class="inline-block h-5 w-5 rounded-full bg-white transition-transform duration-200 shadow-sm" style="transform: translateX(4px);"></span>
+        <div id="demo-toggle" class="monarch-toggle monarch-toggle-lg" onclick="this.classList.toggle('monarch-toggle--active');">
+          <span class="monarch-toggle__thumb"></span>
         </div>
-        <span class="text-sm text-[var(--monarch-text-secondary)]">Click to toggle</span>
+        <span style="font-size: var(--monarch-text-sm); color: var(--monarch-text-secondary);">Click to toggle</span>
       </div>
     </ComponentPreview>
   </section>
 
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Usage Guidelines</h2>
-    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
+    <div class="space-y-3" style="color: var(--monarch-text-secondary);">
       <p>• Use <strong>toggles</strong> for immediate on/off settings — no save button needed</p>
       <p>• Use <strong>checkboxes</strong> for multi-select lists where choices are submitted together</p>
       <p>• Active state uses <strong>brand indigo</strong> — instantly recognizable</p>
       <p>• Include a <strong>label and description</strong> next to toggles for clarity</p>
-      <p>• Disabled toggles should show <strong>50% opacity</strong> with a reason (e.g., "Requires Enterprise")</p>
-      <p>• Transition is <strong>200ms ease</strong> — fast enough to feel snappy, smooth enough to feel premium</p>
+      <p>• Disabled toggles show <strong>50% opacity</strong> with a reason</p>
     </div>
   </section>
 </DocsLayout>

@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import '../../packages/tokens/index.css';
+@import '../../packages/components/index.css';
 
 /* === Preflight: reset browser defaults === */
 @layer base {
