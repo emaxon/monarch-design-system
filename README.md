@@ -72,8 +72,8 @@ src/
 |-------|------|-------|
 | Background Base | `#0D0F1A` | `#FAFBFC` |
 | Background Surface | `#131525` | `#FFFFFF` |
-| Brand Purple | `#7C3AED` | `#7C3AED` |
-| Brand Gradient | `#7C3AED → #A855F7 → #EC4899` | same |
+| Brand Indigo | `#6366f1` | `#6366f1` |
+| Brand Gradient | `#6366f1 → #818cf8 → #a78bfa` | same |
 
 ---
 

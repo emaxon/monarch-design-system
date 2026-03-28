@@ -1,12 +1,12 @@
 /* Monarch Design System — Color Tokens */
 
 :root {
-  /* === Brand === */
-  --monarch-brand-purple: #7C3AED;
-  --monarch-brand-purple-light: #A855F7;
-  --monarch-brand-pink: #EC4899;
-  --monarch-brand-gradient: linear-gradient(135deg, #7C3AED, #A855F7, #EC4899);
-  --monarch-brand-gradient-subtle: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(168, 85, 247, 0.1));
+  /* === Brand (Indigo — matches Monarch logo) === */
+  --monarch-brand-purple: #6366f1;
+  --monarch-brand-purple-light: #818cf8;
+  --monarch-brand-pink: #a78bfa;
+  --monarch-brand-gradient: linear-gradient(135deg, #6366f1, #818cf8, #a78bfa);
+  --monarch-brand-gradient-subtle: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(129, 140, 248, 0.1));
 
   /* === Semantic === */
   --monarch-success: #22C55E;
@@ -21,6 +21,11 @@
   --monarch-info: #3B82F6;
   --monarch-info-light: #60A5FA;
   --monarch-info-dim: rgba(59, 130, 246, 0.15);
+
+  /* === Brand Aliases (for hardcoded references) === */
+  --monarch-brand-indigo: #6366f1;
+  --monarch-brand-indigo-light: #818cf8;
+  --monarch-brand-violet: #a78bfa;
 
   /* === Dark Mode (Default) === */
   --monarch-bg-base: #0D0F1A;

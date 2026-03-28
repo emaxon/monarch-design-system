@@ -41,7 +41,7 @@ body {
 /* === Selection === */
 
 ::selection {
-  background-color: rgba(124, 58, 237, 0.3);
+  background-color: rgba(99, 102, 241, 0.3);
   color: var(--monarch-text-primary);
 }
 
