@@ -63,12 +63,12 @@ const sections = [
 ];
 ---
 
-<nav class="w-64 shrink-0 px-3 py-6 border-r border-[var(--monarch-border-subtle)]">
+<nav class="w-64 shrink-0 px-3 py-6 border-r border-[var(--monarch-border-subtle)]" style="text-decoration: none;">
   <div class="space-y-5">
     {sections.map((section) => (
       <div>
         <div
-          class="nav-section-toggle flex items-center justify-between w-full text-[10px] font-semibold tracking-[0.1em] uppercase mb-1.5 px-3 cursor-pointer transition-colors duration-200"
+          class="nav-section-toggle flex items-center justify-between w-full text-[10px] font-semibold tracking-[0.1em] uppercase mb-1.5 px-3 pr-5 cursor-pointer transition-colors duration-200"
           style="border: none; background: none; color: var(--monarch-text-secondary);"
           data-section={section.title}
         >
@@ -86,7 +86,7 @@ const sections = [
                   ? 'font-medium'
                   : 'text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)]'
               }`}
-              style={isActive(item.href) ? 'background-color: rgba(99,102,241,0.1); color: #818cf8; border-left: 2px solid #6366f1;' : ''}
+              style={isActive(item.href) ? 'background-color: rgba(99,102,241,0.1); color: #818cf8; border-left: 2px solid #6366f1; text-decoration: none;' : 'text-decoration: none;'}
             >
               <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon} />

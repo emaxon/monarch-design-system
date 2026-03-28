@@ -45,6 +45,12 @@ body {
   color: var(--monarch-text-primary);
 }
 
+/* === Link Reset (no underlines in nav) === */
+
+nav a, aside a {
+  text-decoration: none !important;
+}
+
 /* === Button Reset === */
 
 button {
