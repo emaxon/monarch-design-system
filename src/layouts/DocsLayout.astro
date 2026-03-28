@@ -1,0 +1,120 @@
+---
+import Sidebar from '../components/Sidebar.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Build breadcrumb from path
+const path = Astro.url.pathname.replace(base, '').replace(/^\/|\/$/g, '');
+const segments = path.split('/').filter(Boolean);
+const breadcrumbs = segments.map((seg, i) => ({
+  label: seg.charAt(0).toUpperCase() + seg.slice(1).replace(/-/g, ' '),
+  href: `${base}/${segments.slice(0, i + 1).join('/')}`,
+  isLast: i === segments.length - 1,
+}));
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} — Monarch Design System</title>
+    <meta name="description" content={description || 'Monarch Design System documentation'} />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      @import '../styles/global.css';
+    </style>
+    <script is:inline>
+      // Prevent FOUC: apply theme before render
+      const theme = localStorage.getItem('monarch-theme') || 'dark';
+      if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    </script>
+  </head>
+  <body class="min-h-screen bg-[var(--monarch-bg-base)] text-[var(--monarch-text-primary)]">
+    <!-- Top Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 h-14 border-b border-[var(--monarch-border-subtle)] bg-[var(--monarch-bg-surface)] flex items-center px-4 gap-4" style="backdrop-filter: var(--monarch-glass-blur); -webkit-backdrop-filter: var(--monarch-glass-blur);">
+      <!-- Mobile menu toggle -->
+      <button id="mobile-menu-toggle" class="lg:hidden flex items-center justify-center w-8 h-8 rounded-md hover:bg-[var(--monarch-bg-elevated)] text-[var(--monarch-text-secondary)] transition-colors duration-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Logo -->
+      <a href={`${base}/`} class="flex items-center gap-2 shrink-0">
+        <span class="text-xl">👑</span>
+        <span class="text-base font-semibold text-[var(--monarch-text-primary)]">Monarch</span>
+      </a>
+
+      <!-- Breadcrumb -->
+      <div class="hidden sm:flex items-center gap-1.5 text-sm text-[var(--monarch-text-muted)] ml-2">
+        {breadcrumbs.map((crumb) => (
+          <>
+            <span class="text-[var(--monarch-border-medium)]">/</span>
+            {crumb.isLast ? (
+              <span class="text-[var(--monarch-text-secondary)] font-medium">{crumb.label}</span>
+            ) : (
+              <a href={crumb.href} class="hover:text-[var(--monarch-text-primary)] transition-colors duration-200">{crumb.label}</a>
+            )}
+          </>
+        ))}
+      </div>
+
+      <div class="flex-1"></div>
+
+      <!-- GitHub -->
+      <a href="https://github.com/emaxon/monarch-design-system" target="_blank" rel="noopener" class="flex items-center justify-center w-8 h-8 rounded-md hover:bg-[var(--monarch-bg-elevated)] text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] transition-colors duration-200">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+
+      <ThemeToggle />
+    </header>
+
+    <div class="flex pt-14 min-h-screen">
+      <!-- Sidebar (desktop always visible, mobile overlay) -->
+      <aside id="sidebar" class="fixed lg:sticky top-14 left-0 h-[calc(100vh-3.5rem)] z-40 bg-[var(--monarch-bg-surface)] -translate-x-full lg:translate-x-0 transition-transform duration-300">
+        <Sidebar />
+      </aside>
+
+      <!-- Overlay for mobile -->
+      <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden" ></div>
+
+      <!-- Main Content -->
+      <main class="flex-1 min-w-0 px-6 md:px-10 lg:px-16 py-10">
+        <div class="max-w-4xl mx-auto animate-fade-in-up">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2 text-[var(--monarch-text-primary)]">{title}</h1>
+          {description && (
+            <p class="text-lg text-[var(--monarch-text-secondary)] mb-10">{description}</p>
+          )}
+          <slot />
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebar-overlay');
+
+      function toggleMenu() {
+        sidebar?.classList.toggle('-translate-x-full');
+        overlay?.classList.toggle('hidden');
+      }
+
+      menuToggle?.addEventListener('click', toggleMenu);
+      overlay?.addEventListener('click', toggleMenu);
+    </script>
+  </body>
+</html>

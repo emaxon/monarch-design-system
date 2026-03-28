@@ -1,0 +1,80 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+---
+
+<DocsLayout title="Cards" description="Container components for grouping related content. The building block of every Monarch interface.">
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Base Card</h2>
+    <ComponentPreview title="Standard Card" code='<div class="monarch-card p-6">Content</div>'>
+      <div class="monarch-card p-6 max-w-md">
+        <h4 class="text-lg font-semibold mb-2">Base Card</h4>
+        <p class="text-sm text-[var(--monarch-text-secondary)]">Surface background, subtle border, 12px radius. Lifts slightly on hover with a border color change and shadow.</p>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Elevated Card</h2>
+    <ComponentPreview title="Elevated">
+      <div class="p-6 max-w-md rounded-xl bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-medium)] shadow-[var(--monarch-shadow-md)]">
+        <h4 class="text-lg font-semibold mb-2">Elevated Card</h4>
+        <p class="text-sm text-[var(--monarch-text-secondary)]">One step up from base — elevated background with medium border and box shadow. Use for active or focused content.</p>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Gradient Border Card</h2>
+    <ComponentPreview title="Gradient Border" code='<div class="monarch-gradient-border p-6">Featured content</div>'>
+      <div class="monarch-gradient-border p-6 max-w-md">
+        <h4 class="text-lg font-semibold mb-2">Featured</h4>
+        <p class="text-sm text-[var(--monarch-text-secondary)]">Gradient border using a pseudo-element. Intensifies on hover. Use for featured content, premium features, or highlighted sections.</p>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Glass Card</h2>
+    <ComponentPreview title="Glassmorphism" code='<div class="monarch-glass rounded-xl p-6">Glass content</div>'>
+      <div class="relative p-8 rounded-xl overflow-hidden" style="background: linear-gradient(135deg, #7C3AED20, #3B82F620);">
+        <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 30% 50%, #7C3AED, transparent 70%), radial-gradient(circle at 70% 50%, #3B82F6, transparent 70%);"></div>
+        <div class="relative monarch-glass rounded-xl p-6 max-w-md">
+          <h4 class="text-lg font-semibold mb-2">Glass Card</h4>
+          <p class="text-sm text-[var(--monarch-text-secondary)]">Backdrop blur with semi-transparent background. Use for overlays, modals, and floating elements where background context matters.</p>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Card with Header</h2>
+    <ComponentPreview title="Header Card">
+      <div class="monarch-card max-w-md overflow-hidden">
+        <div class="flex items-center justify-between px-6 py-4 border-b border-[var(--monarch-border-subtle)]">
+          <h4 class="text-base font-semibold">Agent Activity</h4>
+          <button class="text-xs text-[var(--monarch-text-muted)] hover:text-[var(--monarch-text-primary)] transition-colors duration-200 flex items-center gap-1">
+            View All
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </button>
+        </div>
+        <div class="p-6">
+          <p class="text-sm text-[var(--monarch-text-secondary)]">Cards with headers include a border separator and an action link. The header establishes context while the body contains the content.</p>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Usage Guidelines</h2>
+    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
+      <p>• <strong>Base cards</strong> for standard content grouping — lists, details, form sections</p>
+      <p>• <strong>Elevated cards</strong> for active/focused states, interactive elements</p>
+      <p>• <strong>Gradient border</strong> for featured content, premium callouts, highlighted items</p>
+      <p>• <strong>Glass cards</strong> sparingly — modals, command palettes, floating menus</p>
+      <p>• All cards use <strong>12px radius</strong> (radius-lg) by default</p>
+      <p>• Hover effect: <strong>1px lift + border color change + shadow</strong> — subtle, not dramatic</p>
+    </div>
+  </section>
+</DocsLayout>

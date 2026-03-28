@@ -1,0 +1,103 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+---
+
+<DocsLayout title="Getting Started" description="Install and configure the Monarch Design System in your project.">
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Installation</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Monarch ships as both a Tailwind CSS preset and standalone CSS custom properties. Choose the approach that fits your stack.</p>
+
+    <h3 class="text-lg font-semibold mb-3">Option 1: Tailwind Preset</h3>
+    <p class="text-[var(--monarch-text-secondary)] mb-3">If your project uses Tailwind CSS, import the Monarch preset for full utility class support.</p>
+    <pre><code>// tailwind.config.js
+import monarchPreset from 'monarch-design-system/tailwind-preset';
+
+export default &#123;
+  presets: [monarchPreset],
+  content: ['./src/**/*.&#123;html,js,ts,jsx,tsx&#125;'],
+&#125;;</code></pre>
+
+    <h3 class="text-lg font-semibold mt-8 mb-3">Option 2: CSS Tokens Only</h3>
+    <p class="text-[var(--monarch-text-secondary)] mb-3">For non-Tailwind projects, import the CSS custom properties directly.</p>
+    <pre><code>/* Import all tokens */
+@import 'monarch-design-system/tokens';
+
+/* Or import selectively */
+@import 'monarch-design-system/tokens/colors.css';
+@import 'monarch-design-system/tokens/typography.css';
+@import 'monarch-design-system/tokens/spacing.css';
+@import 'monarch-design-system/tokens/shadows.css';
+@import 'monarch-design-system/tokens/animations.css';</code></pre>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Dark Mode</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-4">Monarch is dark-first. Dark mode is the default — no attribute needed. For light mode, add <code>data-theme="light"</code> to your <code>&lt;html&gt;</code> element.</p>
+    <pre><code>&lt;!-- Dark mode (default) --&gt;
+&lt;html&gt;
+
+&lt;!-- Light mode --&gt;
+&lt;html data-theme="light"&gt;</code></pre>
+    <p class="text-[var(--monarch-text-secondary)] mt-4">All color tokens automatically switch between dark and light values. Your components don't need to change — just toggle the attribute.</p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Design Principles</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="monarch-card p-6">
+        <h4 class="font-semibold mb-2 text-[var(--monarch-brand-purple)]">Design is Function</h4>
+        <p class="text-sm text-[var(--monarch-text-secondary)]">The aesthetic serves the experience, not the other way around. Beautiful, yes — but never at the cost of clarity or ease.</p>
+      </div>
+      <div class="monarch-card p-6">
+        <h4 class="font-semibold mb-2 text-[#EC4899]">Intentional Restraint</h4>
+        <p class="text-sm text-[var(--monarch-text-secondary)]">Every element earns its place. No feature bloat, no competing calls-to-action — just a clean path to the thing you're trying to do.</p>
+      </div>
+      <div class="monarch-card p-6">
+        <h4 class="font-semibold mb-2 text-[#3B82F6]">Premium by Default</h4>
+        <p class="text-sm text-[var(--monarch-text-secondary)]">Gradient accents, glassmorphism, smooth animations. The emotional positioning through UI that most products ignore.</p>
+      </div>
+      <div class="monarch-card p-6">
+        <h4 class="font-semibold mb-2 text-[#22C55E]">Composable Architecture</h4>
+        <p class="text-sm text-[var(--monarch-text-secondary)]">Atomic Design: Atoms → Molecules → Organisms → Templates. Every piece snaps together predictably.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Atomic Design Structure</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Based on Brad Frost's Atomic Design methodology, Monarch organizes components into five levels of increasing complexity:</p>
+
+    <div class="space-y-4">
+      <div class="flex items-start gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-[rgba(124,58,237,0.15)] text-[var(--monarch-brand-purple)] font-bold text-sm">A</div>
+        <div>
+          <h4 class="font-semibold">Atoms</h4>
+          <p class="text-sm text-[var(--monarch-text-secondary)]">The smallest building blocks — buttons, badges, inputs, toggles, avatars, icons. Indivisible UI elements.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-[rgba(168,85,247,0.15)] text-[#A855F7] font-bold text-sm">M</div>
+        <div>
+          <h4 class="font-semibold">Molecules</h4>
+          <p class="text-sm text-[var(--monarch-text-secondary)]">Simple combinations of atoms — stat cards, search bars, health indicators, navigation items.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-[rgba(236,72,153,0.15)] text-[#EC4899] font-bold text-sm">O</div>
+        <div>
+          <h4 class="font-semibold">Organisms</h4>
+          <p class="text-sm text-[var(--monarch-text-secondary)]">Complex components built from molecules — sidebars, data tables, kanban boards, agent feeds, chat interfaces.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-[rgba(59,130,246,0.15)] text-[#3B82F6] font-bold text-sm">T</div>
+        <div>
+          <h4 class="font-semibold">Templates</h4>
+          <p class="text-sm text-[var(--monarch-text-secondary)]">Full page layouts composed from organisms — dashboards, list views, detail screens.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocsLayout>

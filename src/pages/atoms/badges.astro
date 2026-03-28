@@ -1,0 +1,106 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+---
+
+<DocsLayout title="Badges" description="Status indicators, category labels, and notification markers.">
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Color Variants</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Each semantic color maps to a specific meaning. Use consistently across the product.</p>
+
+    <ComponentPreview title="Filled Badges">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[rgba(34,197,94,0.15)] text-[#22C55E]">Active</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[rgba(59,130,246,0.15)] text-[#60A5FA]">Recruiting</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[rgba(124,58,237,0.15)] text-[#A855F7]">Review</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[rgba(245,158,11,0.15)] text-[#FBBF24]">Pending</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[rgba(239,68,68,0.15)] text-[#F87171]">At Risk</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[rgba(236,72,153,0.15)] text-[#EC4899]">Marketing</span>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">With Dot Indicator</h2>
+
+    <ComponentPreview title="Dot Badges">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[rgba(34,197,94,0.15)] text-[#22C55E]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-[monarch-pulse-dot_2s_ease-in-out_infinite]"></span>
+          Online
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[rgba(245,158,11,0.15)] text-[#FBBF24]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span>
+          Away
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[var(--monarch-bg-elevated)] text-[var(--monarch-text-muted)]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--monarch-text-muted)]"></span>
+          Offline
+        </span>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Outlined</h2>
+
+    <ComponentPreview title="Outlined Badges">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border border-[#22C55E] text-[#22C55E]">Prospecting</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border border-[#3B82F6] text-[#60A5FA]">Qualification</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border border-[#A855F7] text-[#A855F7]">Proposal</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border border-[#F59E0B] text-[#FBBF24]">Negotiation</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border border-[#EF4444] text-[#F87171]">Closed Lost</span>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Sizes</h2>
+
+    <ComponentPreview title="Badge Sizes">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[rgba(124,58,237,0.15)] text-[#A855F7]">Small</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[rgba(124,58,237,0.15)] text-[#A855F7]">Default</span>
+        <span class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-semibold bg-[rgba(124,58,237,0.15)] text-[#A855F7]">Large</span>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Notification Counter</h2>
+
+    <ComponentPreview title="Count Badges">
+      <div class="flex items-center gap-6">
+        <div class="relative">
+          <svg class="w-6 h-6 text-[var(--monarch-text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+          <span class="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center w-4 h-4 rounded-full text-[9px] font-bold bg-[#EF4444] text-white">3</span>
+        </div>
+        <div class="relative">
+          <svg class="w-6 h-6 text-[var(--monarch-text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          <span class="absolute -top-1.5 -right-2 inline-flex items-center justify-center min-w-[18px] h-4 px-1 rounded-full text-[9px] font-bold bg-[#7C3AED] text-white">12</span>
+        </div>
+        <div class="relative">
+          <svg class="w-6 h-6 text-[var(--monarch-text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+          <span class="absolute -top-1.5 -right-2.5 inline-flex items-center justify-center min-w-[18px] h-4 px-1 rounded-full text-[9px] font-bold bg-[#22C55E] text-white">99+</span>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Usage Guidelines</h2>
+    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
+      <p>• <strong>Green</strong> → Active, Online, Success, Healthy, Prospecting</p>
+      <p>• <strong>Blue</strong> → Info, Recruiting, In Progress, Qualification</p>
+      <p>• <strong>Purple</strong> → Review, Featured, Proposal, Brand-related</p>
+      <p>• <strong>Amber</strong> → Warning, Pending, Away, Negotiation</p>
+      <p>• <strong>Red</strong> → Alert, At Risk, Error, Closed Lost</p>
+      <p>• <strong>Pink</strong> → Marketing, Social, Engagement</p>
+      <p>• Use <strong>filled badges</strong> in tables and lists for high visibility</p>
+      <p>• Use <strong>outlined badges</strong> for pipeline stages and categories</p>
+      <p>• Use <strong>dot indicators</strong> for real-time status (online/away/offline)</p>
+    </div>
+  </section>
+</DocsLayout>

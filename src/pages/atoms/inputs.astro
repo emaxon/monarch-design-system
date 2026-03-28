@@ -1,0 +1,108 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+---
+
+<DocsLayout title="Inputs" description="Text fields, search bars, selects, and textareas. Clean focus states with brand-colored rings.">
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Text Input</h2>
+
+    <ComponentPreview title="Text Inputs">
+      <div class="space-y-4 max-w-md">
+        <div>
+          <label class="block text-sm font-medium text-[var(--monarch-text-secondary)] mb-1.5">Account Name</label>
+          <input type="text" placeholder="Enter account name..." class="w-full px-4 py-2.5 rounded-lg bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[var(--monarch-text-primary)] placeholder-[var(--monarch-text-muted)] text-sm transition-all duration-200 focus:outline-none focus:border-[var(--monarch-brand-purple)] focus:ring-2 focus:ring-[rgba(124,58,237,0.2)]" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-[var(--monarch-text-secondary)] mb-1.5">Email</label>
+          <input type="email" value="joe@monarch.tech" class="w-full px-4 py-2.5 rounded-lg bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[var(--monarch-text-primary)] text-sm transition-all duration-200 focus:outline-none focus:border-[var(--monarch-brand-purple)] focus:ring-2 focus:ring-[rgba(124,58,237,0.2)]" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-[#EF4444] mb-1.5">Company (required)</label>
+          <input type="text" placeholder="Required field..." class="w-full px-4 py-2.5 rounded-lg bg-[var(--monarch-bg-elevated)] border border-[#EF4444] text-[var(--monarch-text-primary)] placeholder-[var(--monarch-text-muted)] text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[rgba(239,68,68,0.2)]" />
+          <p class="mt-1 text-xs text-[#EF4444]">This field is required</p>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-[var(--monarch-text-muted)] mb-1.5">Disabled</label>
+          <input type="text" value="Cannot edit" disabled class="w-full px-4 py-2.5 rounded-lg bg-[var(--monarch-bg-base)] border border-[var(--monarch-border-subtle)] text-[var(--monarch-text-muted)] text-sm cursor-not-allowed opacity-60" />
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Search Input</h2>
+
+    <ComponentPreview title="Search">
+      <div class="max-w-md">
+        <div class="relative">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--monarch-text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="search" placeholder="Search accounts, deals, contacts..." class="w-full pl-10 pr-16 py-2.5 rounded-lg bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[var(--monarch-text-primary)] placeholder-[var(--monarch-text-muted)] text-sm transition-all duration-200 focus:outline-none focus:border-[var(--monarch-brand-purple)] focus:ring-2 focus:ring-[rgba(124,58,237,0.2)]" />
+          <kbd class="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-[var(--monarch-bg-base)] border border-[var(--monarch-border-subtle)] text-[10px] text-[var(--monarch-text-muted)] font-mono">⌘K</kbd>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Select</h2>
+
+    <ComponentPreview title="Select Inputs">
+      <div class="space-y-4 max-w-md">
+        <div>
+          <label class="block text-sm font-medium text-[var(--monarch-text-secondary)] mb-1.5">Account Segment</label>
+          <select class="w-full px-4 py-2.5 rounded-lg bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[var(--monarch-text-primary)] text-sm transition-all duration-200 focus:outline-none focus:border-[var(--monarch-brand-purple)] focus:ring-2 focus:ring-[rgba(124,58,237,0.2)] appearance-none" style="background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2364748B%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22m6 9 6 6 6-6%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;">
+            <option>All Segments</option>
+            <option>Fabricator / Installer</option>
+            <option>Commercial</option>
+            <option>Retailer</option>
+            <option>Designer</option>
+            <option>Builder</option>
+            <option>Remodeler</option>
+          </select>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Textarea</h2>
+
+    <ComponentPreview title="Textarea">
+      <div class="max-w-md">
+        <label class="block text-sm font-medium text-[var(--monarch-text-secondary)] mb-1.5">Deal Notes</label>
+        <textarea rows="4" placeholder="Add notes about this deal..." class="w-full px-4 py-3 rounded-lg bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[var(--monarch-text-primary)] placeholder-[var(--monarch-text-muted)] text-sm transition-all duration-200 focus:outline-none focus:border-[var(--monarch-brand-purple)] focus:ring-2 focus:ring-[rgba(124,58,237,0.2)] resize-y"></textarea>
+        <p class="mt-1 text-xs text-[var(--monarch-text-muted)]">Markdown supported</p>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Input with Prefix/Suffix</h2>
+
+    <ComponentPreview title="Decorated Inputs">
+      <div class="space-y-4 max-w-md">
+        <div>
+          <label class="block text-sm font-medium text-[var(--monarch-text-secondary)] mb-1.5">Deal Value</label>
+          <div class="flex">
+            <span class="inline-flex items-center px-3 rounded-l-lg bg-[var(--monarch-bg-base)] border border-r-0 border-[var(--monarch-border-subtle)] text-sm text-[var(--monarch-text-muted)]">$</span>
+            <input type="text" placeholder="0.00" class="w-full px-4 py-2.5 rounded-r-lg bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[var(--monarch-text-primary)] placeholder-[var(--monarch-text-muted)] text-sm transition-all duration-200 focus:outline-none focus:border-[var(--monarch-brand-purple)] focus:ring-2 focus:ring-[rgba(124,58,237,0.2)]" />
+          </div>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Usage Guidelines</h2>
+    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
+      <p>• Always include a visible <strong>label</strong> above the input — never rely on placeholder text alone</p>
+      <p>• Focus ring is <strong>purple with 20% opacity</strong> — consistent brand reinforcement</p>
+      <p>• Error states use <strong>red border + helper text</strong> below the field</p>
+      <p>• <strong>⌘K</strong> shortcut badge on search inputs signals keyboard-first design</p>
+      <p>• Background is <strong>elevated</strong> (one step lighter than base) to create subtle depth</p>
+      <p>• Disabled inputs use <strong>50% opacity</strong> with base background</p>
+    </div>
+  </section>
+</DocsLayout>

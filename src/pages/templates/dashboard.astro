@@ -1,0 +1,119 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+---
+
+<DocsLayout title="Dashboard Template" description="The full dashboard layout — sidebar, top bar, KPI cards, charts, and activity feed composed together.">
+
+  <section class="mb-12">
+    <p class="text-[var(--monarch-text-secondary)] mb-6">This template demonstrates how Atoms, Molecules, and Organisms compose into a complete dashboard view. This is a direct representation of the Monarch GTM OS dashboard.</p>
+
+    <ComponentPreview title="Dashboard Layout (Scaled Preview)">
+      <div class="rounded-xl bg-[var(--monarch-bg-base)] border border-[var(--monarch-border-subtle)] overflow-hidden" style="font-size: 10px;">
+        <div class="flex">
+          <!-- Mini Sidebar -->
+          <div class="w-40 shrink-0 bg-[var(--monarch-bg-surface)] border-r border-[var(--monarch-border-subtle)] p-2">
+            <div class="flex items-center gap-1.5 px-2 py-2 mb-2">
+              <span class="text-sm">👑</span>
+              <span class="font-semibold text-xs">Monarch</span>
+            </div>
+            <p class="px-2 py-0.5 text-[8px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-widest">Intelligence</p>
+            <div class="space-y-0.5">
+              <a class="flex items-center gap-1.5 px-2 py-1 rounded bg-[rgba(124,58,237,0.1)] text-[var(--monarch-brand-purple)] text-[10px] font-medium">Dashboard</a>
+              <a class="flex items-center gap-1.5 px-2 py-1 rounded text-[var(--monarch-text-muted)] text-[10px]">Morning Brief</a>
+              <a class="flex items-center gap-1.5 px-2 py-1 rounded text-[var(--monarch-text-muted)] text-[10px]">Signal Graph</a>
+            </div>
+            <p class="px-2 py-0.5 mt-2 text-[8px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-widest">Revenue</p>
+            <div class="space-y-0.5">
+              <a class="flex items-center gap-1.5 px-2 py-1 rounded text-[var(--monarch-text-muted)] text-[10px]">Deal Board</a>
+              <a class="flex items-center gap-1.5 px-2 py-1 rounded text-[var(--monarch-text-muted)] text-[10px]">Analytics</a>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="flex-1 min-w-0">
+            <!-- Top Bar -->
+            <div class="flex items-center justify-between px-3 py-2 border-b border-[var(--monarch-border-subtle)] bg-[var(--monarch-bg-surface)]">
+              <div class="flex items-center gap-1 text-[9px] text-[var(--monarch-text-muted)]">
+                <span>Monarch</span><span>/</span><span class="text-[var(--monarch-text-secondary)]">Dashboard</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <div class="px-2 py-0.5 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[8px] text-[var(--monarch-text-muted)]">⌘K Search...</div>
+                <div class="w-5 h-5 rounded-full flex items-center justify-center text-[7px] font-bold text-white" style="background: var(--monarch-brand-gradient);">JY</div>
+              </div>
+            </div>
+
+            <div class="p-3 space-y-3">
+              <!-- Greeting -->
+              <div>
+                <h1 class="text-sm font-bold">Good evening, Joe.</h1>
+                <p class="text-[9px] text-[var(--monarch-text-muted)]">Here's your GTM overview for Friday, March 27.</p>
+              </div>
+
+              <!-- Stat Cards -->
+              <div class="grid grid-cols-5 gap-2">
+                <div class="p-2 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+                  <div class="text-base font-bold">433</div>
+                  <div class="text-[8px] text-[var(--monarch-text-muted)] uppercase">Accounts</div>
+                </div>
+                <div class="p-2 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+                  <div class="text-base font-bold">$144.8M</div>
+                  <div class="text-[8px] text-[var(--monarch-text-muted)] uppercase">Pipeline</div>
+                </div>
+                <div class="p-2 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+                  <div class="text-base font-bold">81</div>
+                  <div class="text-[8px] text-[var(--monarch-text-muted)] uppercase">Avg Health</div>
+                </div>
+                <div class="p-2 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+                  <div class="text-base font-bold">20</div>
+                  <div class="text-[8px] text-[var(--monarch-text-muted)] uppercase">Agents</div>
+                </div>
+                <div class="p-2 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+                  <div class="text-base font-bold">$3.01M</div>
+                  <div class="text-[8px] text-[var(--monarch-text-muted)] uppercase">Tax Saved</div>
+                </div>
+              </div>
+
+              <!-- Content Grid -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- Chart placeholder -->
+                <div class="p-2 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+                  <p class="text-[9px] font-semibold mb-2">Pipeline by Stage</p>
+                  <div class="space-y-1">
+                    <div class="flex items-center gap-1"><span class="text-[7px] w-12 text-[var(--monarch-text-muted)]">Prospect</span><div class="h-2 rounded bg-[var(--monarch-brand-purple)]" style="width: 60%;"></div></div>
+                    <div class="flex items-center gap-1"><span class="text-[7px] w-12 text-[var(--monarch-text-muted)]">Qualify</span><div class="h-2 rounded bg-[#A855F7]" style="width: 45%;"></div></div>
+                    <div class="flex items-center gap-1"><span class="text-[7px] w-12 text-[var(--monarch-text-muted)]">Proposal</span><div class="h-2 rounded bg-[#EC4899]" style="width: 30%;"></div></div>
+                    <div class="flex items-center gap-1"><span class="text-[7px] w-12 text-[var(--monarch-text-muted)]">Negotiate</span><div class="h-2 rounded bg-[#3B82F6]" style="width: 20%;"></div></div>
+                  </div>
+                </div>
+                <!-- Activity -->
+                <div class="p-2 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+                  <p class="text-[9px] font-semibold mb-2">Agent Activity</p>
+                  <div class="space-y-1.5">
+                    <div class="text-[8px]"><span class="text-[var(--monarch-brand-purple)] font-semibold">Intelligence</span> <span class="text-[var(--monarch-text-muted)]">· 2m ago</span><br/><span class="text-[var(--monarch-text-secondary)]">11 accounts detected</span></div>
+                    <div class="text-[8px]"><span class="text-[#3B82F6] font-semibold">Engagement</span> <span class="text-[var(--monarch-text-muted)]">· 5m ago</span><br/><span class="text-[var(--monarch-text-secondary)]">47 emails sent</span></div>
+                    <div class="text-[8px]"><span class="text-[#EF4444] font-semibold">Revenue</span> <span class="text-[var(--monarch-text-muted)]">· 8m ago</span><br/><span class="text-[var(--monarch-text-secondary)]">Deal risk alert</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Composition</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-4">This template combines:</p>
+    <div class="space-y-2 text-[var(--monarch-text-secondary)]">
+      <p>• <strong>Organism: Sidebar</strong> — grouped navigation with section headers</p>
+      <p>• <strong>Molecule: Search Bar</strong> — ⌘K command palette trigger in the top bar</p>
+      <p>• <strong>Atom: Avatar</strong> — user identity in the top bar</p>
+      <p>• <strong>Molecule: Stat Cards</strong> — KPI overview row (5 cards)</p>
+      <p>• <strong>Organism: Agent Feed</strong> — activity stream in the right column</p>
+      <p>• <strong>Custom: Charts</strong> — pipeline visualization (CSS bar charts)</p>
+      <p>• <strong>Molecule: Health Indicators</strong> — in the at-risk deals section</p>
+    </div>
+  </section>
+</DocsLayout>

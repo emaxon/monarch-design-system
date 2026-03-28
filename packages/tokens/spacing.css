@@ -1,0 +1,30 @@
+/* Monarch Design System — Spacing Tokens (8px base grid) */
+
+:root {
+  --monarch-space-0: 0;
+  --monarch-space-px: 1px;
+  --monarch-space-0-5: 0.125rem;   /* 2px */
+  --monarch-space-1: 0.25rem;      /* 4px */
+  --monarch-space-1-5: 0.375rem;   /* 6px */
+  --monarch-space-2: 0.5rem;       /* 8px — base unit */
+  --monarch-space-3: 0.75rem;      /* 12px */
+  --monarch-space-4: 1rem;         /* 16px */
+  --monarch-space-5: 1.25rem;      /* 20px */
+  --monarch-space-6: 1.5rem;       /* 24px */
+  --monarch-space-8: 2rem;         /* 32px */
+  --monarch-space-10: 2.5rem;      /* 40px */
+  --monarch-space-12: 3rem;        /* 48px */
+  --monarch-space-16: 4rem;        /* 64px */
+  --monarch-space-20: 5rem;        /* 80px */
+  --monarch-space-24: 6rem;        /* 96px */
+  --monarch-space-32: 8rem;        /* 128px */
+
+  /* === Border Radius === */
+  --monarch-radius-none: 0;
+  --monarch-radius-sm: 0.25rem;    /* 4px */
+  --monarch-radius-md: 0.5rem;     /* 8px */
+  --monarch-radius-lg: 0.75rem;    /* 12px */
+  --monarch-radius-xl: 1rem;       /* 16px */
+  --monarch-radius-2xl: 1.5rem;    /* 24px */
+  --monarch-radius-full: 9999px;
+}

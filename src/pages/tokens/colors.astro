@@ -1,0 +1,113 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ColorSwatch from '../../components/ColorSwatch.astro';
+---
+
+<DocsLayout title="Colors" description="The Monarch color system — dark-first, semantic, and purposeful.">
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Brand</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">The Monarch brand is anchored by a confident violet-purple, extended with gradients into pink for emphasis and energy.</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <ColorSwatch name="Purple" value="#7C3AED" cssVar="--monarch-brand-purple" />
+      <ColorSwatch name="Purple Light" value="#A855F7" cssVar="--monarch-brand-purple-light" />
+      <ColorSwatch name="Pink" value="#EC4899" cssVar="--monarch-brand-pink" />
+      <div class="flex flex-col gap-2 group">
+        <div class="w-full h-20 rounded-lg border border-[var(--monarch-border-subtle)] transition-transform duration-200 group-hover:scale-105" style="background: linear-gradient(135deg, #7C3AED, #A855F7, #EC4899);"></div>
+        <div>
+          <p class="text-sm font-medium text-[var(--monarch-text-primary)]">Brand Gradient</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-brand-gradient</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Semantic</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Purpose-driven colors for states, feedback, and categorization.</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <ColorSwatch name="Success" value="#22C55E" cssVar="--monarch-success" />
+      <ColorSwatch name="Warning" value="#F59E0B" cssVar="--monarch-warning" />
+      <ColorSwatch name="Danger" value="#EF4444" cssVar="--monarch-danger" />
+      <ColorSwatch name="Info" value="#3B82F6" cssVar="--monarch-info" />
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Backgrounds</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Three elevation levels create depth and hierarchy. These values switch automatically between dark and light modes.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="flex flex-col gap-2">
+        <div class="w-full h-24 rounded-lg border border-[var(--monarch-border-subtle)] bg-[var(--monarch-bg-base)] flex items-center justify-center">
+          <span class="text-xs font-mono text-[var(--monarch-text-muted)]">Base</span>
+        </div>
+        <p class="text-sm font-medium">Base</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-bg-base</p>
+        <p class="text-xs text-[var(--monarch-text-muted)]">Dark: #0D0F1A · Light: #FAFBFC</p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="w-full h-24 rounded-lg border border-[var(--monarch-border-subtle)] bg-[var(--monarch-bg-surface)] flex items-center justify-center">
+          <span class="text-xs font-mono text-[var(--monarch-text-muted)]">Surface</span>
+        </div>
+        <p class="text-sm font-medium">Surface</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-bg-surface</p>
+        <p class="text-xs text-[var(--monarch-text-muted)]">Dark: #131525 · Light: #FFFFFF</p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="w-full h-24 rounded-lg border border-[var(--monarch-border-subtle)] bg-[var(--monarch-bg-elevated)] flex items-center justify-center">
+          <span class="text-xs font-mono text-[var(--monarch-text-muted)]">Elevated</span>
+        </div>
+        <p class="text-sm font-medium">Elevated</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-bg-elevated</p>
+        <p class="text-xs text-[var(--monarch-text-muted)]">Dark: #1A1D2E · Light: #F1F5F9</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Text</h2>
+    <div class="space-y-4">
+      <div class="flex items-center gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+        <span class="text-lg font-semibold text-[var(--monarch-text-primary)]">Primary</span>
+        <span class="text-xs font-mono text-[var(--monarch-text-muted)]">--monarch-text-primary</span>
+      </div>
+      <div class="flex items-center gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+        <span class="text-lg font-semibold text-[var(--monarch-text-secondary)]">Secondary</span>
+        <span class="text-xs font-mono text-[var(--monarch-text-muted)]">--monarch-text-secondary</span>
+      </div>
+      <div class="flex items-center gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+        <span class="text-lg font-semibold text-[var(--monarch-text-muted)]">Muted</span>
+        <span class="text-xs font-mono text-[var(--monarch-text-muted)]">--monarch-text-muted</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Borders</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-lg border border-[var(--monarch-border-subtle)]">
+        <p class="text-sm font-medium mb-1">Subtle</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-border-subtle</p>
+      </div>
+      <div class="p-6 rounded-lg border-2 border-[var(--monarch-border-medium)]">
+        <p class="text-sm font-medium mb-1">Medium</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-border-medium</p>
+      </div>
+      <div class="p-6 rounded-lg border-2 border-[var(--monarch-border-strong)]">
+        <p class="text-sm font-medium mb-1">Strong</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-border-strong</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Usage Guidelines</h2>
+    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
+      <p>• Use <strong>brand purple</strong> for primary actions, active states, and key UI accents</p>
+      <p>• Reserve <strong>gradients</strong> for emphasis — hero text, primary CTAs, featured cards</p>
+      <p>• Use <strong>semantic colors</strong> consistently — green always means success, red always means danger</p>
+      <p>• <strong>Background elevation</strong> creates depth — base is the canvas, surface is content, elevated is interactive</p>
+      <p>• Never use pure black (#000) or pure white (#FFF) as backgrounds — use the token values</p>
+    </div>
+  </section>
+</DocsLayout>

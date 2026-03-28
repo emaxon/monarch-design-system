@@ -1,0 +1,99 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+---
+
+<DocsLayout title="Shadows & Effects" description="Elevation, glow effects, and glassmorphism for depth and premium feel.">
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Elevation Shadows</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Four levels of elevation for layering UI elements. Shadows are tuned for both dark and light modes.</p>
+
+    <ComponentPreview title="Shadow Levels">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="p-6 rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] text-center" style="box-shadow: var(--monarch-shadow-sm);">
+          <p class="text-sm font-medium mb-1">Small</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono">shadow-sm</p>
+        </div>
+        <div class="p-6 rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] text-center" style="box-shadow: var(--monarch-shadow-md);">
+          <p class="text-sm font-medium mb-1">Medium</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono">shadow-md</p>
+        </div>
+        <div class="p-6 rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] text-center" style="box-shadow: var(--monarch-shadow-lg);">
+          <p class="text-sm font-medium mb-1">Large</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono">shadow-lg</p>
+        </div>
+        <div class="p-6 rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] text-center" style="box-shadow: var(--monarch-shadow-xl);">
+          <p class="text-sm font-medium mb-1">XL</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono">shadow-xl</p>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Glow Effects</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Subtle color glow for hover states, active elements, and emphasis. Inspired by Superhuman's premium interaction feedback.</p>
+
+    <ComponentPreview title="Glow Variants">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] text-center" style="box-shadow: var(--monarch-glow-purple);">
+          <p class="text-sm font-medium mb-1 text-[#A855F7]">Purple Glow</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono">glow-purple</p>
+        </div>
+        <div class="p-6 rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] text-center" style="box-shadow: var(--monarch-glow-pink);">
+          <p class="text-sm font-medium mb-1 text-[#EC4899]">Pink Glow</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono">glow-pink</p>
+        </div>
+        <div class="p-6 rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] text-center" style="box-shadow: var(--monarch-glow-brand);">
+          <p class="text-sm font-medium mb-1 monarch-gradient-text">Brand Glow</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono">glow-brand</p>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Glassmorphism</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Frosted glass effects for overlays, modals, and floating elements. Uses backdrop-filter for depth without opacity.</p>
+
+    <ComponentPreview title="Glass Card">
+      <div class="relative p-8 rounded-xl overflow-hidden" style="background: linear-gradient(135deg, #7C3AED20, #EC489920);">
+        <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 30% 50%, #7C3AED, transparent 70%), radial-gradient(circle at 70% 50%, #EC4899, transparent 70%);"></div>
+        <div class="relative monarch-glass rounded-xl p-6">
+          <h4 class="text-lg font-semibold mb-2">Glass Card</h4>
+          <p class="text-sm text-[var(--monarch-text-secondary)]">This card uses backdrop-filter blur with a semi-transparent background and subtle border. The content behind shows through with a frosted effect.</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono mt-3">.monarch-glass</p>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Gradient Border</h2>
+    <ComponentPreview title="Gradient Border Card" code='<div class="monarch-gradient-border p-6">Content here</div>'>
+      <div class="monarch-gradient-border p-6">
+        <h4 class="text-lg font-semibold mb-2">Featured Content</h4>
+        <p class="text-sm text-[var(--monarch-text-secondary)]">Hover over this card to see the gradient border intensify. Uses a pseudo-element with the brand gradient behind the card.</p>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Skeleton Loading</h2>
+    <ComponentPreview title="Loading States">
+      <div class="space-y-4 max-w-sm">
+        <div class="monarch-skeleton h-4 w-3/4"></div>
+        <div class="monarch-skeleton h-4 w-full"></div>
+        <div class="monarch-skeleton h-4 w-5/6"></div>
+        <div class="flex gap-3 mt-6">
+          <div class="monarch-skeleton w-10 h-10 rounded-full"></div>
+          <div class="flex-1 space-y-2">
+            <div class="monarch-skeleton h-3 w-1/2"></div>
+            <div class="monarch-skeleton h-3 w-3/4"></div>
+          </div>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+</DocsLayout>

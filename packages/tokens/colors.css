@@ -1,0 +1,64 @@
+/* Monarch Design System — Color Tokens */
+
+:root {
+  /* === Brand === */
+  --monarch-brand-purple: #7C3AED;
+  --monarch-brand-purple-light: #A855F7;
+  --monarch-brand-pink: #EC4899;
+  --monarch-brand-gradient: linear-gradient(135deg, #7C3AED, #A855F7, #EC4899);
+  --monarch-brand-gradient-subtle: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(168, 85, 247, 0.1));
+
+  /* === Semantic === */
+  --monarch-success: #22C55E;
+  --monarch-success-light: #4ADE80;
+  --monarch-success-dim: rgba(34, 197, 94, 0.15);
+  --monarch-warning: #F59E0B;
+  --monarch-warning-light: #FBBF24;
+  --monarch-warning-dim: rgba(245, 158, 11, 0.15);
+  --monarch-danger: #EF4444;
+  --monarch-danger-light: #F87171;
+  --monarch-danger-dim: rgba(239, 68, 68, 0.15);
+  --monarch-info: #3B82F6;
+  --monarch-info-light: #60A5FA;
+  --monarch-info-dim: rgba(59, 130, 246, 0.15);
+
+  /* === Dark Mode (Default) === */
+  --monarch-bg-base: #0D0F1A;
+  --monarch-bg-surface: #131525;
+  --monarch-bg-elevated: #1A1D2E;
+  --monarch-bg-overlay: rgba(13, 15, 26, 0.8);
+
+  --monarch-text-primary: #FFFFFF;
+  --monarch-text-secondary: #94A3B8;
+  --monarch-text-muted: #64748B;
+  --monarch-text-inverse: #0F172A;
+
+  --monarch-border-subtle: #1E293B;
+  --monarch-border-medium: #334155;
+  --monarch-border-strong: #475569;
+
+  --monarch-glass-bg: rgba(19, 21, 37, 0.6);
+  --monarch-glass-border: rgba(255, 255, 255, 0.08);
+  --monarch-glass-highlight: rgba(255, 255, 255, 0.04);
+}
+
+/* === Light Mode === */
+[data-theme="light"] {
+  --monarch-bg-base: #FAFBFC;
+  --monarch-bg-surface: #FFFFFF;
+  --monarch-bg-elevated: #F1F5F9;
+  --monarch-bg-overlay: rgba(250, 251, 252, 0.8);
+
+  --monarch-text-primary: #0F172A;
+  --monarch-text-secondary: #475569;
+  --monarch-text-muted: #94A3B8;
+  --monarch-text-inverse: #FFFFFF;
+
+  --monarch-border-subtle: #E2E8F0;
+  --monarch-border-medium: #CBD5E1;
+  --monarch-border-strong: #94A3B8;
+
+  --monarch-glass-bg: rgba(255, 255, 255, 0.6);
+  --monarch-glass-border: rgba(0, 0, 0, 0.08);
+  --monarch-glass-highlight: rgba(0, 0, 0, 0.02);
+}

@@ -1,0 +1,46 @@
+---
+---
+<button
+  id="theme-toggle"
+  class="relative flex items-center gap-2 rounded-full bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] px-3 py-1.5 text-sm text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:border-[var(--monarch-border-medium)] transition-all duration-200"
+  aria-label="Toggle dark/light mode"
+>
+  <svg id="theme-icon-dark" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+  </svg>
+  <svg id="theme-icon-light" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+  </svg>
+  <span id="theme-label" class="text-xs font-medium">Dark</span>
+</button>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const iconDark = document.getElementById('theme-icon-dark');
+  const iconLight = document.getElementById('theme-icon-light');
+  const label = document.getElementById('theme-label');
+
+  function setTheme(theme: string) {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      iconDark?.classList.add('hidden');
+      iconLight?.classList.remove('hidden');
+      if (label) label.textContent = 'Light';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      iconDark?.classList.remove('hidden');
+      iconLight?.classList.add('hidden');
+      if (label) label.textContent = 'Dark';
+    }
+    localStorage.setItem('monarch-theme', theme);
+  }
+
+  // Initialize from localStorage
+  const saved = localStorage.getItem('monarch-theme') || 'dark';
+  setTheme(saved);
+
+  toggle?.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'light' ? 'dark' : 'light');
+  });
+</script>

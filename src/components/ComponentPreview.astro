@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+  code?: string;
+}
+
+const { title, code } = Astro.props;
+const previewId = `preview-${title.toLowerCase().replace(/\s+/g, '-')}-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<div class="monarch-card overflow-hidden mb-8">
+  <div class="flex items-center justify-between px-4 py-3 border-b border-[var(--monarch-border-subtle)]">
+    <span class="text-sm font-medium text-[var(--monarch-text-secondary)]">{title}</span>
+    {code && (
+      <button
+        class="preview-code-toggle flex items-center gap-1.5 text-xs text-[var(--monarch-text-muted)] hover:text-[var(--monarch-text-primary)] transition-colors duration-200"
+        data-target={previewId}
+      >
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+        View Code
+      </button>
+    )}
+  </div>
+
+  <div class="p-6 bg-[var(--monarch-bg-base)]">
+    <slot />
+  </div>
+
+  {code && (
+    <div id={previewId} class="preview-code hidden border-t border-[var(--monarch-border-subtle)]">
+      <div class="flex items-center justify-between px-4 py-2 bg-[var(--monarch-bg-elevated)]">
+        <span class="text-xs text-[var(--monarch-text-muted)] font-mono">HTML</span>
+        <button class="copy-btn text-xs text-[var(--monarch-text-muted)] hover:text-[var(--monarch-text-primary)] transition-colors duration-200 flex items-center gap-1" data-code={code}>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          Copy
+        </button>
+      </div>
+      <pre class="!rounded-none !border-0 !m-0"><code set:text={code} /></pre>
+    </div>
+  )}
+</div>
+
+<script>
+  document.querySelectorAll('.preview-code-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      if (!targetId) return;
+      const codeBlock = document.getElementById(targetId);
+      if (!codeBlock) return;
+      codeBlock.classList.toggle('hidden');
+      const span = btn.querySelector('span') || btn.lastChild;
+      if (span && span.textContent) {
+        span.textContent = codeBlock.classList.contains('hidden') ? 'View Code' : 'Hide Code';
+      }
+    });
+  });
+
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const code = btn.getAttribute('data-code');
+      if (!code) return;
+      navigator.clipboard.writeText(code).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Copied!';
+        setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+      });
+    });
+  });
+</script>

@@ -1,0 +1,87 @@
+/* Monarch Design System — Animation Tokens */
+
+:root {
+  /* === Durations === */
+  --monarch-duration-fast: 150ms;
+  --monarch-duration-base: 200ms;
+  --monarch-duration-slow: 300ms;
+  --monarch-duration-slower: 500ms;
+
+  /* === Easings === */
+  --monarch-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --monarch-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --monarch-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --monarch-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --monarch-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --monarch-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* === Keyframe Animations === */
+
+@keyframes monarch-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes monarch-fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes monarch-fade-in-down {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes monarch-slide-in-left {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes monarch-slide-in-right {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes monarch-scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes monarch-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes monarch-pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+@keyframes monarch-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes monarch-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes monarch-gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes monarch-bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes monarch-typing-dot {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-4px); }
+}

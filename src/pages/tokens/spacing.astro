@@ -1,0 +1,77 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+---
+
+<DocsLayout title="Spacing" description="An 8px base grid system for consistent, harmonious layouts.">
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Spacing Scale</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Monarch uses an 8px base unit. All spacing values are multiples or fractions of 8px, creating rhythm and consistency across every component.</p>
+
+    <ComponentPreview title="Spacing Values">
+      <div class="space-y-3">
+        {[
+          { name: '0.5', size: '2px', rem: '0.125rem' },
+          { name: '1', size: '4px', rem: '0.25rem' },
+          { name: '1.5', size: '6px', rem: '0.375rem' },
+          { name: '2', size: '8px', rem: '0.5rem' },
+          { name: '3', size: '12px', rem: '0.75rem' },
+          { name: '4', size: '16px', rem: '1rem' },
+          { name: '5', size: '20px', rem: '1.25rem' },
+          { name: '6', size: '24px', rem: '1.5rem' },
+          { name: '8', size: '32px', rem: '2rem' },
+          { name: '10', size: '40px', rem: '2.5rem' },
+          { name: '12', size: '48px', rem: '3rem' },
+          { name: '16', size: '64px', rem: '4rem' },
+          { name: '20', size: '80px', rem: '5rem' },
+          { name: '24', size: '96px', rem: '6rem' },
+        ].map(({ name, size, rem }) => (
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-20 shrink-0">space-{name}</span>
+            <div class="h-4 rounded bg-[var(--monarch-brand-purple)] opacity-60" style={`width: ${rem};`}></div>
+            <span class="text-xs text-[var(--monarch-text-muted)]">{size} / {rem}</span>
+          </div>
+        ))}
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Border Radius</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Rounded corners at consistent scales — from subtle rounding to full pills.</p>
+
+    <ComponentPreview title="Radius Values">
+      <div class="flex flex-wrap gap-6 items-end">
+        {[
+          { name: 'sm', value: '4px', css: '0.25rem' },
+          { name: 'md', value: '8px', css: '0.5rem' },
+          { name: 'lg', value: '12px', css: '0.75rem' },
+          { name: 'xl', value: '16px', css: '1rem' },
+          { name: '2xl', value: '24px', css: '1.5rem' },
+          { name: 'full', value: '9999px', css: '9999px' },
+        ].map(({ name, value, css }) => (
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-20 h-20 bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-medium)]" style={`border-radius: ${css};`}></div>
+            <span class="text-xs font-mono text-[var(--monarch-text-muted)]">{name}</span>
+            <span class="text-xs text-[var(--monarch-text-muted)]">{value}</span>
+          </div>
+        ))}
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Usage Guidelines</h2>
+    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
+      <p>• Use <strong>space-2 (8px)</strong> as the base padding for tight elements like badges and inline items</p>
+      <p>• Use <strong>space-4 (16px)</strong> for standard component padding — inputs, small cards</p>
+      <p>• Use <strong>space-6 (24px)</strong> for card padding and content area gutters</p>
+      <p>• Use <strong>space-8 (32px)</strong> or <strong>space-10 (40px)</strong> for section spacing within a page</p>
+      <p>• Use <strong>space-16+ (64px+)</strong> for major section breaks between content blocks</p>
+      <p>• <strong>radius-lg (12px)</strong> is the default for cards and containers</p>
+      <p>• <strong>radius-md (8px)</strong> for buttons, inputs, and smaller elements</p>
+      <p>• <strong>radius-full</strong> for avatars, pills, and badges</p>
+    </div>
+  </section>
+</DocsLayout>

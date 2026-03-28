@@ -1,0 +1,165 @@
+@import 'tailwindcss';
+@import '../../packages/tokens/index.css';
+
+/* === Base Styles === */
+
+html {
+  font-family: var(--monarch-font-sans);
+  background-color: var(--monarch-bg-base);
+  color: var(--monarch-text-primary);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  transition: background-color var(--monarch-duration-slow) var(--monarch-ease-default),
+              color var(--monarch-duration-slow) var(--monarch-ease-default);
+}
+
+/* === Scrollbar === */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--monarch-border-medium);
+  border-radius: var(--monarch-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--monarch-border-strong);
+}
+
+/* === Selection === */
+
+::selection {
+  background-color: rgba(124, 58, 237, 0.3);
+  color: var(--monarch-text-primary);
+}
+
+/* === Focus Styles === */
+
+:focus-visible {
+  outline: 2px solid var(--monarch-brand-purple);
+  outline-offset: 2px;
+  border-radius: var(--monarch-radius-sm);
+}
+
+/* === Utility Classes === */
+
+.monarch-gradient-text {
+  background: var(--monarch-brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.monarch-glass {
+  background: var(--monarch-glass-bg);
+  backdrop-filter: var(--monarch-glass-blur);
+  -webkit-backdrop-filter: var(--monarch-glass-blur);
+  border: 1px solid var(--monarch-glass-border);
+}
+
+.monarch-card {
+  background: var(--monarch-bg-surface);
+  border: 1px solid var(--monarch-border-subtle);
+  border-radius: var(--monarch-radius-lg);
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
+}
+
+.monarch-card:hover {
+  border-color: var(--monarch-border-medium);
+  box-shadow: var(--monarch-shadow-md);
+  transform: translateY(-1px);
+}
+
+.monarch-gradient-border {
+  position: relative;
+  border-radius: var(--monarch-radius-lg);
+  background: var(--monarch-bg-surface);
+}
+
+.monarch-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: var(--monarch-brand-gradient);
+  z-index: -1;
+  opacity: 0.5;
+  transition: opacity var(--monarch-duration-base) var(--monarch-ease-default);
+}
+
+.monarch-gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* === Skeleton Loading === */
+
+.monarch-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--monarch-bg-elevated) 25%,
+    var(--monarch-border-subtle) 50%,
+    var(--monarch-bg-elevated) 75%
+  );
+  background-size: 200% 100%;
+  animation: monarch-shimmer 2s linear infinite;
+  border-radius: var(--monarch-radius-md);
+}
+
+/* === Animation Classes === */
+
+.animate-fade-in { animation: monarch-fade-in var(--monarch-duration-base) var(--monarch-ease-out); }
+.animate-fade-in-up { animation: monarch-fade-in-up var(--monarch-duration-slow) var(--monarch-ease-out); }
+.animate-slide-left { animation: monarch-slide-in-left var(--monarch-duration-slow) var(--monarch-ease-out); }
+.animate-scale-in { animation: monarch-scale-in var(--monarch-duration-base) var(--monarch-ease-spring); }
+
+/* Staggered animation delays */
+.delay-1 { animation-delay: 100ms; animation-fill-mode: both; }
+.delay-2 { animation-delay: 200ms; animation-fill-mode: both; }
+.delay-3 { animation-delay: 300ms; animation-fill-mode: both; }
+.delay-4 { animation-delay: 400ms; animation-fill-mode: both; }
+.delay-5 { animation-delay: 500ms; animation-fill-mode: both; }
+
+/* === Code Blocks === */
+
+code {
+  font-family: var(--monarch-font-mono);
+  font-size: 0.875em;
+}
+
+pre {
+  font-family: var(--monarch-font-mono);
+  background: var(--monarch-bg-base);
+  border: 1px solid var(--monarch-border-subtle);
+  border-radius: var(--monarch-radius-lg);
+  padding: var(--monarch-space-4);
+  overflow-x: auto;
+  font-size: var(--monarch-text-sm);
+  line-height: var(--monarch-leading-relaxed);
+}
+
+[data-theme="light"] pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border-color: #313244;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background: var(--monarch-bg-elevated);
+  padding: 0.125em 0.375em;
+  border-radius: var(--monarch-radius-sm);
+  border: 1px solid var(--monarch-border-subtle);
+  font-size: 0.85em;
+}

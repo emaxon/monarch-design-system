@@ -1,0 +1,118 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+---
+
+<DocsLayout title="Data Table" description="Sortable, filterable tables for accounts, deals, and contacts — the workhorse of B2B SaaS.">
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Accounts Table</h2>
+
+    <ComponentPreview title="Full Data Table">
+      <div class="monarch-card overflow-hidden">
+        <!-- Table Header -->
+        <div class="flex items-center justify-between px-5 py-3 border-b border-[var(--monarch-border-subtle)]">
+          <div class="flex items-center gap-3">
+            <h3 class="text-base font-semibold">Accounts</h3>
+            <span class="px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--monarch-bg-elevated)] text-[var(--monarch-text-muted)]">433</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="flex rounded-lg border border-[var(--monarch-border-subtle)] overflow-hidden">
+              <button class="px-3 py-1.5 text-xs font-medium bg-[var(--monarch-bg-elevated)] text-[var(--monarch-text-primary)]">All</button>
+              <button class="px-3 py-1.5 text-xs font-medium text-[var(--monarch-text-muted)] hover:text-[var(--monarch-text-primary)] transition-colors duration-200">Active</button>
+              <button class="px-3 py-1.5 text-xs font-medium text-[var(--monarch-text-muted)] hover:text-[var(--monarch-text-primary)] transition-colors duration-200">At Risk</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-[var(--monarch-border-subtle)] text-left">
+                <th class="px-5 py-3 text-xs font-medium text-[var(--monarch-text-muted)] uppercase tracking-wider">
+                  <button class="flex items-center gap-1 hover:text-[var(--monarch-text-primary)] transition-colors duration-200">
+                    Account
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" /></svg>
+                  </button>
+                </th>
+                <th class="px-5 py-3 text-xs font-medium text-[var(--monarch-text-muted)] uppercase tracking-wider">Segment</th>
+                <th class="px-5 py-3 text-xs font-medium text-[var(--monarch-text-muted)] uppercase tracking-wider">Health</th>
+                <th class="px-5 py-3 text-xs font-medium text-[var(--monarch-text-muted)] uppercase tracking-wider">Pipeline</th>
+                <th class="px-5 py-3 text-xs font-medium text-[var(--monarch-text-muted)] uppercase tracking-wider">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-[var(--monarch-border-subtle)] hover:bg-[var(--monarch-bg-elevated)] transition-colors duration-150 cursor-pointer">
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-[rgba(59,130,246,0.12)] flex items-center justify-center text-xs font-semibold text-[#3B82F6]">TK</div>
+                    <div>
+                      <p class="font-medium text-[var(--monarch-text-primary)]">The Kitchen Source</p>
+                      <p class="text-xs text-[var(--monarch-text-muted)]">Dallas, TX</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-[rgba(59,130,246,0.15)] text-[#60A5FA]">Commercial</span></td>
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-2">
+                    <div class="relative w-7 h-7">
+                      <svg class="w-7 h-7 -rotate-90" viewBox="0 0 36 36"><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--monarch-border-subtle)" stroke-width="4" /><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#22C55E" stroke-width="4" stroke-dasharray="92, 100" stroke-linecap="round" /></svg>
+                      <span class="absolute inset-0 flex items-center justify-center text-[8px] font-bold text-[#22C55E]">92</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-5 py-3 font-medium">$2,450,000</td>
+                <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-[rgba(34,197,94,0.15)] text-[#22C55E]"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Active</span></td>
+              </tr>
+              <tr class="border-b border-[var(--monarch-border-subtle)] hover:bg-[var(--monarch-bg-elevated)] transition-colors duration-150 cursor-pointer">
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-[rgba(245,158,11,0.12)] flex items-center justify-center text-xs font-semibold text-[#F59E0B]">AK</div>
+                    <div>
+                      <p class="font-medium text-[var(--monarch-text-primary)]">AK Design Group</p>
+                      <p class="text-xs text-[var(--monarch-text-muted)]">Chicago, IL</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-[rgba(124,58,237,0.15)] text-[#A855F7]">Designer</span></td>
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-2">
+                    <div class="relative w-7 h-7">
+                      <svg class="w-7 h-7 -rotate-90" viewBox="0 0 36 36"><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--monarch-border-subtle)" stroke-width="4" /><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#F59E0B" stroke-width="4" stroke-dasharray="58, 100" stroke-linecap="round" /></svg>
+                      <span class="absolute inset-0 flex items-center justify-center text-[8px] font-bold text-[#F59E0B]">58</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-5 py-3 font-medium">$285,852</td>
+                <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-[rgba(245,158,11,0.15)] text-[#FBBF24]"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span>At Risk</span></td>
+              </tr>
+              <tr class="hover:bg-[var(--monarch-bg-elevated)] transition-colors duration-150 cursor-pointer">
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-[rgba(239,68,68,0.12)] flex items-center justify-center text-xs font-semibold text-[#EF4444]">BC</div>
+                    <div>
+                      <p class="font-medium text-[var(--monarch-text-primary)]">Baltix Construction</p>
+                      <p class="text-xs text-[var(--monarch-text-muted)]">Minneapolis, MN</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-[rgba(34,197,94,0.15)] text-[#22C55E]">Fabricator</span></td>
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-2">
+                    <div class="relative w-7 h-7">
+                      <svg class="w-7 h-7 -rotate-90" viewBox="0 0 36 36"><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--monarch-border-subtle)" stroke-width="4" /><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#EF4444" stroke-width="4" stroke-dasharray="25, 100" stroke-linecap="round" /></svg>
+                      <span class="absolute inset-0 flex items-center justify-center text-[8px] font-bold text-[#EF4444]">25</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-5 py-3 font-medium">$154,527</td>
+                <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-[rgba(239,68,68,0.15)] text-[#F87171]"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444]"></span>Critical</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+</DocsLayout>

@@ -1,0 +1,113 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+---
+
+<DocsLayout title="Typography" description="Inter for interfaces, JetBrains Mono for code. Bold, clean, readable.">
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Font Families</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="monarch-card p-6">
+        <p class="text-xs text-[var(--monarch-text-muted)] uppercase tracking-widest mb-3">Primary</p>
+        <p class="text-3xl font-semibold mb-2" style="font-family: var(--monarch-font-sans);">Inter</p>
+        <p class="text-sm text-[var(--monarch-text-secondary)]" style="font-family: var(--monarch-font-sans);">The quick brown fox jumps over the lazy dog. ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono mt-3">--monarch-font-sans</p>
+      </div>
+      <div class="monarch-card p-6">
+        <p class="text-xs text-[var(--monarch-text-muted)] uppercase tracking-widest mb-3">Code</p>
+        <p class="text-3xl font-semibold mb-2" style="font-family: var(--monarch-font-mono);">JetBrains Mono</p>
+        <p class="text-sm text-[var(--monarch-text-secondary)]" style="font-family: var(--monarch-font-mono);">const monarch = &#123; theme: 'dark' &#125;; // 0O1lI</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono mt-3">--monarch-font-mono</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Type Scale</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Based on a Major Third scale (1.250 ratio) for harmonious proportions.</p>
+
+    <ComponentPreview title="Font Sizes">
+      <div class="space-y-6">
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">7xl / 72px</span>
+          <span style="font-size: var(--monarch-text-7xl); line-height: 1; font-weight: 800;">Ag</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">6xl / 60px</span>
+          <span style="font-size: var(--monarch-text-6xl); line-height: 1; font-weight: 800;">Ag</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">5xl / 48px</span>
+          <span style="font-size: var(--monarch-text-5xl); line-height: 1; font-weight: 700;">Ag</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">4xl / 36px</span>
+          <span style="font-size: var(--monarch-text-4xl); line-height: 1.1; font-weight: 700;">Ag</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">3xl / 30px</span>
+          <span style="font-size: var(--monarch-text-3xl); line-height: 1.2; font-weight: 600;">Ag</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">2xl / 24px</span>
+          <span style="font-size: var(--monarch-text-2xl); line-height: 1.25; font-weight: 600;">Ag</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">xl / 20px</span>
+          <span style="font-size: var(--monarch-text-xl); line-height: 1.3; font-weight: 600;">The quick brown fox</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">lg / 18px</span>
+          <span style="font-size: var(--monarch-text-lg); font-weight: 500;">The quick brown fox jumps</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">base / 16px</span>
+          <span style="font-size: var(--monarch-text-base);">The quick brown fox jumps over the lazy dog</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">sm / 14px</span>
+          <span style="font-size: var(--monarch-text-sm);">The quick brown fox jumps over the lazy dog</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-[var(--monarch-text-muted)] font-mono w-24 shrink-0">xs / 12px</span>
+          <span style="font-size: var(--monarch-text-xs);">The quick brown fox jumps over the lazy dog</span>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Font Weights</h2>
+    <ComponentPreview title="Weight Variants">
+      <div class="space-y-4 text-xl">
+        <p style="font-weight: 300;"><span class="text-xs text-[var(--monarch-text-muted)] font-mono inline-block w-28">300 Light</span> The quick brown fox</p>
+        <p style="font-weight: 400;"><span class="text-xs text-[var(--monarch-text-muted)] font-mono inline-block w-28">400 Normal</span> The quick brown fox</p>
+        <p style="font-weight: 500;"><span class="text-xs text-[var(--monarch-text-muted)] font-mono inline-block w-28">500 Medium</span> The quick brown fox</p>
+        <p style="font-weight: 600;"><span class="text-xs text-[var(--monarch-text-muted)] font-mono inline-block w-28">600 Semibold</span> The quick brown fox</p>
+        <p style="font-weight: 700;"><span class="text-xs text-[var(--monarch-text-muted)] font-mono inline-block w-28">700 Bold</span> The quick brown fox</p>
+        <p style="font-weight: 800;"><span class="text-xs text-[var(--monarch-text-muted)] font-mono inline-block w-28">800 Extrabold</span> The quick brown fox</p>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Gradient Text</h2>
+    <ComponentPreview title="Gradient Text Effect" code='<span class="monarch-gradient-text text-4xl font-extrabold">Design with intention.</span>'>
+      <span class="monarch-gradient-text text-4xl font-extrabold">Design with intention.</span>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Usage Guidelines</h2>
+    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
+      <p>• Use <strong>Inter</strong> for all UI text — it's optimized for screen readability at any size</p>
+      <p>• Use <strong>JetBrains Mono</strong> for code blocks, inline code, data values, and terminal output</p>
+      <p>• Headlines: <strong>semibold (600) or bold (700)</strong> — never light headlines on dark backgrounds</p>
+      <p>• Body text: <strong>normal (400)</strong> with relaxed line-height for readability</p>
+      <p>• Labels and captions: <strong>medium (500)</strong> at sm (14px) or xs (12px)</p>
+      <p>• Section headers: <strong>uppercase, widest tracking, xs</strong> — like INTELLIGENCE, DATA ENGINE</p>
+      <p>• Reserve <strong>extrabold (800)</strong> for hero text and gradient headlines only</p>
+    </div>
+  </section>
+</DocsLayout>

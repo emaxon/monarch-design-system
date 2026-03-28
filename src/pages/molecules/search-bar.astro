@@ -1,0 +1,83 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+---
+
+<DocsLayout title="Search Bar" description="The command-palette-style search — fast access to everything in Monarch.">
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Default Search</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Matches the Monarch prototype's top-bar search with the ⌘K keyboard shortcut indicator.</p>
+
+    <ComponentPreview title="Search Bar">
+      <div class="max-w-lg">
+        <button class="w-full flex items-center gap-3 px-4 py-2.5 rounded-lg bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-sm text-[var(--monarch-text-muted)] hover:border-[var(--monarch-border-medium)] hover:text-[var(--monarch-text-secondary)] transition-all duration-200">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <span class="flex-1 text-left">Search or type a command...</span>
+          <kbd class="px-1.5 py-0.5 rounded bg-[var(--monarch-bg-base)] border border-[var(--monarch-border-subtle)] text-[10px] font-mono">⌘K</kbd>
+        </button>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Active Search</h2>
+
+    <ComponentPreview title="Search with Results">
+      <div class="max-w-lg">
+        <div class="rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-medium)] shadow-[var(--monarch-shadow-xl)] overflow-hidden">
+          <div class="flex items-center gap-3 px-4 py-3 border-b border-[var(--monarch-border-subtle)]">
+            <svg class="w-4 h-4 text-[var(--monarch-text-muted)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            <input type="text" value="Baltix" class="flex-1 bg-transparent text-sm text-[var(--monarch-text-primary)] outline-none" readonly />
+            <kbd class="px-1.5 py-0.5 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[10px] text-[var(--monarch-text-muted)] font-mono">ESC</kbd>
+          </div>
+
+          <div class="py-2">
+            <p class="px-4 py-1 text-[10px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-widest">Accounts</p>
+            <button class="w-full flex items-center gap-3 px-4 py-2 bg-[rgba(124,58,237,0.08)] text-left">
+              <svg class="w-4 h-4 text-[var(--monarch-brand-purple)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+              <div class="flex-1">
+                <p class="text-sm font-medium text-[var(--monarch-text-primary)]"><mark class="bg-[rgba(124,58,237,0.2)] text-[var(--monarch-text-primary)] rounded px-0.5">Baltix</mark> Construction</p>
+                <p class="text-xs text-[var(--monarch-text-muted)]">Fabricator · Minneapolis, MN</p>
+              </div>
+              <span class="text-xs text-[var(--monarch-text-muted)]">↵</span>
+            </button>
+            <button class="w-full flex items-center gap-3 px-4 py-2 hover:bg-[var(--monarch-bg-elevated)] text-left transition-colors duration-150">
+              <svg class="w-4 h-4 text-[var(--monarch-text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+              <div class="flex-1">
+                <p class="text-sm text-[var(--monarch-text-primary)]"><mark class="bg-[rgba(124,58,237,0.2)] text-[var(--monarch-text-primary)] rounded px-0.5">Baltix</mark> Home Designs</p>
+                <p class="text-xs text-[var(--monarch-text-muted)]">Designer · Chicago, IL</p>
+              </div>
+            </button>
+
+            <p class="px-4 py-1 mt-2 text-[10px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-widest">Deals</p>
+            <button class="w-full flex items-center gap-3 px-4 py-2 hover:bg-[var(--monarch-bg-elevated)] text-left transition-colors duration-150">
+              <svg class="w-4 h-4 text-[var(--monarch-text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <div class="flex-1">
+                <p class="text-sm text-[var(--monarch-text-primary)]">Renovation - <mark class="bg-[rgba(124,58,237,0.2)] text-[var(--monarch-text-primary)] rounded px-0.5">Baltix</mark></p>
+                <p class="text-xs text-[var(--monarch-text-muted)]">$154,527 · Prospecting</p>
+              </div>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-4 px-4 py-2 border-t border-[var(--monarch-border-subtle)] text-[10px] text-[var(--monarch-text-muted)]">
+            <span class="flex items-center gap-1"><kbd class="px-1 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] font-mono">↑↓</kbd> Navigate</span>
+            <span class="flex items-center gap-1"><kbd class="px-1 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] font-mono">↵</kbd> Open</span>
+            <span class="flex items-center gap-1"><kbd class="px-1 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] font-mono">ESC</kbd> Close</span>
+          </div>
+        </div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Usage Guidelines</h2>
+    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
+      <p>• The search bar doubles as a <strong>command palette trigger</strong> — keyboard-first design</p>
+      <p>• Results are grouped by <strong>entity type</strong> (Accounts, Deals, Contacts, Actions)</p>
+      <p>• Matching text is highlighted with <strong>purple background</strong></p>
+      <p>• First result is <strong>auto-selected</strong> — pressing Enter opens it immediately</p>
+      <p>• Keyboard shortcuts shown in the footer reinforce the <strong>power-user experience</strong></p>
+    </div>
+  </section>
+</DocsLayout>
