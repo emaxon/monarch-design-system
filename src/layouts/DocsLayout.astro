@@ -1,6 +1,7 @@
 ---
 import Sidebar from '../components/Sidebar.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import MonarchLogo from '../components/MonarchLogo.astro';
 
 interface Props {
   title: string;
@@ -52,7 +53,7 @@ const breadcrumbs = segments.map((seg, i) => ({
 
       <!-- Logo -->
       <a href={`${base}/`} class="flex items-center gap-2 shrink-0">
-        <span class="text-xl">👑</span>
+        <MonarchLogo size={28} />
         <span class="text-base font-semibold text-[var(--monarch-text-primary)]">Monarch</span>
       </a>
 
