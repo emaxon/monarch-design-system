@@ -72,9 +72,9 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Gradient Border</h2>
     <ComponentPreview title="Gradient Border Card" code='<div class="monarch-gradient-border p-6">Content here</div>'>
-      <div class="monarch-gradient-border p-6">
+      <div class="p-6 rounded-xl" style="border: 2px solid transparent; background-image: linear-gradient(#131525, #131525), linear-gradient(135deg, #6366f1, #818cf8, #a78bfa); background-origin: border-box; background-clip: padding-box, border-box;">
         <h4 class="text-lg font-semibold mb-2">Featured Content</h4>
-        <p class="text-sm text-[var(--monarch-text-secondary)]">Hover over this card to see the gradient border intensify. Uses a pseudo-element with the brand gradient behind the card.</p>
+        <p class="text-sm text-[var(--monarch-text-secondary)]">Hover over this card to see the gradient border. Uses background-clip with the brand gradient applied to the border-box.</p>
       </div>
     </ComponentPreview>
   </section>

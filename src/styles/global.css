@@ -97,18 +97,17 @@ button {
 }
 
 .monarch-gradient-border {
-  position: relative;
-  border-radius: var(--monarch-radius-lg);
-  background: var(--monarch-bg-surface);
-  border: 2px solid transparent;
-  background-image: linear-gradient(var(--monarch-bg-surface), var(--monarch-bg-surface)), var(--monarch-brand-gradient);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
+  position: relative !important;
+  border-radius: var(--monarch-radius-lg) !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(var(--monarch-bg-surface), var(--monarch-bg-surface)), var(--monarch-brand-gradient) !important;
+  background-origin: border-box !important;
+  background-clip: padding-box, border-box !important;
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default) !important;
 }
 
 .monarch-gradient-border:hover {
-  box-shadow: var(--monarch-glow-brand);
+  box-shadow: var(--monarch-glow-brand) !important;
 }
 
 /* === Skeleton Loading === */
