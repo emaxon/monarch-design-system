@@ -8,30 +8,45 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Navigation Items</h2>
 
-    <ComponentPreview title="Nav Item States">
-      <div class="w-56 space-y-1 bg-[var(--monarch-bg-surface)] rounded-xl p-3 border border-[var(--monarch-border-subtle)]">
-        <!-- Active -->
-        <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[rgba(99,102,241,0.1)] text-[var(--monarch-brand-purple)] border-l-2 border-[var(--monarch-brand-purple)] font-medium text-sm">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
-          Dashboard
-        </a>
-        <!-- Default -->
-        <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-          Morning Brief
-        </a>
-        <!-- With Badge -->
-        <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-          <span class="flex-1">Agent Feed</span>
-          <span class="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-[#EF4444] text-white">3</span>
-        </a>
-        <!-- With Dot -->
-        <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-          <span class="flex-1">Ghost Rep</span>
-          <span class="w-2 h-2 rounded-full bg-[#22C55E] animate-[monarch-pulse-dot_2s_ease-in-out_infinite]"></span>
-        </a>
+    <ComponentPreview title="Nav Item States" code='<a class="monarch-nav-item monarch-nav-item--active" href="#">
+  <svg class="monarch-nav-item__icon">...</svg>
+  <span class="monarch-nav-item__label">Dashboard</span>
+</a>
+<a class="monarch-nav-item" href="#">
+  <svg class="monarch-nav-item__icon">...</svg>
+  <span class="monarch-nav-item__label">Morning Brief</span>
+</a>
+<a class="monarch-nav-item" href="#">
+  <svg class="monarch-nav-item__icon">...</svg>
+  <span class="monarch-nav-item__label">Agent Feed</span>
+  <span class="monarch-nav-item__badge">3</span>
+</a>
+<a class="monarch-nav-item" href="#">
+  <svg class="monarch-nav-item__icon">...</svg>
+  <span class="monarch-nav-item__label">Ghost Rep</span>
+  <span class="monarch-nav-item__dot"></span>
+</a>'>
+      <div style="width: 224px; padding: 12px; background: var(--monarch-bg-surface); border: 1px solid var(--monarch-border-subtle); border-radius: 12px;">
+        <div class="monarch-nav-section__items">
+          <a class="monarch-nav-item monarch-nav-item--active" href="#" style="text-decoration:none;">
+            <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            <span class="monarch-nav-item__label">Dashboard</span>
+          </a>
+          <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+            <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            <span class="monarch-nav-item__label">Morning Brief</span>
+          </a>
+          <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+            <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2" /></svg>
+            <span class="monarch-nav-item__label">Agent Feed</span>
+            <span class="monarch-nav-item__badge">3</span>
+          </a>
+          <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+            <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            <span class="monarch-nav-item__label">Ghost Rep</span>
+            <span class="monarch-nav-item__dot"></span>
+          </a>
+        </div>
       </div>
     </ComponentPreview>
   </section>
@@ -39,30 +54,39 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Section Headers</h2>
 
-    <ComponentPreview title="Grouped Navigation">
-      <div class="w-56 bg-[var(--monarch-bg-surface)] rounded-xl p-3 border border-[var(--monarch-border-subtle)]">
-        <p class="px-3 py-1 text-[10px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-[0.1em]">Intelligence</p>
-        <div class="space-y-0.5 mb-4">
-          <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[rgba(99,102,241,0.1)] text-[var(--monarch-brand-purple)] border-l-2 border-[var(--monarch-brand-purple)] font-medium text-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
-            Dashboard
-          </a>
-          <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-            Signal Graph
-          </a>
+    <ComponentPreview title="Grouped Navigation" code='<div class="monarch-nav-section">
+  <div class="monarch-nav-section__title">Intelligence</div>
+  <div class="monarch-nav-section__items">
+    <a class="monarch-nav-item monarch-nav-item--active" href="#">...</a>
+    <a class="monarch-nav-item" href="#">...</a>
+  </div>
+</div>'>
+      <div style="width: 224px; padding: 12px; background: var(--monarch-bg-surface); border: 1px solid var(--monarch-border-subtle); border-radius: 12px;">
+        <div class="monarch-nav-section">
+          <div class="monarch-nav-section__title">Intelligence</div>
+          <div class="monarch-nav-section__items">
+            <a class="monarch-nav-item monarch-nav-item--active" href="#" style="text-decoration:none;">
+              <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+              <span class="monarch-nav-item__label">Dashboard</span>
+            </a>
+            <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+              <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+              <span class="monarch-nav-item__label">Signal Graph</span>
+            </a>
+          </div>
         </div>
-
-        <p class="px-3 py-1 text-[10px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-[0.1em]">Revenue</p>
-        <div class="space-y-0.5">
-          <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-            Deal Board
-          </a>
-          <a href="#" style="text-decoration: none;" class="flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-all duration-200 text-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-            Analytics
-          </a>
+        <div class="monarch-nav-section">
+          <div class="monarch-nav-section__title">Revenue</div>
+          <div class="monarch-nav-section__items">
+            <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+              <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+              <span class="monarch-nav-item__label">Deal Board</span>
+            </a>
+            <a class="monarch-nav-item" href="#" style="text-decoration:none;">
+              <svg class="monarch-nav-item__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+              <span class="monarch-nav-item__label">Analytics</span>
+            </a>
+          </div>
         </div>
       </div>
     </ComponentPreview>
@@ -70,12 +94,12 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
 
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Usage Guidelines</h2>
-    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
-      <p>• Active state: <strong>purple left border + purple tinted background + purple text</strong></p>
-      <p>• Section headers: <strong>10px, uppercase, widest tracking</strong> — matches the prototype's INTELLIGENCE, DATA ENGINE, etc.</p>
-      <p>• Icons are <strong>4×4 (16px)</strong> — consistent with the prototype's sidebar</p>
-      <p>• Notification badges: <strong>red background, white text, 9px</strong> — visible but not overwhelming</p>
-      <p>• Live status dots use the <strong>pulse animation</strong> for active/running states</p>
+    <div class="space-y-3" style="color: var(--monarch-text-secondary);">
+      <p>• Active state: <strong>indigo left border + tinted background + indigo text</strong></p>
+      <p>• Section headers: <strong>10px, uppercase, widest tracking</strong></p>
+      <p>• Icons are <strong>4×4 (16px)</strong> — consistent with the prototype</p>
+      <p>• Notification badges: <strong>red background, white text, 9px</strong></p>
+      <p>• Live status dots use the <strong>pulse animation</strong></p>
     </div>
   </section>
 </DocsLayout>

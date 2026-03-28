@@ -6,64 +6,80 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
 <DocsLayout title="Agent Feed" description="Real-time activity stream from Monarch's AI agents — what they're doing and what needs attention.">
 
   <section class="mb-12">
-    <ComponentPreview title="Agent Activity Feed">
-      <div class="max-w-xl space-y-3">
+    <ComponentPreview title="Agent Activity Feed" code='<div class="monarch-feed">
+  <div class="monarch-feed-item">
+    <div class="monarch-feed-item__header">
+      <div class="monarch-feed-item__agent">
+        <div class="monarch-avatar monarch-avatar-sm monarch-avatar-agent">...</div>
+        <span class="monarch-feed-item__agent-name">Intelligence Agent</span>
+      </div>
+      <span class="monarch-feed-item__time">2m ago</span>
+    </div>
+    <div class="monarch-feed-item__title">High-Intent Accounts</div>
+    <div class="monarch-feed-item__body">Detected 11 accounts...</div>
+    <div class="monarch-feed-item__tags">
+      <span class="monarch-badge monarch-badge-success monarch-badge-sm">11 accounts</span>
+    </div>
+  </div>
+  <div class="monarch-feed-item monarch-feed-item--alert">...</div>
+</div>'>
+      <div class="monarch-feed" style="max-width: 36rem;">
         <!-- Intelligence Agent -->
-        <div class="monarch-card p-4">
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-lg flex items-center justify-center" style="background: var(--monarch-brand-gradient-subtle);">
-                <svg class="w-3.5 h-3.5 text-[var(--monarch-brand-purple)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+        <div class="monarch-feed-item">
+          <div class="monarch-feed-item__header">
+            <div class="monarch-feed-item__agent">
+              <div class="monarch-avatar monarch-avatar-sm monarch-avatar-agent">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
               </div>
-              <span class="text-sm font-semibold text-[var(--monarch-brand-purple)]">Intelligence Agent</span>
+              <span class="monarch-feed-item__agent-name" style="color: var(--monarch-brand-purple);">Intelligence Agent</span>
             </div>
-            <span class="text-xs text-[var(--monarch-text-muted)]">2m ago</span>
+            <span class="monarch-feed-item__time">2m ago</span>
           </div>
-          <h4 class="text-sm font-semibold mb-1">High-Intent Accounts Detected</h4>
-          <p class="text-sm text-[var(--monarch-text-secondary)] mb-3">Detected 11 accounts with recent project inquiries matching Cambria ICP. Auto-enriched with contact data and scored.</p>
-          <div class="flex items-center gap-3">
-            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[rgba(34,197,94,0.15)] text-[#22C55E]">11 accounts</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[rgba(59,130,246,0.15)] text-[#60A5FA]">auto-enriched</span>
-            <button class="ml-auto text-xs text-[var(--monarch-brand-purple)] hover:underline">View Accounts →</button>
+          <div class="monarch-feed-item__title">High-Intent Accounts Detected</div>
+          <div class="monarch-feed-item__body">Detected 11 accounts with recent project inquiries matching Cambria ICP. Auto-enriched with contact data and scored.</div>
+          <div class="monarch-feed-item__tags">
+            <span class="monarch-badge monarch-badge-success monarch-badge-sm">11 accounts</span>
+            <span class="monarch-badge monarch-badge-info monarch-badge-sm">auto-enriched</span>
+            <span style="margin-left: auto; font-size: var(--monarch-text-xs); color: var(--monarch-brand-purple); cursor: pointer; text-decoration: none;">View Accounts →</span>
           </div>
         </div>
 
         <!-- Engagement Agent -->
-        <div class="monarch-card p-4">
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-lg flex items-center justify-center bg-[rgba(59,130,246,0.12)]">
-                <svg class="w-3.5 h-3.5 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+        <div class="monarch-feed-item">
+          <div class="monarch-feed-item__header">
+            <div class="monarch-feed-item__agent">
+              <div class="monarch-avatar monarch-avatar-sm monarch-avatar-agent-blue">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
               </div>
-              <span class="text-sm font-semibold text-[#3B82F6]">Engagement Agent</span>
+              <span class="monarch-feed-item__agent-name" style="color: #3B82F6;">Engagement Agent</span>
             </div>
-            <span class="text-xs text-[var(--monarch-text-muted)]">5m ago</span>
+            <span class="monarch-feed-item__time">5m ago</span>
           </div>
-          <h4 class="text-sm font-semibold mb-1">Email Sequence Delivered</h4>
-          <p class="text-sm text-[var(--monarch-text-secondary)] mb-3">Sent personalized outreach to 47 contacts across The Kitchen Source - Dallas. 12 opened within first hour. 3 clicked pricing page.</p>
-          <div class="flex items-center gap-3">
-            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[rgba(34,197,94,0.15)] text-[#22C55E]">25.5% open</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[rgba(99,102,241,0.15)] text-[#818cf8]">6.4% CTR</span>
+          <div class="monarch-feed-item__title">Email Sequence Delivered</div>
+          <div class="monarch-feed-item__body">Sent personalized outreach to 47 contacts across The Kitchen Source - Dallas. 12 opened within first hour. 3 clicked pricing page.</div>
+          <div class="monarch-feed-item__tags">
+            <span class="monarch-badge monarch-badge-success monarch-badge-sm">25.5% open</span>
+            <span class="monarch-badge monarch-badge-purple monarch-badge-sm">6.4% CTR</span>
           </div>
         </div>
 
         <!-- Revenue Agent (Alert) -->
-        <div class="p-4 rounded-xl bg-[var(--monarch-bg-surface)] border border-[rgba(239,68,68,0.3)]">
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-lg flex items-center justify-center bg-[rgba(239,68,68,0.12)]">
-                <svg class="w-3.5 h-3.5 text-[#EF4444]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+        <div class="monarch-feed-item monarch-feed-item--alert">
+          <div class="monarch-feed-item__header">
+            <div class="monarch-feed-item__agent">
+              <div class="monarch-avatar monarch-avatar-sm monarch-avatar-agent-red">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
               </div>
-              <span class="text-sm font-semibold text-[#EF4444]">Revenue Agent</span>
-              <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-[rgba(239,68,68,0.15)] text-[#EF4444] uppercase">Alert</span>
+              <span class="monarch-feed-item__agent-name" style="color: #EF4444;">Revenue Agent</span>
+              <span class="monarch-badge monarch-badge-danger monarch-badge-sm">Alert</span>
             </div>
-            <span class="text-xs text-[var(--monarch-text-muted)]">8m ago</span>
+            <span class="monarch-feed-item__time">8m ago</span>
           </div>
-          <h4 class="text-sm font-semibold mb-1">Deal Risk Alert: Stalled Negotiation</h4>
-          <p class="text-sm text-[var(--monarch-text-secondary)] mb-3">AK Design Group has been in Negotiation stage for 28 days with no activity. Last contact was a pricing objection. Recommend: send ROI calculator + schedule executive sponsor call.</p>
-          <div class="flex items-center gap-2">
-            <button class="px-3 py-1.5 rounded-lg text-xs font-semibold text-white" style="background: var(--monarch-brand-gradient);">Take Action</button>
-            <button class="px-3 py-1.5 rounded-lg text-xs font-semibold text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)] transition-colors duration-200">Dismiss</button>
+          <div class="monarch-feed-item__title">Deal Risk Alert: Stalled Negotiation</div>
+          <div class="monarch-feed-item__body">AK Design Group has been in Negotiation stage for 28 days with no activity. Last contact was a pricing objection. Recommend: send ROI calculator + schedule executive sponsor call.</div>
+          <div class="monarch-feed-item__actions">
+            <button class="monarch-btn monarch-btn-primary monarch-btn-sm">Take Action</button>
+            <button class="monarch-btn monarch-btn-ghost monarch-btn-sm">Dismiss</button>
           </div>
         </div>
       </div>

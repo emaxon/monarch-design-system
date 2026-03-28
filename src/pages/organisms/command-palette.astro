@@ -6,56 +6,69 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
 <DocsLayout title="Command Palette" description="⌘K power-user navigation — search anything, execute actions, keyboard-first.">
 
   <section class="mb-12">
-    <p class="text-[var(--monarch-text-secondary)] mb-6">Inspired by Superhuman's keyboard-first philosophy. The command palette is the fastest way to navigate, search, and execute actions across the entire Monarch platform.</p>
-
-    <ComponentPreview title="Command Palette (⌘K)">
+    <ComponentPreview title="Command Palette (⌘K)" code='<div class="monarch-command-palette">
+  <div class="monarch-command-palette__input">
+    <svg class="monarch-command-palette__input-icon">🔍</svg>
+    <input placeholder="Type a command or search..." />
+  </div>
+  <div class="monarch-command-palette__results">
+    <div class="monarch-command-palette__group-title">Quick Actions</div>
+    <button class="monarch-command-palette__item monarch-command-palette__item--selected">
+      <svg class="monarch-command-palette__item-icon">+</svg>
+      <span class="monarch-command-palette__item-label">Create New Deal</span>
+      <kbd class="monarch-command-palette__item-kbd">N</kbd>
+    </button>
+  </div>
+  <div class="monarch-command-palette__footer">
+    <span class="monarch-command-palette__footer-shortcut">
+      <kbd class="monarch-command-palette__item-kbd">↑↓</kbd> Navigate
+    </span>
+  </div>
+</div>'>
       <div class="flex items-center justify-center py-8">
-        <div class="w-full max-w-lg rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-medium)] shadow-[var(--monarch-shadow-xl)] overflow-hidden" style="backdrop-filter: var(--monarch-glass-blur);">
-          <!-- Search Input -->
-          <div class="flex items-center gap-3 px-5 py-4 border-b border-[var(--monarch-border-subtle)]">
-            <svg class="w-5 h-5 text-[var(--monarch-text-muted)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-            <span class="flex-1 text-sm text-[var(--monarch-text-primary)]">Type a command or search...</span>
+        <div class="monarch-command-palette" style="width: 100%; max-width: 32rem;">
+          <div class="monarch-command-palette__input">
+            <svg class="monarch-command-palette__input-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            <span style="flex: 1; font-size: var(--monarch-text-sm); color: var(--monarch-text-primary);">Type a command or search...</span>
           </div>
 
-          <!-- Results -->
-          <div class="py-2">
-            <p class="px-5 py-1.5 text-[10px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-widest">Quick Actions</p>
-            <button class="w-full flex items-center gap-3 px-5 py-2.5 bg-[rgba(99,102,241,0.08)] text-left">
-              <svg class="w-4 h-4 text-[var(--monarch-brand-purple)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
-              <span class="flex-1 text-sm text-[var(--monarch-text-primary)]">Create New Deal</span>
-              <kbd class="px-1.5 py-0.5 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[10px] text-[var(--monarch-text-muted)] font-mono">N</kbd>
-            </button>
-            <button class="w-full flex items-center gap-3 px-5 py-2.5 hover:bg-[var(--monarch-bg-elevated)] text-left transition-colors duration-150">
-              <svg class="w-4 h-4 text-[var(--monarch-text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-              <span class="flex-1 text-sm text-[var(--monarch-text-primary)]">Add Account</span>
-              <kbd class="px-1.5 py-0.5 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[10px] text-[var(--monarch-text-muted)] font-mono">A</kbd>
-            </button>
-            <button class="w-full flex items-center gap-3 px-5 py-2.5 hover:bg-[var(--monarch-bg-elevated)] text-left transition-colors duration-150">
-              <svg class="w-4 h-4 text-[var(--monarch-text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-              <span class="flex-1 text-sm text-[var(--monarch-text-primary)]">Open Morning Brief</span>
-              <kbd class="px-1.5 py-0.5 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] text-[10px] text-[var(--monarch-text-muted)] font-mono">B</kbd>
-            </button>
+          <div class="monarch-command-palette__results">
+            <div class="monarch-command-palette__group-title">Quick Actions</div>
+            <div class="monarch-command-palette__item monarch-command-palette__item--selected">
+              <svg class="monarch-command-palette__item-icon" style="color: var(--monarch-brand-purple);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+              <span class="monarch-command-palette__item-label">Create New Deal</span>
+              <kbd class="monarch-command-palette__item-kbd">N</kbd>
+            </div>
+            <div class="monarch-command-palette__item">
+              <svg class="monarch-command-palette__item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+              <span class="monarch-command-palette__item-label">Add Account</span>
+              <kbd class="monarch-command-palette__item-kbd">A</kbd>
+            </div>
+            <div class="monarch-command-palette__item">
+              <svg class="monarch-command-palette__item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+              <span class="monarch-command-palette__item-label">Open Morning Brief</span>
+              <kbd class="monarch-command-palette__item-kbd">B</kbd>
+            </div>
 
-            <p class="px-5 py-1.5 mt-2 text-[10px] font-semibold text-[var(--monarch-text-muted)] uppercase tracking-widest">Navigate</p>
-            <button class="w-full flex items-center gap-3 px-5 py-2.5 hover:bg-[var(--monarch-bg-elevated)] text-left transition-colors duration-150">
-              <svg class="w-4 h-4 text-[var(--monarch-text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
-              <span class="flex-1 text-sm text-[var(--monarch-text-secondary)]">Dashboard</span>
-            </button>
-            <button class="w-full flex items-center gap-3 px-5 py-2.5 hover:bg-[var(--monarch-bg-elevated)] text-left transition-colors duration-150">
-              <svg class="w-4 h-4 text-[var(--monarch-text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-              <span class="flex-1 text-sm text-[var(--monarch-text-secondary)]">Deal Board</span>
-            </button>
-            <button class="w-full flex items-center gap-3 px-5 py-2.5 hover:bg-[var(--monarch-bg-elevated)] text-left transition-colors duration-150">
-              <svg class="w-4 h-4 text-[var(--monarch-text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-              <span class="flex-1 text-sm text-[var(--monarch-text-secondary)]">Analytics</span>
-            </button>
+            <div class="monarch-command-palette__group-title" style="margin-top: 8px;">Navigate</div>
+            <div class="monarch-command-palette__item">
+              <svg class="monarch-command-palette__item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+              <span class="monarch-command-palette__item-label">Dashboard</span>
+            </div>
+            <div class="monarch-command-palette__item">
+              <svg class="monarch-command-palette__item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+              <span class="monarch-command-palette__item-label">Deal Board</span>
+            </div>
+            <div class="monarch-command-palette__item">
+              <svg class="monarch-command-palette__item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+              <span class="monarch-command-palette__item-label">Analytics</span>
+            </div>
           </div>
 
-          <!-- Footer -->
-          <div class="flex items-center gap-4 px-5 py-2.5 border-t border-[var(--monarch-border-subtle)] text-[10px] text-[var(--monarch-text-muted)]">
-            <span class="flex items-center gap-1"><kbd class="px-1 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] font-mono">↑↓</kbd> Navigate</span>
-            <span class="flex items-center gap-1"><kbd class="px-1 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] font-mono">↵</kbd> Select</span>
-            <span class="flex items-center gap-1"><kbd class="px-1 rounded bg-[var(--monarch-bg-elevated)] border border-[var(--monarch-border-subtle)] font-mono">ESC</kbd> Close</span>
+          <div class="monarch-command-palette__footer">
+            <span class="monarch-command-palette__footer-shortcut"><kbd class="monarch-command-palette__item-kbd">↑↓</kbd> Navigate</span>
+            <span class="monarch-command-palette__footer-shortcut"><kbd class="monarch-command-palette__item-kbd">↵</kbd> Select</span>
+            <span class="monarch-command-palette__footer-shortcut"><kbd class="monarch-command-palette__item-kbd">ESC</kbd> Close</span>
           </div>
         </div>
       </div>

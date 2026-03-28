@@ -3,105 +3,107 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
 import ComponentPreview from '../../components/ComponentPreview.astro';
 ---
 
-<DocsLayout title="Kanban Board" description="Deal pipeline visualization — drag-friendly columns with health-scored cards.">
+<DocsLayout title="Kanban Board" description="Deal pipeline visualization — columns with health-scored cards.">
 
   <section class="mb-12">
-    <ComponentPreview title="Deal Board">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Prospecting Column -->
-        <div class="rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
-          <div class="flex items-center justify-between px-4 py-3 border-b border-[var(--monarch-border-subtle)]">
-            <div class="flex items-center gap-2">
-              <span class="text-sm font-semibold">Prospecting</span>
-              <span class="px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-[var(--monarch-bg-elevated)] text-[var(--monarch-text-muted)]">3</span>
-            </div>
-            <span class="text-xs text-[var(--monarch-text-muted)]">$445K</span>
+    <ComponentPreview title="Deal Board" code='<div class="monarch-kanban">
+  <div class="monarch-kanban__column">
+    <div class="monarch-kanban__column-header">
+      <div class="monarch-kanban__column-title">
+        Prospecting <span class="monarch-kanban__column-count">3</span>
+      </div>
+      <span class="monarch-kanban__column-total">$445K</span>
+    </div>
+    <div class="monarch-kanban__column-body">
+      <div class="monarch-kanban__card">
+        <div class="monarch-kanban__card-header">
+          <span class="monarch-kanban__card-title">Renovation - Baltix</span>
+          <!-- health ring -->
+        </div>
+        <div class="monarch-kanban__card-footer">
+          <span class="monarch-kanban__card-value">$154,527</span>
+          <span class="monarch-badge monarch-badge-danger monarch-badge-sm">45d</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>'>
+      <div class="monarch-kanban">
+        <!-- Prospecting -->
+        <div class="monarch-kanban__column">
+          <div class="monarch-kanban__column-header">
+            <div class="monarch-kanban__column-title">Prospecting <span class="monarch-kanban__column-count">2</span></div>
+            <span class="monarch-kanban__column-total">$291K</span>
           </div>
-          <div class="p-3 space-y-2">
-            <div class="p-3 rounded-lg bg-[var(--monarch-bg-base)] border border-[var(--monarch-border-subtle)] hover:border-[var(--monarch-border-medium)] transition-all duration-200 cursor-grab">
-              <div class="flex items-center justify-between mb-2">
-                <p class="text-sm font-medium">Renovation - Baltix</p>
-                <div class="relative w-6 h-6">
-                  <svg class="w-6 h-6 -rotate-90" viewBox="0 0 36 36"><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--monarch-border-subtle)" stroke-width="4" /><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#EF4444" stroke-width="4" stroke-dasharray="25, 100" stroke-linecap="round" /></svg>
-                </div>
+          <div class="monarch-kanban__column-body">
+            <div class="monarch-kanban__card">
+              <div class="monarch-kanban__card-header">
+                <span class="monarch-kanban__card-title">Renovation - Baltix</span>
+                <div class="monarch-health-ring monarch-health-ring-sm"><svg class="monarch-health-ring__svg" viewBox="0 0 36 36"><path class="monarch-health-ring__track" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" stroke-width="4" /><path class="monarch-health-ring__fill monarch-health-ring__fill--critical" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" stroke-width="4" stroke-dasharray="25, 100" /></svg></div>
               </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm font-semibold text-[var(--monarch-text-primary)]">$154,527</span>
-                <span class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-[rgba(239,68,68,0.15)] text-[#F87171]">45d</span>
+              <div class="monarch-kanban__card-footer">
+                <span class="monarch-kanban__card-value">$154,527</span>
+                <span class="monarch-badge monarch-badge-danger monarch-badge-sm">45d</span>
               </div>
             </div>
-            <div class="p-3 rounded-lg bg-[var(--monarch-bg-base)] border border-[var(--monarch-border-subtle)] hover:border-[var(--monarch-border-medium)] transition-all duration-200 cursor-grab">
-              <div class="flex items-center justify-between mb-2">
-                <p class="text-sm font-medium">Upgrade - Top</p>
-                <div class="relative w-6 h-6">
-                  <svg class="w-6 h-6 -rotate-90" viewBox="0 0 36 36"><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--monarch-border-subtle)" stroke-width="4" /><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#EF4444" stroke-width="4" stroke-dasharray="25, 100" stroke-linecap="round" /></svg>
-                </div>
+            <div class="monarch-kanban__card">
+              <div class="monarch-kanban__card-header">
+                <span class="monarch-kanban__card-title">Upgrade - Top</span>
+                <div class="monarch-health-ring monarch-health-ring-sm"><svg class="monarch-health-ring__svg" viewBox="0 0 36 36"><path class="monarch-health-ring__track" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" stroke-width="4" /><path class="monarch-health-ring__fill monarch-health-ring__fill--critical" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" stroke-width="4" stroke-dasharray="25, 100" /></svg></div>
               </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm font-semibold text-[var(--monarch-text-primary)]">$136,201</span>
-                <span class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-[rgba(239,68,68,0.15)] text-[#F87171]">62d</span>
+              <div class="monarch-kanban__card-footer">
+                <span class="monarch-kanban__card-value">$136,201</span>
+                <span class="monarch-badge monarch-badge-danger monarch-badge-sm">62d</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Qualification Column -->
-        <div class="rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
-          <div class="flex items-center justify-between px-4 py-3 border-b border-[var(--monarch-border-subtle)]">
-            <div class="flex items-center gap-2">
-              <span class="text-sm font-semibold">Qualification</span>
-              <span class="px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-[var(--monarch-bg-elevated)] text-[var(--monarch-text-muted)]">2</span>
-            </div>
-            <span class="text-xs text-[var(--monarch-text-muted)]">$661K</span>
+        <!-- Qualification -->
+        <div class="monarch-kanban__column">
+          <div class="monarch-kanban__column-header">
+            <div class="monarch-kanban__column-title">Qualification <span class="monarch-kanban__column-count">2</span></div>
+            <span class="monarch-kanban__column-total">$661K</span>
           </div>
-          <div class="p-3 space-y-2">
-            <div class="p-3 rounded-lg bg-[var(--monarch-bg-base)] border border-[var(--monarch-border-subtle)] hover:border-[var(--monarch-border-medium)] transition-all duration-200 cursor-grab">
-              <div class="flex items-center justify-between mb-2">
-                <p class="text-sm font-medium">Build-Out - Baltix</p>
-                <div class="relative w-6 h-6">
-                  <svg class="w-6 h-6 -rotate-90" viewBox="0 0 36 36"><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--monarch-border-subtle)" stroke-width="4" /><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#3B82F6" stroke-width="4" stroke-dasharray="65, 100" stroke-linecap="round" /></svg>
-                </div>
+          <div class="monarch-kanban__column-body">
+            <div class="monarch-kanban__card">
+              <div class="monarch-kanban__card-header">
+                <span class="monarch-kanban__card-title">Build-Out - Baltix</span>
+                <div class="monarch-health-ring monarch-health-ring-sm"><svg class="monarch-health-ring__svg" viewBox="0 0 36 36"><path class="monarch-health-ring__track" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" stroke-width="4" /><path class="monarch-health-ring__fill monarch-health-ring__fill--warning" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" stroke-width="4" stroke-dasharray="65, 100" /></svg></div>
               </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm font-semibold">$308,793</span>
-                <span class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-[rgba(59,130,246,0.15)] text-[#60A5FA]">2d</span>
+              <div class="monarch-kanban__card-footer">
+                <span class="monarch-kanban__card-value">$308,793</span>
+                <span class="monarch-badge monarch-badge-info monarch-badge-sm">2d</span>
               </div>
             </div>
-            <div class="p-3 rounded-lg bg-[var(--monarch-bg-base)] border border-[var(--monarch-border-subtle)] hover:border-[var(--monarch-border-medium)] transition-all duration-200 cursor-grab">
-              <div class="flex items-center justify-between mb-2">
-                <p class="text-sm font-medium">Build-Out - NBBJ</p>
-                <div class="relative w-6 h-6">
-                  <svg class="w-6 h-6 -rotate-90" viewBox="0 0 36 36"><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--monarch-border-subtle)" stroke-width="4" /><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#22C55E" stroke-width="4" stroke-dasharray="78, 100" stroke-linecap="round" /></svg>
-                </div>
+            <div class="monarch-kanban__card">
+              <div class="monarch-kanban__card-header">
+                <span class="monarch-kanban__card-title">Build-Out - NBBJ</span>
+                <div class="monarch-health-ring monarch-health-ring-sm"><svg class="monarch-health-ring__svg" viewBox="0 0 36 36"><path class="monarch-health-ring__track" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" stroke-width="4" /><path class="monarch-health-ring__fill monarch-health-ring__fill--healthy" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" stroke-width="4" stroke-dasharray="78, 100" /></svg></div>
               </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm font-semibold">$351,978</span>
-                <span class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-[rgba(34,197,94,0.15)] text-[#22C55E]">10d</span>
+              <div class="monarch-kanban__card-footer">
+                <span class="monarch-kanban__card-value">$351,978</span>
+                <span class="monarch-badge monarch-badge-success monarch-badge-sm">10d</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Negotiation Column -->
-        <div class="rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
-          <div class="flex items-center justify-between px-4 py-3 border-b border-[var(--monarch-border-subtle)]">
-            <div class="flex items-center gap-2">
-              <span class="text-sm font-semibold">Negotiation</span>
-              <span class="px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-[var(--monarch-bg-elevated)] text-[var(--monarch-text-muted)]">1</span>
-            </div>
-            <span class="text-xs text-[var(--monarch-text-muted)]">$286K</span>
+        <!-- Negotiation -->
+        <div class="monarch-kanban__column">
+          <div class="monarch-kanban__column-header">
+            <div class="monarch-kanban__column-title">Negotiation <span class="monarch-kanban__column-count">1</span></div>
+            <span class="monarch-kanban__column-total">$286K</span>
           </div>
-          <div class="p-3 space-y-2">
-            <div class="p-3 rounded-lg bg-[var(--monarch-bg-base)] border border-[var(--monarch-border-subtle)] hover:border-[var(--monarch-border-medium)] transition-all duration-200 cursor-grab">
-              <div class="flex items-center justify-between mb-2">
-                <p class="text-sm font-medium">Design - Calnitsky</p>
-                <div class="relative w-6 h-6">
-                  <svg class="w-6 h-6 -rotate-90" viewBox="0 0 36 36"><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--monarch-border-subtle)" stroke-width="4" /><path d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#F59E0B" stroke-width="4" stroke-dasharray="42, 100" stroke-linecap="round" /></svg>
-                </div>
+          <div class="monarch-kanban__column-body">
+            <div class="monarch-kanban__card">
+              <div class="monarch-kanban__card-header">
+                <span class="monarch-kanban__card-title">Design - Calnitsky</span>
+                <div class="monarch-health-ring monarch-health-ring-sm"><svg class="monarch-health-ring__svg" viewBox="0 0 36 36"><path class="monarch-health-ring__track" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" stroke-width="4" /><path class="monarch-health-ring__fill monarch-health-ring__fill--warning" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" stroke-width="4" stroke-dasharray="42, 100" /></svg></div>
               </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm font-semibold">$285,852</span>
-                <span class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-[rgba(245,158,11,0.15)] text-[#FBBF24]">40d</span>
+              <div class="monarch-kanban__card-footer">
+                <span class="monarch-kanban__card-value">$285,852</span>
+                <span class="monarch-badge monarch-badge-warning monarch-badge-sm">40d</span>
               </div>
             </div>
           </div>
