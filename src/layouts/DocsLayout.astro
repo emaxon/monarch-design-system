@@ -51,8 +51,8 @@ const breadcrumbs = segments.map((seg, i) => ({
         </svg>
       </button>
 
-      <!-- Logo (mobile only — sidebar has it on desktop) -->
-      <a href={`${base}/`} class="flex lg:hidden items-center gap-2 shrink-0">
+      <!-- Logo -->
+      <a href={`${base}/`} class="flex items-center gap-2 shrink-0">
         <MonarchLogo size={28} />
         <span class="text-base font-semibold text-[var(--monarch-text-primary)]">Monarch</span>
       </a>
@@ -85,7 +85,7 @@ const breadcrumbs = segments.map((seg, i) => ({
 
     <div class="flex pt-14 min-h-screen">
       <!-- Sidebar (desktop always visible, mobile overlay) -->
-      <aside id="sidebar" class="fixed lg:sticky top-14 left-0 h-[calc(100vh-3.5rem)] z-40 bg-[var(--monarch-bg-surface)] -translate-x-full lg:translate-x-0 transition-transform duration-300">
+      <aside id="sidebar" class="fixed lg:relative top-14 lg:top-0 left-0 z-40 bg-[var(--monarch-bg-surface)] -translate-x-full lg:translate-x-0 transition-transform duration-300">
         <Sidebar />
       </aside>
 

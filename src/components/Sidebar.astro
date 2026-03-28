@@ -1,6 +1,4 @@
 ---
-import MonarchLogo from './MonarchLogo.astro';
-
 const currentPath = Astro.url.pathname.replace(/\/$/, '');
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -12,98 +10,65 @@ const sections = [
   {
     title: 'Getting Started',
     items: [
-      { label: 'Introduction', href: '/getting-started', icon: 'book' },
+      { label: 'Introduction', href: '/getting-started', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
     ],
   },
   {
     title: 'Design Tokens',
     items: [
-      { label: 'Colors', href: '/tokens/colors', icon: 'palette' },
-      { label: 'Typography', href: '/tokens/typography', icon: 'type' },
-      { label: 'Spacing', href: '/tokens/spacing', icon: 'grid' },
-      { label: 'Shadows', href: '/tokens/shadows', icon: 'layers' },
+      { label: 'Colors', href: '/tokens/colors', icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01' },
+      { label: 'Typography', href: '/tokens/typography', icon: 'M4 7V4h16v3M9 20h6M12 4v16' },
+      { label: 'Spacing', href: '/tokens/spacing', icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z' },
+      { label: 'Shadows', href: '/tokens/shadows', icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10' },
     ],
   },
   {
     title: 'Atoms',
     items: [
-      { label: 'Buttons', href: '/atoms/buttons', icon: 'click' },
-      { label: 'Badges', href: '/atoms/badges', icon: 'tag' },
-      { label: 'Inputs', href: '/atoms/inputs', icon: 'input' },
-      { label: 'Toggles', href: '/atoms/toggles', icon: 'toggle' },
-      { label: 'Avatars', href: '/atoms/avatars', icon: 'user' },
+      { label: 'Buttons', href: '/atoms/buttons', icon: 'M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122' },
+      { label: 'Badges', href: '/atoms/badges', icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z' },
+      { label: 'Inputs', href: '/atoms/inputs', icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z' },
+      { label: 'Toggles', href: '/atoms/toggles', icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4' },
+      { label: 'Avatars', href: '/atoms/avatars', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
     ],
   },
   {
     title: 'Molecules',
     items: [
-      { label: 'Cards', href: '/molecules/cards', icon: 'card' },
-      { label: 'Stat Cards', href: '/molecules/stat-cards', icon: 'chart' },
-      { label: 'Search Bar', href: '/molecules/search-bar', icon: 'search' },
-      { label: 'Health Indicators', href: '/molecules/health-indicators', icon: 'heart' },
-      { label: 'Nav Items', href: '/molecules/nav-items', icon: 'nav' },
+      { label: 'Cards', href: '/molecules/cards', icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10' },
+      { label: 'Stat Cards', href: '/molecules/stat-cards', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+      { label: 'Search Bar', href: '/molecules/search-bar', icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' },
+      { label: 'Health Indicators', href: '/molecules/health-indicators', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
+      { label: 'Nav Items', href: '/molecules/nav-items', icon: 'M4 6h16M4 12h16M4 18h7' },
     ],
   },
   {
     title: 'Organisms',
     items: [
-      { label: 'Sidebar', href: '/organisms/sidebar', icon: 'sidebar' },
-      { label: 'Data Table', href: '/organisms/data-table', icon: 'table' },
-      { label: 'Kanban Board', href: '/organisms/kanban-board', icon: 'kanban' },
-      { label: 'Agent Feed', href: '/organisms/agent-feed', icon: 'feed' },
-      { label: 'Command Palette', href: '/organisms/command-palette', icon: 'command' },
-      { label: 'Chat Interface', href: '/organisms/chat-interface', icon: 'chat' },
+      { label: 'Sidebar', href: '/organisms/sidebar', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+      { label: 'Data Table', href: '/organisms/data-table', icon: 'M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z' },
+      { label: 'Kanban Board', href: '/organisms/kanban-board', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' },
+      { label: 'Agent Feed', href: '/organisms/agent-feed', icon: 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2' },
+      { label: 'Command Palette', href: '/organisms/command-palette', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+      { label: 'Chat Interface', href: '/organisms/chat-interface', icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z' },
     ],
   },
   {
     title: 'Templates',
     items: [
-      { label: 'Dashboard', href: '/templates/dashboard', icon: 'dashboard' },
-      { label: 'List View', href: '/templates/list-view', icon: 'list' },
+      { label: 'Dashboard', href: '/templates/dashboard', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+      { label: 'List View', href: '/templates/list-view', icon: 'M4 6h16M4 10h16M4 14h16M4 18h16' },
     ],
   },
 ];
-
-const icons: Record<string, string> = {
-  book: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
-  palette: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
-  type: 'M4 7V4h16v3M9 20h6M12 4v16',
-  grid: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z',
-  layers: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-  click: 'M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122',
-  tag: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
-  input: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
-  toggle: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
-  user: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z',
-  card: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-  chart: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
-  search: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
-  heart: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
-  nav: 'M4 6h16M4 12h16M4 18h7',
-  sidebar: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
-  table: 'M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z',
-  kanban: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
-  feed: 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2',
-  command: 'M13 10V3L4 14h7v7l9-11h-7z',
-  chat: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
-  dashboard: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
-  list: 'M4 6h16M4 10h16M4 14h16M4 18h16',
-};
 ---
 
-<nav class="w-64 shrink-0 h-full overflow-y-auto border-r border-[var(--monarch-border-subtle)]">
-  <!-- Logo -->
-  <div class="flex items-center gap-2.5 px-5 py-4 border-b border-[var(--monarch-border-subtle)]">
-    <MonarchLogo size={28} />
-    <span class="text-base font-semibold">Monarch</span>
-    <span class="text-[10px] font-medium px-1.5 py-0.5 rounded" style="background-color: rgba(99,102,241,0.15); color: #818cf8;">DS</span>
-  </div>
-
-  <div class="py-3 px-3 space-y-4">
+<nav class="w-64 shrink-0 px-3 py-6 border-r border-[var(--monarch-border-subtle)]">
+  <div class="space-y-5">
     {sections.map((section) => (
       <div>
         <div
-          class="nav-section-toggle flex items-center justify-between w-full text-[10px] font-semibold tracking-[0.1em] uppercase mb-2 px-3 cursor-pointer transition-colors duration-200"
+          class="nav-section-toggle flex items-center justify-between w-full text-[10px] font-semibold tracking-[0.1em] uppercase mb-1.5 px-3 cursor-pointer transition-colors duration-200"
           style="border: none; background: none; color: var(--monarch-text-secondary);"
           data-section={section.title}
         >
@@ -112,26 +77,24 @@ const icons: Record<string, string> = {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </div>
-        <ul class="nav-section-items space-y-0.5" data-section={section.title}>
+        <div class="nav-section-items space-y-0.5" data-section={section.title}>
           {section.items.map((item) => (
-            <li>
-              <a
-                href={`${base}${item.href}`}
-                class={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
-                  isActive(item.href)
-                    ? 'font-medium'
-                    : 'text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)]'
-                }`}
-                style={isActive(item.href) ? 'background-color: rgba(99,102,241,0.1); color: #818cf8; border-left: 2px solid #6366f1;' : ''}
-              >
-                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icons[item.icon] || icons.book} />
-                </svg>
-                {item.label}
-              </a>
-            </li>
+            <a
+              href={`${base}${item.href}`}
+              class={`flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm transition-all duration-200 ${
+                isActive(item.href)
+                  ? 'font-medium'
+                  : 'text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] hover:bg-[var(--monarch-bg-elevated)]'
+              }`}
+              style={isActive(item.href) ? 'background-color: rgba(99,102,241,0.1); color: #818cf8; border-left: 2px solid #6366f1;' : ''}
+            >
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon} />
+              </svg>
+              {item.label}
+            </a>
           ))}
-        </ul>
+        </div>
       </div>
     ))}
   </div>
