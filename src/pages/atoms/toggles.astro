@@ -15,27 +15,27 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
             <p class="text-sm font-medium text-[var(--monarch-text-primary)]">Auto-enrich new accounts</p>
             <p class="text-xs text-[var(--monarch-text-muted)]">Automatically run data enrichment on incoming accounts</p>
           </div>
-          <button class="monarch-toggle active relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 bg-[var(--monarch-brand-purple)]" data-toggled="true">
-            <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 translate-x-6"></span>
-          </button>
+          <div class="relative inline-flex h-6 w-11 items-center rounded-full" style="background-color: #6366f1;">
+            <span class="inline-block h-4 w-4 rounded-full bg-white transition-transform duration-200" style="transform: translateX(24px);"></span>
+          </div>
         </div>
         <div class="flex items-center justify-between max-w-sm">
           <div>
             <p class="text-sm font-medium text-[var(--monarch-text-primary)]">Email notifications</p>
             <p class="text-xs text-[var(--monarch-text-muted)]">Send email alerts for deal status changes</p>
           </div>
-          <button class="monarch-toggle relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 bg-[var(--monarch-border-medium)]">
-            <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 translate-x-1"></span>
-          </button>
+          <div class="relative inline-flex h-6 w-11 items-center rounded-full" style="background-color: #334155;">
+            <span class="inline-block h-4 w-4 rounded-full bg-white transition-transform duration-200" style="transform: translateX(4px);"></span>
+          </div>
         </div>
         <div class="flex items-center justify-between max-w-sm opacity-50">
           <div>
             <p class="text-sm font-medium text-[var(--monarch-text-primary)]">Ghost Rep mode</p>
             <p class="text-xs text-[var(--monarch-text-muted)]">Requires Enterprise plan</p>
           </div>
-          <button class="relative inline-flex h-6 w-11 items-center rounded-full bg-[var(--monarch-border-medium)] cursor-not-allowed" disabled>
-            <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 translate-x-1"></span>
-          </button>
+          <div class="relative inline-flex h-6 w-11 items-center rounded-full cursor-not-allowed" style="background-color: #334155;">
+            <span class="inline-block h-4 w-4 rounded-full bg-white transition-transform duration-200" style="transform: translateX(4px);"></span>
+          </div>
         </div>
       </div>
     </ComponentPreview>
@@ -47,23 +47,23 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
     <ComponentPreview title="Styled Checkboxes">
       <div class="space-y-3 max-w-sm">
         <label class="flex items-center gap-3 cursor-pointer group">
-          <div class="relative w-5 h-5 rounded bg-[var(--monarch-brand-purple)] border-0 flex items-center justify-center">
+          <div class="relative w-5 h-5 rounded flex items-center justify-center" style="background-color: #6366f1;">
             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
           </div>
           <span class="text-sm text-[var(--monarch-text-primary)] group-hover:text-[var(--monarch-brand-purple-light)] transition-colors duration-200">Intelligence Agent</span>
         </label>
         <label class="flex items-center gap-3 cursor-pointer group">
-          <div class="relative w-5 h-5 rounded bg-[var(--monarch-brand-purple)] border-0 flex items-center justify-center">
+          <div class="relative w-5 h-5 rounded flex items-center justify-center" style="background-color: #6366f1;">
             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
           </div>
           <span class="text-sm text-[var(--monarch-text-primary)] group-hover:text-[var(--monarch-brand-purple-light)] transition-colors duration-200">Engagement Agent</span>
         </label>
         <label class="flex items-center gap-3 cursor-pointer group">
-          <div class="relative w-5 h-5 rounded border-2 border-[var(--monarch-border-medium)] bg-transparent hover:border-[var(--monarch-brand-purple)] transition-colors duration-200"></div>
+          <div class="relative w-5 h-5 rounded" style="border: 2px solid #334155; background: transparent;"></div>
           <span class="text-sm text-[var(--monarch-text-secondary)]">Revenue Agent</span>
         </label>
         <label class="flex items-center gap-3 cursor-pointer group">
-          <div class="relative w-5 h-5 rounded border-2 border-[var(--monarch-border-medium)] bg-transparent hover:border-[var(--monarch-brand-purple)] transition-colors duration-200"></div>
+          <div class="relative w-5 h-5 rounded" style="border: 2px solid #334155; background: transparent;"></div>
           <span class="text-sm text-[var(--monarch-text-secondary)]">Success Agent</span>
         </label>
       </div>
@@ -75,9 +75,9 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
 
     <ComponentPreview title="Interactive Toggle">
       <div class="flex items-center gap-4">
-        <button id="demo-toggle" class="relative inline-flex h-7 w-12 items-center rounded-full transition-colors duration-200 bg-[var(--monarch-border-medium)]" onclick="this.classList.toggle('active'); const thumb = this.querySelector('span'); const isActive = this.classList.contains('active'); thumb.style.transform = isActive ? 'translateX(22px)' : 'translateX(4px)'; this.style.backgroundColor = isActive ? 'var(--monarch-brand-purple)' : 'var(--monarch-border-medium)';">
-          <span class="inline-block h-5 w-5 transform rounded-full bg-white transition-transform duration-200 shadow-sm" style="transform: translateX(4px);"></span>
-        </button>
+        <div id="demo-toggle" class="relative inline-flex h-7 w-12 items-center rounded-full cursor-pointer" style="background-color: #334155;" onclick="const thumb = this.querySelector('span'); const isOn = thumb.style.transform === 'translateX(22px)'; thumb.style.transform = isOn ? 'translateX(4px)' : 'translateX(22px)'; this.style.backgroundColor = isOn ? '#334155' : '#6366f1';">
+          <span class="inline-block h-5 w-5 rounded-full bg-white transition-transform duration-200 shadow-sm" style="transform: translateX(4px);"></span>
+        </div>
         <span class="text-sm text-[var(--monarch-text-secondary)]">Click to toggle</span>
       </div>
     </ComponentPreview>
@@ -88,7 +88,7 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
     <div class="space-y-3 text-[var(--monarch-text-secondary)]">
       <p>• Use <strong>toggles</strong> for immediate on/off settings — no save button needed</p>
       <p>• Use <strong>checkboxes</strong> for multi-select lists where choices are submitted together</p>
-      <p>• Active state uses <strong>brand purple</strong> — instantly recognizable</p>
+      <p>• Active state uses <strong>brand indigo</strong> — instantly recognizable</p>
       <p>• Include a <strong>label and description</strong> next to toggles for clarity</p>
       <p>• Disabled toggles should show <strong>50% opacity</strong> with a reason (e.g., "Requires Enterprise")</p>
       <p>• Transition is <strong>200ms ease</strong> — fast enough to feel snappy, smooth enough to feel premium</p>
