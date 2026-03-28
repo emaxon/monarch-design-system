@@ -1,0 +1,117 @@
+/* Monarch Design System — Command Palette Components */
+
+.monarch-command-palette {
+  border-radius: var(--monarch-radius-xl);
+  background: var(--monarch-bg-surface);
+  border: 1px solid var(--monarch-border-medium);
+  box-shadow: var(--monarch-shadow-xl);
+  overflow: hidden;
+}
+
+.monarch-command-palette__input {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-3);
+  padding: var(--monarch-space-4) var(--monarch-space-5);
+  border-bottom: 1px solid var(--monarch-border-subtle);
+}
+
+.monarch-command-palette__input-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--monarch-text-muted);
+  flex-shrink: 0;
+}
+
+.monarch-command-palette__input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: var(--monarch-text-sm);
+  color: var(--monarch-text-primary);
+  outline: none;
+}
+
+.monarch-command-palette__input input::placeholder {
+  color: var(--monarch-text-muted);
+}
+
+/* --- Results --- */
+
+.monarch-command-palette__results {
+  padding: var(--monarch-space-2) 0;
+}
+
+.monarch-command-palette__group-title {
+  padding: var(--monarch-space-1-5) var(--monarch-space-5);
+  font-size: 10px;
+  font-weight: var(--monarch-font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--monarch-tracking-widest);
+  color: var(--monarch-text-muted);
+}
+
+.monarch-command-palette__item {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-3);
+  padding: var(--monarch-space-2) var(--monarch-space-5);
+  width: 100%;
+  text-align: left;
+  font-size: var(--monarch-text-sm);
+  color: var(--monarch-text-secondary);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: background var(--monarch-duration-fast) var(--monarch-ease-default);
+  text-decoration: none;
+}
+
+.monarch-command-palette__item:hover {
+  background: var(--monarch-bg-elevated);
+  text-decoration: none;
+}
+
+.monarch-command-palette__item--selected {
+  background: rgba(99, 102, 241, 0.08);
+  color: var(--monarch-text-primary);
+}
+
+.monarch-command-palette__item-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.monarch-command-palette__item-label {
+  flex: 1;
+}
+
+.monarch-command-palette__item-kbd {
+  padding: var(--monarch-space-0-5) var(--monarch-space-1-5);
+  border-radius: var(--monarch-radius-sm);
+  background: var(--monarch-bg-elevated);
+  border: 1px solid var(--monarch-border-subtle);
+  font-size: 10px;
+  font-family: var(--monarch-font-mono);
+  color: var(--monarch-text-muted);
+  line-height: 1;
+}
+
+/* --- Footer --- */
+
+.monarch-command-palette__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-4);
+  padding: var(--monarch-space-2) var(--monarch-space-5);
+  border-top: 1px solid var(--monarch-border-subtle);
+  font-size: 10px;
+  color: var(--monarch-text-muted);
+}
+
+.monarch-command-palette__footer-shortcut {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-1);
+}

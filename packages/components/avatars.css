@@ -1,0 +1,148 @@
+/* Monarch Design System — Avatar Components */
+
+.monarch-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--monarch-radius-full);
+  font-weight: var(--monarch-font-semibold);
+  font-family: var(--monarch-font-sans);
+  color: #fff;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* --- Sizes --- */
+
+.monarch-avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: var(--monarch-text-xs);
+}
+
+.monarch-avatar-md {
+  width: 40px;
+  height: 40px;
+  font-size: var(--monarch-text-sm);
+}
+
+.monarch-avatar-lg {
+  width: 48px;
+  height: 48px;
+  font-size: var(--monarch-text-base);
+}
+
+.monarch-avatar-xl {
+  width: 64px;
+  height: 64px;
+  font-size: var(--monarch-text-lg);
+}
+
+/* --- Color Variants --- */
+
+.monarch-avatar-brand {
+  background: var(--monarch-brand-gradient);
+}
+
+.monarch-avatar-blue {
+  background: var(--monarch-info);
+}
+
+.monarch-avatar-green {
+  background: var(--monarch-success);
+}
+
+.monarch-avatar-amber {
+  background: var(--monarch-warning);
+}
+
+.monarch-avatar-pink {
+  background: var(--monarch-brand-violet);
+}
+
+.monarch-avatar-red {
+  background: var(--monarch-danger);
+}
+
+/* --- Agent Avatar (square with rounded corners) --- */
+
+.monarch-avatar-agent {
+  border-radius: var(--monarch-radius-xl);
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--monarch-brand-purple);
+}
+
+.monarch-avatar-agent-blue {
+  border-radius: var(--monarch-radius-xl);
+  background: var(--monarch-info-dim);
+  color: var(--monarch-info);
+}
+
+.monarch-avatar-agent-green {
+  border-radius: var(--monarch-radius-xl);
+  background: var(--monarch-success-dim);
+  color: var(--monarch-success);
+}
+
+.monarch-avatar-agent-red {
+  border-radius: var(--monarch-radius-xl);
+  background: var(--monarch-danger-dim);
+  color: var(--monarch-danger);
+}
+
+/* --- Status Dot --- */
+
+.monarch-avatar__status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--monarch-radius-full);
+  border: 2px solid var(--monarch-bg-surface);
+}
+
+.monarch-avatar__status--online {
+  background: var(--monarch-success);
+}
+
+.monarch-avatar__status--away {
+  background: var(--monarch-warning);
+}
+
+.monarch-avatar__status--offline {
+  background: var(--monarch-text-muted);
+}
+
+.monarch-avatar__status--alert {
+  background: var(--monarch-danger);
+  animation: monarch-pulse-dot 2s var(--monarch-ease-in-out) infinite;
+}
+
+/* --- Avatar Group --- */
+
+.monarch-avatar-group {
+  display: flex;
+}
+
+.monarch-avatar-group > .monarch-avatar {
+  margin-left: -8px;
+  border: 2px solid var(--monarch-bg-surface);
+}
+
+.monarch-avatar-group > .monarch-avatar:first-child {
+  margin-left: 0;
+}
+
+.monarch-avatar-group__overflow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -8px;
+  border: 2px solid var(--monarch-bg-surface);
+  border-radius: var(--monarch-radius-full);
+  background: var(--monarch-bg-elevated);
+  color: var(--monarch-text-secondary);
+  font-size: var(--monarch-text-xs);
+  font-weight: var(--monarch-font-medium);
+}

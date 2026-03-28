@@ -1,0 +1,132 @@
+/* Monarch Design System — Toggle & Checkbox Components */
+
+/* --- Toggle Switch --- */
+
+.monarch-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 44px;
+  height: 24px;
+  border-radius: var(--monarch-radius-full);
+  background: var(--monarch-border-medium);
+  cursor: pointer;
+  transition: background-color var(--monarch-duration-base) var(--monarch-ease-default);
+  flex-shrink: 0;
+}
+
+.monarch-toggle--active {
+  background: var(--monarch-brand-purple);
+}
+
+.monarch-toggle__thumb {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--monarch-radius-full);
+  background: #fff;
+  transition: transform var(--monarch-duration-base) var(--monarch-ease-default);
+  transform: translateX(4px);
+  box-shadow: var(--monarch-shadow-sm);
+}
+
+.monarch-toggle--active .monarch-toggle__thumb {
+  transform: translateX(24px);
+}
+
+.monarch-toggle--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Large toggle */
+.monarch-toggle-lg {
+  width: 48px;
+  height: 28px;
+}
+
+.monarch-toggle-lg .monarch-toggle__thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.monarch-toggle-lg.monarch-toggle--active .monarch-toggle__thumb {
+  transform: translateX(22px);
+}
+
+/* --- Toggle Row (label + toggle) --- */
+
+.monarch-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.monarch-toggle-row__label {
+  font-size: var(--monarch-text-sm);
+  font-weight: var(--monarch-font-medium);
+  color: var(--monarch-text-primary);
+}
+
+.monarch-toggle-row__description {
+  font-size: var(--monarch-text-xs);
+  color: var(--monarch-text-muted);
+}
+
+/* --- Checkbox --- */
+
+.monarch-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-3);
+  cursor: pointer;
+}
+
+.monarch-checkbox__box {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--monarch-radius-sm);
+  border: 2px solid var(--monarch-border-medium);
+  background: transparent;
+  flex-shrink: 0;
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
+}
+
+.monarch-checkbox__box--checked {
+  background: var(--monarch-brand-purple);
+  border-color: var(--monarch-brand-purple);
+}
+
+.monarch-checkbox__box--checked svg {
+  display: block;
+}
+
+.monarch-checkbox__box svg {
+  display: none;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.monarch-checkbox__label {
+  font-size: var(--monarch-text-sm);
+  color: var(--monarch-text-primary);
+  transition: color var(--monarch-duration-base) var(--monarch-ease-default);
+}
+
+.monarch-checkbox:hover .monarch-checkbox__label {
+  color: var(--monarch-brand-purple-light);
+}
+
+.monarch-checkbox__label--unchecked {
+  color: var(--monarch-text-secondary);
+}
+
+.monarch-checkbox:hover .monarch-checkbox__box {
+  border-color: var(--monarch-brand-purple);
+}

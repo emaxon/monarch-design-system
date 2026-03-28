@@ -1,0 +1,103 @@
+/* Monarch Design System — Data Table Components */
+
+.monarch-table {
+  width: 100%;
+  font-size: var(--monarch-text-sm);
+  border-collapse: collapse;
+}
+
+.monarch-table th {
+  text-align: left;
+  padding: var(--monarch-space-3) var(--monarch-space-5);
+  font-size: var(--monarch-text-xs);
+  font-weight: var(--monarch-font-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--monarch-tracking-wider);
+  color: var(--monarch-text-muted);
+  border-bottom: 1px solid var(--monarch-border-subtle);
+}
+
+.monarch-table td {
+  padding: var(--monarch-space-3) var(--monarch-space-5);
+  border-bottom: 1px solid var(--monarch-border-subtle);
+  color: var(--monarch-text-primary);
+}
+
+.monarch-table tr:hover td {
+  background: var(--monarch-bg-elevated);
+}
+
+.monarch-table tr {
+  transition: background var(--monarch-duration-fast) var(--monarch-ease-default);
+  cursor: pointer;
+}
+
+/* --- Table Header with Filters --- */
+
+.monarch-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--monarch-space-3) var(--monarch-space-5);
+  border-bottom: 1px solid var(--monarch-border-subtle);
+}
+
+.monarch-table-header__title {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-3);
+  font-size: var(--monarch-text-base);
+  font-weight: var(--monarch-font-semibold);
+}
+
+.monarch-table-header__count {
+  padding: var(--monarch-space-0-5) var(--monarch-space-2);
+  border-radius: var(--monarch-radius-full);
+  font-size: var(--monarch-text-xs);
+  font-weight: var(--monarch-font-medium);
+  background: var(--monarch-bg-elevated);
+  color: var(--monarch-text-muted);
+}
+
+/* --- Filter Tabs --- */
+
+.monarch-filter-tabs {
+  display: flex;
+  border-radius: var(--monarch-radius-lg);
+  border: 1px solid var(--monarch-border-subtle);
+  overflow: hidden;
+}
+
+.monarch-filter-tab {
+  padding: var(--monarch-space-1-5) var(--monarch-space-3);
+  font-size: var(--monarch-text-xs);
+  font-weight: var(--monarch-font-medium);
+  color: var(--monarch-text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--monarch-duration-fast) var(--monarch-ease-default);
+}
+
+.monarch-filter-tab:hover {
+  color: var(--monarch-text-primary);
+}
+
+.monarch-filter-tab--active {
+  background: var(--monarch-bg-elevated);
+  color: var(--monarch-text-primary);
+}
+
+/* --- Sortable Column --- */
+
+.monarch-table__sortable {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-1);
+  cursor: pointer;
+  transition: color var(--monarch-duration-fast) var(--monarch-ease-default);
+}
+
+.monarch-table__sortable:hover {
+  color: var(--monarch-text-primary);
+}

@@ -1,0 +1,95 @@
+/* Monarch Design System — Kanban Board Components */
+
+.monarch-kanban {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--monarch-space-4);
+}
+
+.monarch-kanban__column {
+  background: var(--monarch-bg-surface);
+  border: 1px solid var(--monarch-border-subtle);
+  border-radius: var(--monarch-radius-xl);
+}
+
+.monarch-kanban__column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--monarch-space-3) var(--monarch-space-4);
+  border-bottom: 1px solid var(--monarch-border-subtle);
+}
+
+.monarch-kanban__column-title {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-2);
+  font-size: var(--monarch-text-sm);
+  font-weight: var(--monarch-font-semibold);
+}
+
+.monarch-kanban__column-count {
+  padding: var(--monarch-space-0-5) var(--monarch-space-1-5);
+  border-radius: var(--monarch-radius-full);
+  font-size: 10px;
+  font-weight: var(--monarch-font-medium);
+  background: var(--monarch-bg-elevated);
+  color: var(--monarch-text-muted);
+}
+
+.monarch-kanban__column-total {
+  font-size: var(--monarch-text-xs);
+  color: var(--monarch-text-muted);
+}
+
+.monarch-kanban__column-body {
+  padding: var(--monarch-space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--monarch-space-2);
+}
+
+/* --- Kanban Card --- */
+
+.monarch-kanban__card {
+  padding: var(--monarch-space-3);
+  border-radius: var(--monarch-radius-lg);
+  background: var(--monarch-bg-base);
+  border: 1px solid var(--monarch-border-subtle);
+  cursor: grab;
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
+}
+
+.monarch-kanban__card:hover {
+  border-color: var(--monarch-border-medium);
+}
+
+.monarch-kanban__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--monarch-space-2);
+}
+
+.monarch-kanban__card-title {
+  font-size: var(--monarch-text-sm);
+  font-weight: var(--monarch-font-medium);
+}
+
+.monarch-kanban__card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.monarch-kanban__card-value {
+  font-size: var(--monarch-text-sm);
+  font-weight: var(--monarch-font-semibold);
+}
+
+.monarch-kanban__card-days {
+  padding: var(--monarch-space-0-5) var(--monarch-space-1-5);
+  border-radius: var(--monarch-radius-sm);
+  font-size: 10px;
+  font-weight: var(--monarch-font-medium);
+}

@@ -1,0 +1,131 @@
+/* Monarch Design System — Button Components */
+
+.monarch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--monarch-space-2);
+  padding: var(--monarch-space-2) var(--monarch-space-5);
+  border-radius: var(--monarch-radius-lg);
+  font-size: var(--monarch-text-sm);
+  font-weight: var(--monarch-font-semibold);
+  font-family: var(--monarch-font-sans);
+  line-height: var(--monarch-leading-normal);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--monarch-text-primary);
+  text-decoration: none;
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.monarch-btn:active {
+  transform: scale(0.98);
+}
+
+.monarch-btn:focus-visible {
+  outline: 2px solid var(--monarch-brand-purple);
+  outline-offset: 2px;
+}
+
+/* --- Variants --- */
+
+.monarch-btn-primary {
+  background: var(--monarch-brand-gradient);
+  color: #fff;
+}
+
+.monarch-btn-primary:hover {
+  box-shadow: var(--monarch-glow-purple);
+  transform: scale(1.02);
+}
+
+.monarch-btn-secondary {
+  border: 1px solid var(--monarch-brand-purple);
+  color: var(--monarch-brand-purple);
+  background: transparent;
+}
+
+.monarch-btn-secondary:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.monarch-btn-ghost {
+  color: var(--monarch-text-secondary);
+  background: transparent;
+}
+
+.monarch-btn-ghost:hover {
+  color: var(--monarch-text-primary);
+  background: var(--monarch-bg-elevated);
+}
+
+.monarch-btn-danger {
+  background: var(--monarch-danger-dim);
+  color: var(--monarch-danger);
+}
+
+.monarch-btn-danger:hover {
+  background: rgba(239, 68, 68, 0.25);
+}
+
+.monarch-btn-outline {
+  border: 1px solid var(--monarch-border-medium);
+  color: var(--monarch-text-primary);
+  background: transparent;
+}
+
+.monarch-btn-outline:hover {
+  background: var(--monarch-bg-elevated);
+  border-color: var(--monarch-border-strong);
+}
+
+/* --- Sizes --- */
+
+.monarch-btn-sm {
+  gap: var(--monarch-space-1-5);
+  padding: var(--monarch-space-1-5) var(--monarch-space-3);
+  border-radius: var(--monarch-radius-md);
+  font-size: var(--monarch-text-xs);
+}
+
+.monarch-btn-lg {
+  gap: var(--monarch-space-2);
+  padding: var(--monarch-space-3) var(--monarch-space-8);
+  font-size: var(--monarch-text-base);
+}
+
+/* --- Icon-only --- */
+
+.monarch-btn-icon {
+  padding: var(--monarch-space-2);
+  gap: 0;
+}
+
+.monarch-btn-icon.monarch-btn-sm {
+  padding: var(--monarch-space-1-5);
+}
+
+.monarch-btn-icon.monarch-btn-lg {
+  padding: var(--monarch-space-3);
+}
+
+/* --- States --- */
+
+.monarch-btn--loading {
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.monarch-btn--loading .monarch-btn__spinner {
+  animation: monarch-spin 1s linear infinite;
+}
+
+.monarch-btn--disabled,
+.monarch-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

@@ -1,0 +1,108 @@
+/* Monarch Design System — Badge Components */
+
+.monarch-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--monarch-space-1-5);
+  padding: var(--monarch-space-1) var(--monarch-space-2);
+  border-radius: var(--monarch-radius-full);
+  font-size: var(--monarch-text-xs);
+  font-weight: var(--monarch-font-semibold);
+  font-family: var(--monarch-font-sans);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* --- Color Variants (filled) --- */
+
+.monarch-badge-success {
+  background: var(--monarch-success-dim);
+  color: var(--monarch-success);
+}
+
+.monarch-badge-warning {
+  background: var(--monarch-warning-dim);
+  color: var(--monarch-warning-light);
+}
+
+.monarch-badge-danger {
+  background: var(--monarch-danger-dim);
+  color: var(--monarch-danger-light);
+}
+
+.monarch-badge-info {
+  background: var(--monarch-info-dim);
+  color: var(--monarch-info-light);
+}
+
+.monarch-badge-purple {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--monarch-brand-purple-light);
+}
+
+.monarch-badge-pink {
+  background: rgba(167, 139, 250, 0.15);
+  color: var(--monarch-brand-violet);
+}
+
+.monarch-badge-neutral {
+  background: var(--monarch-bg-elevated);
+  color: var(--monarch-text-muted);
+}
+
+/* --- Outlined Variants --- */
+
+.monarch-badge-outlined {
+  background: transparent;
+  border: 1px solid currentColor;
+}
+
+/* --- Sizes --- */
+
+.monarch-badge-sm {
+  padding: var(--monarch-space-0-5) var(--monarch-space-2);
+  font-size: 10px;
+}
+
+.monarch-badge-lg {
+  padding: var(--monarch-space-1-5) var(--monarch-space-3);
+  font-size: var(--monarch-text-sm);
+}
+
+/* --- Dot indicator --- */
+
+.monarch-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--monarch-radius-full);
+  background: currentColor;
+}
+
+.monarch-badge__dot--pulse {
+  animation: monarch-pulse-dot 2s var(--monarch-ease-in-out) infinite;
+}
+
+/* --- Count badge (notification) --- */
+
+.monarch-badge-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 var(--monarch-space-1);
+  border-radius: var(--monarch-radius-full);
+  font-size: 9px;
+  font-weight: var(--monarch-font-bold);
+  line-height: 1;
+  color: #fff;
+  background: var(--monarch-danger);
+}
+
+.monarch-badge-count-purple {
+  background: var(--monarch-brand-purple);
+}
+
+.monarch-badge-count-success {
+  background: var(--monarch-success);
+}

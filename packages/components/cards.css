@@ -1,0 +1,147 @@
+/* Monarch Design System — Card Components */
+
+.monarch-card {
+  background: var(--monarch-bg-surface);
+  border: 1px solid var(--monarch-border-subtle);
+  border-radius: var(--monarch-radius-lg);
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
+}
+
+.monarch-card:hover {
+  border-color: var(--monarch-border-medium);
+  box-shadow: var(--monarch-shadow-md);
+  transform: translateY(-1px);
+}
+
+.monarch-card--no-hover:hover {
+  border-color: var(--monarch-border-subtle);
+  box-shadow: none;
+  transform: none;
+}
+
+/* --- Card Parts --- */
+
+.monarch-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--monarch-space-4) var(--monarch-space-6);
+  border-bottom: 1px solid var(--monarch-border-subtle);
+}
+
+.monarch-card__header-title {
+  font-size: var(--monarch-text-base);
+  font-weight: var(--monarch-font-semibold);
+}
+
+.monarch-card__header-action {
+  font-size: var(--monarch-text-xs);
+  color: var(--monarch-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-1);
+  transition: color var(--monarch-duration-base) var(--monarch-ease-default);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.monarch-card__header-action:hover {
+  color: var(--monarch-text-primary);
+}
+
+.monarch-card__body {
+  padding: var(--monarch-space-6);
+}
+
+/* --- Elevated Card --- */
+
+.monarch-card-elevated {
+  background: var(--monarch-bg-elevated);
+  border: 1px solid var(--monarch-border-medium);
+  border-radius: var(--monarch-radius-lg);
+  box-shadow: var(--monarch-shadow-md);
+}
+
+/* --- Glass Card --- */
+
+.monarch-card-glass {
+  background: var(--monarch-glass-bg);
+  backdrop-filter: var(--monarch-glass-blur);
+  -webkit-backdrop-filter: var(--monarch-glass-blur);
+  border: 1px solid var(--monarch-glass-border);
+  border-radius: var(--monarch-radius-lg);
+}
+
+/* --- Gradient Border Card --- */
+
+.monarch-card-gradient {
+  border-radius: var(--monarch-radius-lg);
+  border: 2px solid transparent;
+  background-image: linear-gradient(var(--monarch-bg-surface), var(--monarch-bg-surface)), var(--monarch-brand-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
+}
+
+.monarch-card-gradient:hover {
+  box-shadow: var(--monarch-glow-brand);
+}
+
+/* --- Stat Card --- */
+
+.monarch-stat-card {
+  background: var(--monarch-bg-surface);
+  border: 1px solid var(--monarch-border-subtle);
+  border-radius: var(--monarch-radius-lg);
+  padding: var(--monarch-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--monarch-space-2);
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
+}
+
+.monarch-stat-card:hover {
+  border-color: var(--monarch-border-medium);
+  box-shadow: var(--monarch-shadow-md);
+  transform: translateY(-1px);
+}
+
+.monarch-stat-card__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--monarch-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.monarch-stat-card__value {
+  font-size: var(--monarch-text-2xl);
+  font-weight: var(--monarch-font-bold);
+  color: var(--monarch-text-primary);
+}
+
+.monarch-stat-card__label {
+  font-size: var(--monarch-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--monarch-tracking-wider);
+  color: var(--monarch-text-muted);
+}
+
+.monarch-stat-card__trend {
+  font-size: var(--monarch-text-xs);
+  font-weight: var(--monarch-font-semibold);
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-1);
+}
+
+.monarch-stat-card__trend--up {
+  color: var(--monarch-success);
+}
+
+.monarch-stat-card__trend--down {
+  color: var(--monarch-danger);
+}

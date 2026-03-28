@@ -1,0 +1,76 @@
+/* Monarch Design System — Agent Feed Components */
+
+.monarch-feed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--monarch-space-3);
+}
+
+.monarch-feed-item {
+  background: var(--monarch-bg-surface);
+  border: 1px solid var(--monarch-border-subtle);
+  border-radius: var(--monarch-radius-lg);
+  padding: var(--monarch-space-4);
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
+}
+
+.monarch-feed-item:hover {
+  border-color: var(--monarch-border-medium);
+  box-shadow: var(--monarch-shadow-md);
+  transform: translateY(-1px);
+}
+
+.monarch-feed-item--alert {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* --- Feed Item Parts --- */
+
+.monarch-feed-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--monarch-space-2);
+}
+
+.monarch-feed-item__agent {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-2);
+}
+
+.monarch-feed-item__agent-name {
+  font-size: var(--monarch-text-sm);
+  font-weight: var(--monarch-font-semibold);
+}
+
+.monarch-feed-item__time {
+  font-size: var(--monarch-text-xs);
+  color: var(--monarch-text-muted);
+}
+
+.monarch-feed-item__title {
+  font-size: var(--monarch-text-sm);
+  font-weight: var(--monarch-font-semibold);
+  margin-bottom: var(--monarch-space-1);
+}
+
+.monarch-feed-item__body {
+  font-size: var(--monarch-text-sm);
+  color: var(--monarch-text-secondary);
+  margin-bottom: var(--monarch-space-3);
+  line-height: var(--monarch-leading-relaxed);
+}
+
+.monarch-feed-item__tags {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-3);
+}
+
+.monarch-feed-item__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-2);
+  margin-top: var(--monarch-space-3);
+}

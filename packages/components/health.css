@@ -1,0 +1,74 @@
+/* Monarch Design System — Health Indicator Components */
+
+.monarch-health-ring {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.monarch-health-ring-sm {
+  width: 28px;
+  height: 28px;
+}
+
+.monarch-health-ring-md {
+  width: 48px;
+  height: 48px;
+}
+
+.monarch-health-ring-lg {
+  width: 64px;
+  height: 64px;
+}
+
+.monarch-health-ring__svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.monarch-health-ring__track {
+  fill: none;
+  stroke: var(--monarch-border-subtle);
+}
+
+.monarch-health-ring__fill {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-dasharray var(--monarch-duration-slow) var(--monarch-ease-default);
+}
+
+.monarch-health-ring__fill--healthy {
+  stroke: var(--monarch-success);
+}
+
+.monarch-health-ring__fill--warning {
+  stroke: var(--monarch-warning);
+}
+
+.monarch-health-ring__fill--critical {
+  stroke: var(--monarch-danger);
+}
+
+.monarch-health-ring__value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--monarch-font-bold);
+  font-family: var(--monarch-font-sans);
+}
+
+.monarch-health-ring-sm .monarch-health-ring__value {
+  font-size: 8px;
+}
+
+.monarch-health-ring-md .monarch-health-ring__value {
+  font-size: var(--monarch-text-sm);
+}
+
+.monarch-health-ring-lg .monarch-health-ring__value {
+  font-size: var(--monarch-text-base);
+}

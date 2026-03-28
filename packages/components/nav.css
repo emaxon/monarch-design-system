@@ -1,0 +1,112 @@
+/* Monarch Design System — Navigation Components */
+
+/* --- Nav Item --- */
+
+.monarch-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-3);
+  padding: var(--monarch-space-2) var(--monarch-space-3);
+  border-radius: var(--monarch-radius-lg);
+  font-size: var(--monarch-text-sm);
+  color: var(--monarch-text-secondary);
+  text-decoration: none;
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
+  cursor: pointer;
+}
+
+.monarch-nav-item:hover {
+  color: var(--monarch-text-primary);
+  background: var(--monarch-bg-elevated);
+  text-decoration: none;
+}
+
+.monarch-nav-item--active {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--monarch-brand-purple);
+  font-weight: var(--monarch-font-medium);
+  border-left: 2px solid var(--monarch-brand-purple);
+}
+
+.monarch-nav-item__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.monarch-nav-item__label {
+  flex: 1;
+}
+
+.monarch-nav-item__badge {
+  padding: var(--monarch-space-0-5) var(--monarch-space-1-5);
+  border-radius: var(--monarch-radius-full);
+  font-size: 9px;
+  font-weight: var(--monarch-font-bold);
+  color: #fff;
+  background: var(--monarch-danger);
+  line-height: 1;
+}
+
+.monarch-nav-item__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--monarch-radius-full);
+  background: var(--monarch-success);
+  animation: monarch-pulse-dot 2s var(--monarch-ease-in-out) infinite;
+}
+
+/* --- Nav Section --- */
+
+.monarch-nav-section {
+  margin-bottom: var(--monarch-space-4);
+}
+
+.monarch-nav-section__title {
+  font-size: 10px;
+  font-weight: var(--monarch-font-semibold);
+  letter-spacing: var(--monarch-tracking-widest);
+  text-transform: uppercase;
+  color: var(--monarch-text-secondary);
+  padding: var(--monarch-space-1) var(--monarch-space-3);
+  margin-bottom: var(--monarch-space-1);
+}
+
+.monarch-nav-section__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--monarch-space-0-5);
+}
+
+/* --- Sidebar --- */
+
+.monarch-sidebar {
+  width: 240px;
+  background: var(--monarch-bg-surface);
+  border-right: 1px solid var(--monarch-border-subtle);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.monarch-sidebar__header {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-2);
+  padding: var(--monarch-space-4) var(--monarch-space-5);
+  border-bottom: 1px solid var(--monarch-border-subtle);
+}
+
+.monarch-sidebar__nav {
+  padding: var(--monarch-space-3);
+  flex: 1;
+  overflow-y: auto;
+}
+
+.monarch-sidebar__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--monarch-space-3);
+  padding: var(--monarch-space-3) var(--monarch-space-5);
+  border-top: 1px solid var(--monarch-border-subtle);
+}
