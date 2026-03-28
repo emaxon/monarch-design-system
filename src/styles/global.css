@@ -2,7 +2,8 @@
 @import '../../packages/tokens/index.css';
 
 /* === Preflight: reset browser defaults that Tailwind v4 misses === */
-button, input, select, textarea {
+/* :where() gives zero specificity so Tailwind utility classes win */
+:where(button, input, select, textarea) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
