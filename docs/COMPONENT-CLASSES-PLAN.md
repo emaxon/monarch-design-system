@@ -148,6 +148,28 @@ Each phase gets a GitHub issue. Work items within each phase:
 - Components are independent of Tailwind — they work with just the token CSS
 - The Tailwind preset remains available for projects that prefer utility classes
 
+## Phase 0: Documentation (can be done anytime)
+
+### README.md Updates
+- [ ] Replace crown emoji with actual Monarch logo SVG (or link to the rendered logo)
+- [ ] Update "Quick Start" section to show component class usage (not just tokens/preset)
+- [ ] Add badge for DS version, GitHub Pages link
+- [ ] Add component import examples
+
+### DESIGN.md — LLM Integration Guide
+Create `DESIGN.md` at the repo root. This file is designed to be fed to an LLM (Claude, GPT, Copilot, Cursor, etc.) as context when building Monarch interfaces. It should contain:
+
+- [ ] **Brand identity summary** — logo description, indigo palette, Inter/JetBrains Mono
+- [ ] **Design tokens reference** — all CSS custom property names and their values (dark + light)
+- [ ] **Component class reference** — every `.monarch-*` class, what it does, and how to compose them
+- [ ] **Naming convention** — how to read class names, BEM-ish structure
+- [ ] **Do's and don'ts** — design principles from Joe's feedback (function > aesthetic, no hamburger nav on desktop, never sacrifice clarity, etc.)
+- [ ] **Dark/light mode instructions** — how to toggle, which tokens switch
+- [ ] **Code examples** — common patterns (dashboard layout, form, table, chat interface)
+- [ ] **Atomic Design hierarchy** — what level each component belongs to and how they compose
+
+The goal: an LLM reading DESIGN.md can generate correct Monarch-styled HTML/CSS without needing to browse the docs site.
+
 ## How to Resume
 
 If pausing between phases:
