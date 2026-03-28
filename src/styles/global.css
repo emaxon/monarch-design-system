@@ -45,6 +45,20 @@ body {
   color: var(--monarch-text-primary);
 }
 
+/* === Button Reset === */
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 /* === Focus Styles === */
 
 :focus-visible {
@@ -86,29 +100,15 @@ body {
   position: relative;
   border-radius: var(--monarch-radius-lg);
   background: var(--monarch-bg-surface);
-  padding: 1px;
-  background-clip: padding-box;
-  isolation: isolate;
+  border: 2px solid transparent;
+  background-image: linear-gradient(var(--monarch-bg-surface), var(--monarch-bg-surface)), var(--monarch-brand-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all var(--monarch-duration-base) var(--monarch-ease-default);
 }
 
-.monarch-gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: var(--monarch-brand-gradient);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  opacity: 0.6;
-  transition: opacity var(--monarch-duration-base) var(--monarch-ease-default);
-  pointer-events: none;
-}
-
-.monarch-gradient-border:hover::before {
-  opacity: 1;
+.monarch-gradient-border:hover {
+  box-shadow: var(--monarch-glow-brand);
 }
 
 /* === Skeleton Loading === */

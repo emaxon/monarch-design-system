@@ -67,8 +67,9 @@ const sections = [
   {sections.map((section, si) => (
     <div class={si > 0 ? 'mt-6' : ''}>
       <button
-        class="nav-section-toggle flex items-center justify-between w-full text-[10px] font-semibold tracking-[0.1em] uppercase text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] mb-2 px-2 transition-colors duration-200"
+        class="nav-section-toggle flex items-center justify-between w-full text-[10px] font-semibold tracking-[0.1em] uppercase text-[var(--monarch-text-secondary)] hover:text-[var(--monarch-text-primary)] mb-2 px-2 cursor-pointer transition-colors duration-200"
         data-section={section.title}
+        style="border: none; background: none; outline: none; -webkit-appearance: none; appearance: none;"
       >
         {section.title}
         <svg class="nav-chevron w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
