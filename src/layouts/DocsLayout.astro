@@ -51,8 +51,8 @@ const breadcrumbs = segments.map((seg, i) => ({
         </svg>
       </button>
 
-      <!-- Logo -->
-      <a href={`${base}/`} class="flex items-center gap-2 shrink-0">
+      <!-- Logo (mobile only — sidebar has it on desktop) -->
+      <a href={`${base}/`} class="flex lg:hidden items-center gap-2 shrink-0">
         <MonarchLogo size={28} />
         <span class="text-base font-semibold text-[var(--monarch-text-primary)]">Monarch</span>
       </a>
