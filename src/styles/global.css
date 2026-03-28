@@ -51,18 +51,15 @@ nav a, aside a {
   text-decoration: none !important;
 }
 
-/* === Button Reset === */
+/* === Element Resets (Tailwind v4 preflight supplement) === */
 
-button {
-  border: none;
-  background: none;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  -webkit-appearance: none;
-  appearance: none;
+@layer base {
+  button, [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+  }
 }
 
 /* === Focus Styles === */
