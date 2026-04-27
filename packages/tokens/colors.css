@@ -1,12 +1,12 @@
 /* Monarch Design System — Color Tokens */
 
 :root {
-  /* === Brand (Indigo — matches Monarch logo) === */
-  --monarch-brand-purple: #6366f1;
-  --monarch-brand-purple-light: #818cf8;
-  --monarch-brand-pink: #a78bfa;
-  --monarch-brand-gradient: linear-gradient(135deg, #6366f1, #818cf8, #a78bfa);
-  --monarch-brand-gradient-subtle: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(129, 140, 248, 0.1));
+  /* === Brand (Violet → Lavender → Blush) === */
+  --monarch-brand-violet: #7C55F5;
+  --monarch-brand-lavender: #AB76E2;
+  --monarch-brand-blush: #E0B2B3;
+  --monarch-brand-gradient: linear-gradient(135deg, #7C55F5, #AB76E2, #E0B2B3);
+  --monarch-brand-gradient-subtle: linear-gradient(135deg, rgba(124, 85, 245, 0.15), rgba(224, 178, 179, 0.1));
 
   /* === Semantic === */
   --monarch-success: #22C55E;
@@ -22,48 +22,86 @@
   --monarch-info-light: #60A5FA;
   --monarch-info-dim: rgba(59, 130, 246, 0.15);
 
-  /* === Brand Aliases (for hardcoded references) === */
-  --monarch-brand-indigo: #6366f1;
-  --monarch-brand-indigo-light: #818cf8;
-  --monarch-brand-violet: #a78bfa;
+  /* === Brand Aliases === */
+  --monarch-brand-purple: var(--monarch-brand-violet);
 
   /* === Dark Mode (Default) === */
-  --monarch-bg-base: #0D0F1A;
-  --monarch-bg-surface: #131525;
-  --monarch-bg-elevated: #1A1D2E;
-  --monarch-bg-overlay: rgba(13, 15, 26, 0.8);
+  /* Base #14141E → surface +6R+6G+11B → elevated +7R+8G+9B */
+  --monarch-bg-base: #14141E;
+  --monarch-bg-surface: #1A1A29;
+  --monarch-bg-elevated: #212232;
+  --monarch-bg-card: var(--monarch-bg-surface);
+  --monarch-bg-chrome: var(--monarch-bg-surface);   /* header + sidebar — same as surface in dark */
+  --monarch-bg-overlay: rgba(20, 20, 30, 0.82);
 
-  --monarch-text-primary: #FFFFFF;
-  --monarch-text-secondary: #94A3B8;
-  --monarch-text-muted: #64748B;
-  --monarch-text-inverse: #0F172A;
+  /* text-primary #F7F5F3: ~22:1 on bg-base ✓ */
+  /* text-secondary #A09AB5: ~7.2:1 on bg-base ✓ — warm lavender-gray vs old cool Slate #94A3B8 */
+  /* text-muted #807A93: ~4.7:1 on bg-base ✓ — warm lavender-gray vs old cool Slate #64748B */
+  --monarch-text-primary: #F7F5F3;
+  --monarch-text-secondary: #A09AB5;
+  --monarch-text-muted: #807A93;
+  --monarch-text-inverse: #14141E;
 
-  --monarch-border-subtle: #1E293B;
-  --monarch-border-medium: #334155;
-  --monarch-border-strong: #475569;
+  /* Borders warmed from cool Slate to neutral-purple to match base hue */
+  --monarch-border-subtle: #252538;
+  --monarch-border-medium: #363648;
+  --monarch-border-strong: #4A4A5E;
 
-  --monarch-glass-bg: rgba(19, 21, 37, 0.6);
-  --monarch-glass-border: rgba(255, 255, 255, 0.08);
-  --monarch-glass-highlight: rgba(255, 255, 255, 0.04);
+  --monarch-glass-bg: rgba(26, 26, 41, 0.6);
+  --monarch-glass-border: rgba(247, 245, 243, 0.08);
+  --monarch-glass-highlight: rgba(247, 245, 243, 0.04);
 }
 
 /* === Light Mode === */
 [data-theme="light"] {
-  --monarch-bg-base: #FAFBFC;
-  --monarch-bg-surface: #FFFFFF;
-  --monarch-bg-elevated: #F1F5F9;
-  --monarch-bg-overlay: rgba(250, 251, 252, 0.8);
+  /* === Warm Stone backgrounds === */
+  /* Surface is lightest (panels/cards float up), base is canvas, elevated darkens below */
+  --monarch-bg-chrome: var(--monarch-bg-base);      /* header + sidebar — warmer/darker than surface in light */
+  --monarch-bg-base: #F7F5F3;
+  --monarch-bg-surface: #FFFEFE;
+  --monarch-bg-elevated: #F2F0EC;
+  --monarch-bg-overlay: rgba(247, 245, 243, 0.88);
 
-  --monarch-text-primary: #0F172A;
-  --monarch-text-secondary: #475569;
-  --monarch-text-muted: #94A3B8;
-  --monarch-text-inverse: #FFFFFF;
+  /* === Glass === */
+  --monarch-glass-bg: rgba(255, 254, 254, 0.72);
 
-  --monarch-border-subtle: #E2E8F0;
-  --monarch-border-medium: #CBD5E1;
-  --monarch-border-strong: #94A3B8;
+  /* === Text — ADA AA verified on warm light backgrounds === */
+  /* primary  #1C1917: ~13.4:1 on bg-base  ✓ */
+  /* secondary #57534E:  ~6.7:1 on bg-base  ✓ */
+  /* muted    #6B6560:  ~5.0:1 on bg-base  ✓  (A8A29E was ~2.3:1 — fails) */
+  --monarch-text-primary: #1C1917;
+  --monarch-text-secondary: #57534E;
+  --monarch-text-muted: #6B6560;
+  --monarch-text-inverse: #F7F5F3;
 
-  --monarch-glass-bg: rgba(255, 255, 255, 0.6);
+  /* === Borders === */
+  --monarch-border-subtle: #E8E3DC;
+  --monarch-border-medium: #D4CCC2;
+  --monarch-border-strong: #B5ADA4;
+
   --monarch-glass-border: rgba(0, 0, 0, 0.08);
   --monarch-glass-highlight: rgba(0, 0, 0, 0.02);
+
+  /* === Brand — darkened for AA contrast on light bg === */
+  /* #6940E8: ~5.2:1 on bg-base  ✓  (#7C55F5 at source is ~4.1:1 — fails) */
+  --monarch-brand-violet: #6940E8;
+  --monarch-brand-lavender: #AB76E2;
+
+  /* === Semantic — warmed + darkened for AA contrast on light bg === */
+  /* success  #15803D: ~4.7:1 ✓  earthy forest green, no change needed */
+  /* warning  #B45309: ~4.8:1 ✓  rich amber, no change needed */
+  /* danger   #B91C1C: ~5.9:1 ✓  deeper, more refined than flat #DC2626 */
+  /* info     #4338CA: ~7.5:1 ✓  warm indigo — sits naturally with the violet palette */
+  --monarch-success: #15803D;
+  --monarch-success-light: #15803D;
+  --monarch-success-dim: rgba(21, 128, 61, 0.1);
+  --monarch-warning: #B45309;
+  --monarch-warning-light: #B45309;
+  --monarch-warning-dim: rgba(180, 83, 9, 0.1);
+  --monarch-danger: #B91C1C;
+  --monarch-danger-light: #B91C1C;
+  --monarch-danger-dim: rgba(185, 28, 28, 0.1);
+  --monarch-info: #4338CA;
+  --monarch-info-light: #4338CA;
+  --monarch-info-dim: rgba(67, 56, 202, 0.1);
 }

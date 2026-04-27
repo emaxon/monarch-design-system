@@ -3,30 +3,42 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
 import ComponentPreview from '../../components/ComponentPreview.astro';
 ---
 
-<DocsLayout title="Typography" description="Inter for interfaces, JetBrains Mono for code. Bold, clean, readable.">
+<DocsLayout title="Typography" description="Inter for interfaces. JetBrains Mono for code. Clash Display for brand moments only.">
 
+  <!-- ===================== UI TYPEFACES ===================== -->
   <section class="mb-12">
-    <h2 class="text-2xl font-semibold mb-4">Font Families</h2>
+    <h2 class="text-2xl font-semibold mb-1">UI Typefaces</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">The two fonts used across all product interfaces.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
       <div class="monarch-card p-6">
-        <p class="text-xs text-[var(--monarch-text-muted)] uppercase tracking-widest mb-3">Primary</p>
-        <p class="text-3xl font-semibold mb-2" style="font-family: var(--monarch-font-sans);">Inter</p>
-        <p class="text-sm text-[var(--monarch-text-secondary)]" style="font-family: var(--monarch-font-sans);">The quick brown fox jumps over the lazy dog. ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</p>
-        <p class="text-xs text-[var(--monarch-text-muted)] font-mono mt-3">--monarch-font-sans</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] uppercase tracking-widest mb-4">Interface — Inter</p>
+        <p class="text-4xl font-semibold mb-3" style="font-family: var(--monarch-font-sans);">Aa Bb Cc</p>
+        <p class="text-sm text-[var(--monarch-text-secondary)] mb-4" style="font-family: var(--monarch-font-sans);">The quick brown fox jumps over the lazy dog.<br/>ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</p>
+        <div class="flex flex-wrap gap-3 mb-4">
+          <span class="text-sm text-[var(--monarch-text-muted)]" style="font-weight: 400;">Regular</span>
+          <span class="text-sm text-[var(--monarch-text-muted)]" style="font-weight: 500;">Medium</span>
+          <span class="text-sm text-[var(--monarch-text-muted)]" style="font-weight: 600;">Semibold</span>
+          <span class="text-sm text-[var(--monarch-text-muted)]" style="font-weight: 700;">Bold</span>
+        </div>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-font-sans</p>
       </div>
+
       <div class="monarch-card p-6">
-        <p class="text-xs text-[var(--monarch-text-muted)] uppercase tracking-widest mb-3">Code</p>
-        <p class="text-3xl font-semibold mb-2" style="font-family: var(--monarch-font-mono);">JetBrains Mono</p>
-        <p class="text-sm text-[var(--monarch-text-secondary)]" style="font-family: var(--monarch-font-mono);">const monarch = &#123; theme: 'dark' &#125;; // 0O1lI</p>
-        <p class="text-xs text-[var(--monarch-text-muted)] font-mono mt-3">--monarch-font-mono</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] uppercase tracking-widest mb-4">Code — JetBrains Mono</p>
+        <p class="text-4xl font-semibold mb-3" style="font-family: var(--monarch-font-mono);">Aa Bb Cc</p>
+        <p class="text-sm text-[var(--monarch-text-secondary)] mb-4" style="font-family: var(--monarch-font-mono);">const monarch = &#123; theme: 'dark' &#125;;<br/>// 0O1lI — ambiguity-free glyphs</p>
+        <p class="text-xs text-[var(--monarch-text-secondary)] mb-4" style="font-family: var(--monarch-font-mono);">Use for code blocks, inline code, data values, terminal output.</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-font-mono</p>
       </div>
+
     </div>
   </section>
 
+  <!-- ===================== TYPE SCALE ===================== -->
   <section class="mb-12">
-    <h2 class="text-2xl font-semibold mb-4">Type Scale</h2>
-    <p class="text-[var(--monarch-text-secondary)] mb-6">Based on a Major Third scale (1.250 ratio) for harmonious proportions.</p>
-
+    <h2 class="text-2xl font-semibold mb-1">Type Scale</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Major Third scale (1.250 ratio). All sizes are Inter.</p>
     <ComponentPreview title="Font Sizes">
       <div class="space-y-6">
         <div class="flex items-baseline gap-4">
@@ -77,8 +89,10 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
     </ComponentPreview>
   </section>
 
+  <!-- ===================== FONT WEIGHTS ===================== -->
   <section class="mb-12">
-    <h2 class="text-2xl font-semibold mb-4">Font Weights</h2>
+    <h2 class="text-2xl font-semibold mb-1">Font Weights</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Inter weight ramp. Use the lightest weight that still reads clearly at the given size and context.</p>
     <ComponentPreview title="Weight Variants">
       <div class="space-y-4 text-xl">
         <p style="font-weight: 300;"><span class="text-xs text-[var(--monarch-text-muted)] font-mono inline-block w-28">300 Light</span> The quick brown fox</p>
@@ -91,23 +105,44 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
     </ComponentPreview>
   </section>
 
+  <!-- ===================== USAGE GUIDELINES ===================== -->
   <section class="mb-12">
-    <h2 class="text-2xl font-semibold mb-4">Gradient Text</h2>
+    <h2 class="text-2xl font-semibold mb-1">Usage Guidelines</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Rules for Inter across the product UI.</p>
+    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
+      <p>• <strong>h2–h6 headings:</strong> semibold (600) or bold (700) — never light weight headings</p>
+      <p>• <strong>Body text:</strong> normal (400) with relaxed line-height for readability</p>
+      <p>• <strong>Labels and captions:</strong> medium (500) at sm (14px) or xs (12px)</p>
+      <p>• <strong>Section eyebrows:</strong> uppercase, widest tracking, xs — e.g. <span class="uppercase tracking-widest text-xs font-medium">Intelligence</span></p>
+      <p>• <strong>Extrabold (800):</strong> reserved for gradient headline treatments only</p>
+      <p>• <strong>Code and data values:</strong> always JetBrains Mono, never Inter</p>
+    </div>
+  </section>
+
+  <!-- ===================== DISPLAY & EMPHASIS ===================== -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-1">Display & Emphasis</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Brand-only typefaces. Used in exactly two places — nowhere else.</p>
+
+    <ComponentPreview title="Display & Emphasis" code='<h1>Design with <em>intention.</em></h1>' class="mb-4">
+      <h1 class="text-5xl mb-8">Design with <em>intention.</em></h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[var(--monarch-border-subtle)]">
+        <div>
+          <p class="text-xs text-[var(--monarch-text-muted)] uppercase tracking-widest mb-2">Clash Display</p>
+          <p class="text-sm text-[var(--monarch-text-secondary)]">Used for <code>h1</code> page titles and the <code>.monarch-display</code> class. Weight 500. Never in body copy, labels, or UI components.</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono mt-3">--monarch-font-display</p>
+        </div>
+        <div>
+          <p class="text-xs text-[var(--monarch-text-muted)] uppercase tracking-widest mb-2">Instrument Serif</p>
+          <p class="text-sm text-[var(--monarch-text-secondary)]">Used only via <code>&lt;em&gt;</code> inside an <code>h1</code> or <code>.monarch-display</code> element. Always italic, 1.15em — never standalone.</p>
+          <p class="text-xs text-[var(--monarch-text-muted)] font-mono mt-3">--monarch-font-serif</p>
+        </div>
+      </div>
+    </ComponentPreview>
+
     <ComponentPreview title="Gradient Text Effect" code='<span class="monarch-gradient-text text-4xl font-extrabold">Design with intention.</span>'>
       <span class="monarch-gradient-text text-4xl font-extrabold">Design with intention.</span>
     </ComponentPreview>
   </section>
 
-  <section class="mb-12">
-    <h2 class="text-2xl font-semibold mb-4">Usage Guidelines</h2>
-    <div class="space-y-3 text-[var(--monarch-text-secondary)]">
-      <p>• Use <strong>Inter</strong> for all UI text — it's optimized for screen readability at any size</p>
-      <p>• Use <strong>JetBrains Mono</strong> for code blocks, inline code, data values, and terminal output</p>
-      <p>• Headlines: <strong>semibold (600) or bold (700)</strong> — never light headlines on dark backgrounds</p>
-      <p>• Body text: <strong>normal (400)</strong> with relaxed line-height for readability</p>
-      <p>• Labels and captions: <strong>medium (500)</strong> at sm (14px) or xs (12px)</p>
-      <p>• Section headers: <strong>uppercase, widest tracking, xs</strong> — like INTELLIGENCE, DATA ENGINE</p>
-      <p>• Reserve <strong>extrabold (800)</strong> for hero text and gradient headlines only</p>
-    </div>
-  </section>
 </DocsLayout>

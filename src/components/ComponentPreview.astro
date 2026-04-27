@@ -2,9 +2,12 @@
 interface Props {
   title: string;
   code?: string;
+  background?: 'base' | 'elevated';
+  previewStyle?: string;
 }
 
-const { title, code } = Astro.props;
+const { title, code, background = 'base', previewStyle } = Astro.props;
+const bgClass = background === 'elevated' ? 'monarch-preview-elevated' : 'bg-[var(--monarch-bg-base)]';
 const previewId = `preview-${title.toLowerCase().replace(/\s+/g, '-')}-${Math.random().toString(36).slice(2, 8)}`;
 ---
 
@@ -25,7 +28,7 @@ const previewId = `preview-${title.toLowerCase().replace(/\s+/g, '-')}-${Math.ra
     )}
   </div>
 
-  <div class="p-6 bg-[var(--monarch-bg-base)]">
+  <div class={`p-6 ${bgClass}`} style={previewStyle}>
     <slot />
   </div>
 

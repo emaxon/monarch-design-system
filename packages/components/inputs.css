@@ -21,8 +21,8 @@
 
 .monarch-input:focus {
   outline: none;
-  border-color: var(--monarch-brand-purple);
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  border-color: var(--monarch-brand-violet);
+  box-shadow: 0 0 0 2px rgba(124, 85, 245, 0.2);
 }
 
 .monarch-input--error {
@@ -89,8 +89,8 @@
 
 .monarch-select:focus {
   outline: none;
-  border-color: var(--monarch-brand-purple);
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  border-color: var(--monarch-brand-violet);
+  box-shadow: 0 0 0 2px rgba(124, 85, 245, 0.2);
 }
 
 /* --- Textarea --- */
@@ -117,8 +117,8 @@
 
 .monarch-textarea:focus {
   outline: none;
-  border-color: var(--monarch-brand-purple);
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  border-color: var(--monarch-brand-violet);
+  box-shadow: 0 0 0 2px rgba(124, 85, 245, 0.2);
 }
 
 /* --- Search Input --- */
@@ -148,8 +148,8 @@
 
 .monarch-search__input:focus {
   outline: none;
-  border-color: var(--monarch-brand-purple);
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  border-color: var(--monarch-brand-violet);
+  box-shadow: 0 0 0 2px rgba(124, 85, 245, 0.2);
 }
 
 .monarch-search__icon {
@@ -198,4 +198,10 @@
 
 .monarch-input-group .monarch-input {
   border-radius: 0 var(--monarch-radius-lg) var(--monarch-radius-lg) 0;
+}
+
+/* ── Light mode ─────────────────────────────────────── */
+
+[data-theme="light"] .monarch-input {
+  background: var(--monarch-bg-surface);
 }

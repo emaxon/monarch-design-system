@@ -8,14 +8,14 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
   <section class="mb-12">
     <p style="color: var(--monarch-text-secondary); margin-bottom: 24px;">This organism previews the direction for conversational AI interfaces within Monarch — inspired by the push-based, daily engagement model where the LLM proactively guides users through workflows.</p>
 
-    <ComponentPreview title="Agent Chat" code='<div class="monarch-chat">
+    <ComponentPreview title="Agent Chat" background="elevated" previewStyle="background: radial-gradient(circle at 30% 50%, #7C55F5, transparent 70%), radial-gradient(circle at 70% 50%, #3B82F6, transparent 70%);" code='<div class="monarch-chat">
   <div class="monarch-chat__header">
     <div class="monarch-avatar monarch-avatar-md monarch-avatar-agent">
       <svg>🤖</svg>
       <span class="monarch-avatar__status monarch-avatar__status--online"></span>
     </div>
     <div class="monarch-chat__header-info">
-      <div class="monarch-chat__header-name">Monarch Intelligence</div>
+      <div class="monarch-chat__header-name">Sonder Intelligence</div>
       <div class="monarch-chat__header-status">Your daily briefing agent</div>
     </div>
   </div>
@@ -64,7 +64,7 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
             </div>
           </div>
           <div class="monarch-chat__header-info">
-            <div class="monarch-chat__header-name">Monarch Intelligence</div>
+            <div class="monarch-chat__header-name">Sonder Intelligence</div>
             <div class="monarch-chat__header-status">Your daily briefing agent</div>
           </div>
           <button class="monarch-btn monarch-btn-ghost monarch-btn-icon">
@@ -116,8 +116,8 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
               <div class="monarch-chat__bubble-body">
                 <p>Based on the pricing objection pattern, I recommend:</p>
                 <ol style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
-                  <li style="display: flex; gap: 8px;"><span style="color: var(--monarch-brand-purple); font-weight: 600;">1.</span> Send the ROI calculator showing projected savings over 24 months</li>
-                  <li style="display: flex; gap: 8px;"><span style="color: var(--monarch-brand-purple); font-weight: 600;">2.</span> Schedule an executive sponsor call within the week</li>
+                  <li style="display: flex; gap: 8px;"><span style="color: var(--monarch-brand-violet); font-weight: 600;">1.</span> Send the ROI calculator showing projected savings over 24 months</li>
+                  <li style="display: flex; gap: 8px;"><span style="color: var(--monarch-brand-violet); font-weight: 600;">2.</span> Schedule an executive sponsor call within the week</li>
                 </ol>
                 <div class="monarch-chat__actions">
                   <button class="monarch-btn monarch-btn-primary monarch-btn-sm">Send ROI Calculator</button>
@@ -152,7 +152,7 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
 
         <!-- Input -->
         <div class="monarch-chat__input-area">
-          <input class="monarch-input" placeholder="Ask Monarch anything..." />
+          <input class="monarch-input" placeholder="Ask Sonder anything..." />
           <button class="monarch-chat__send-btn">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
           </button>
@@ -165,11 +165,11 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
     <h2 class="text-2xl font-semibold mb-4">Cambria LLM Direction</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="monarch-card"><div class="monarch-card__body">
-        <h4 style="font-weight: 600; color: var(--monarch-brand-purple); margin-bottom: 8px;">Give-to-Get Exchange</h4>
+        <h4 style="font-weight: 600; color: var(--monarch-brand-violet); margin-bottom: 8px;">Give-to-Get Exchange</h4>
         <p style="font-size: var(--monarch-text-sm); color: var(--monarch-text-secondary);">Employees answer the agent's daily questions and immediately get valuable insights back — not a one-way data extraction.</p>
       </div></div>
       <div class="monarch-card"><div class="monarch-card__body">
-        <h4 style="font-weight: 600; color: #a78bfa; margin-bottom: 8px;">Push, Not Pull</h4>
+        <h4 style="font-weight: 600; color: #E0B2B3; margin-bottom: 8px;">Push, Not Pull</h4>
         <p style="font-size: var(--monarch-text-sm); color: var(--monarch-text-secondary);">The LLM proactively surfaces what matters. Users don't need to know what to ask — the agent leads the conversation.</p>
       </div></div>
       <div class="monarch-card"><div class="monarch-card__body">

@@ -5,13 +5,13 @@ export default {
       colors: {
         monarch: {
           purple: {
-            DEFAULT: '#6366f1',
-            light: '#818cf8',
-            dark: '#4f46e5',
+            DEFAULT: '#7C55F5',
+            light: '#AB76E2',
+            dark: '#6940E8',
           },
           pink: {
-            DEFAULT: '#a78bfa',
-            light: '#c4b5fd',
+            DEFAULT: '#E0B2B3',
+            light: '#EEC8C9',
           },
           bg: {
             base: 'var(--monarch-bg-base)',

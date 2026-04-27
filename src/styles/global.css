@@ -61,7 +61,7 @@ body {
 /* === Selection === */
 
 ::selection {
-  background-color: rgba(99, 102, 241, 0.3);
+  background-color: rgba(124, 85, 245, 0.3);
   color: var(--monarch-text-primary);
 }
 
@@ -76,7 +76,7 @@ nav a, aside a {
 /* === Focus Styles === */
 
 :focus-visible {
-  outline: 2px solid var(--monarch-brand-purple);
+  outline: 2px solid var(--monarch-brand-violet);
   outline-offset: 2px;
   border-radius: var(--monarch-radius-sm);
 }
@@ -98,7 +98,7 @@ nav a, aside a {
 }
 
 .monarch-card {
-  background: var(--monarch-bg-surface);
+  background: var(--monarch-bg-card);
   border: 1px solid var(--monarch-border-subtle);
   border-radius: var(--monarch-radius-lg);
   transition: all var(--monarch-duration-base) var(--monarch-ease-default);
@@ -124,6 +124,16 @@ nav a, aside a {
   box-shadow: var(--monarch-glow-brand) !important;
 }
 
+/* === Preview Background (elevated in light mode only) === */
+
+.monarch-preview-elevated {
+  background: var(--monarch-bg-base);
+}
+
+[data-theme="light"] .monarch-preview-elevated {
+  background: var(--monarch-bg-elevated);
+}
+
 /* === Skeleton Loading === */
 
 .monarch-skeleton {
@@ -139,6 +149,15 @@ nav a, aside a {
   min-height: 1em;
 }
 
+[data-theme="light"] .monarch-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--monarch-border-subtle) 25%,
+    var(--monarch-border-medium) 50%,
+    var(--monarch-border-subtle) 75%
+  );
+}
+
 /* === Animation Classes === */
 
 .animate-fade-in { animation: monarch-fade-in var(--monarch-duration-base) var(--monarch-ease-out); }
@@ -147,11 +166,37 @@ nav a, aside a {
 .animate-scale-in { animation: monarch-scale-in var(--monarch-duration-base) var(--monarch-ease-spring); }
 
 /* Staggered animation delays */
-.delay-1 { animation-delay: 100ms; animation-fill-mode: both; }
-.delay-2 { animation-delay: 200ms; animation-fill-mode: both; }
-.delay-3 { animation-delay: 300ms; animation-fill-mode: both; }
-.delay-4 { animation-delay: 400ms; animation-fill-mode: both; }
-.delay-5 { animation-delay: 500ms; animation-fill-mode: both; }
+.delay-1 { animation-delay: 100ms; animation-fill-mode: backwards; }
+.delay-2 { animation-delay: 200ms; animation-fill-mode: backwards; }
+.delay-3 { animation-delay: 300ms; animation-fill-mode: backwards; }
+.delay-4 { animation-delay: 400ms; animation-fill-mode: backwards; }
+.delay-5 { animation-delay: 500ms; animation-fill-mode: backwards; }
+
+/* === Headings === */
+
+h1 {
+  font-family: var(--monarch-font-display);
+  font-weight: 500;
+}
+
+.monarch-display {
+  font-family: var(--monarch-font-display);
+  font-weight: 500;
+}
+
+.monarch-display em {
+  font-family: var(--monarch-font-serif);
+  font-style: italic;
+  font-weight: inherit;
+  font-size: 1.15em;
+}
+
+h1 em {
+  font-family: var(--monarch-font-serif);
+  font-style: italic;
+  font-weight: inherit;
+  font-size: 1.15em;
+}
 
 /* === Code Blocks === */
 
@@ -175,6 +220,33 @@ pre {
   background: #1e1e2e;
   color: #cdd6f4;
   border-color: #313244;
+}
+
+/* === Noise Overlay === */
+
+:root {
+  --noise-image: url('/background-noise.webp');
+  --noise-size: 200px 200px;
+  --noise-opacity: 0.034;
+}
+
+[data-theme="light"] {
+  --noise-image: url('/light-background-noise.webp');
+  --noise-size: 256px 256px;
+  --noise-opacity: 0.034;
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: var(--noise-image);
+  background-size: var(--noise-size);
+  opacity: var(--noise-opacity);
+  z-index: 9999;
 }
 
 /* Inline code */

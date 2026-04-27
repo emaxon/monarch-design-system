@@ -7,13 +7,13 @@ import ColorSwatch from '../../components/ColorSwatch.astro';
 
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Brand</h2>
-    <p class="text-[var(--monarch-text-secondary)] mb-6">The Monarch brand is anchored by indigo — matching the logo's gradient (#6366f1 → #818cf8). Extended with violet for softer accents.</p>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">The Monarch brand runs from violet through lavender to blush — a warm gradient arc that complements the Stone palette.</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <ColorSwatch name="Indigo" value="#6366f1" cssVar="--monarch-brand-purple" />
-      <ColorSwatch name="Indigo Light" value="#818cf8" cssVar="--monarch-brand-purple-light" />
-      <ColorSwatch name="Violet" value="#a78bfa" cssVar="--monarch-brand-pink" />
+      <ColorSwatch name="Violet" cssVar="--monarch-brand-violet" value="#7C55F5" />
+      <ColorSwatch name="Lavender" cssVar="--monarch-brand-lavender" value="#AB76E2" />
+      <ColorSwatch name="Blush" cssVar="--monarch-brand-blush" value="#E0B2B3" />
       <div class="flex flex-col gap-2 group">
-        <div class="w-full h-20 rounded-lg border border-[var(--monarch-border-subtle)] transition-transform duration-200 group-hover:scale-105" style="background: linear-gradient(135deg, #6366f1, #818cf8, #a78bfa);"></div>
+        <div class="w-full h-20 rounded-lg border border-[var(--monarch-border-subtle)] transition-transform duration-200 group-hover:scale-105" style="background: linear-gradient(135deg, #7C55F5, #AB76E2, #E0B2B3);"></div>
         <div>
           <p class="text-sm font-medium text-[var(--monarch-text-primary)]">Brand Gradient</p>
           <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-brand-gradient</p>
@@ -24,12 +24,28 @@ import ColorSwatch from '../../components/ColorSwatch.astro';
 
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Semantic</h2>
-    <p class="text-[var(--monarch-text-secondary)] mb-6">Purpose-driven colors for states, feedback, and categorization.</p>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">Purpose-driven colors for states, feedback, and categorization. Light mode uses warmer, darkened values to meet WCAG AA contrast.</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <ColorSwatch name="Success" value="#22C55E" cssVar="--monarch-success" />
-      <ColorSwatch name="Warning" value="#F59E0B" cssVar="--monarch-warning" />
-      <ColorSwatch name="Danger" value="#EF4444" cssVar="--monarch-danger" />
-      <ColorSwatch name="Info" value="#3B82F6" cssVar="--monarch-info" />
+      <div class="flex flex-col gap-1">
+        <ColorSwatch name="Success" cssVar="--monarch-success" />
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">Dark: #22C55E</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">Light: #15803D</p>
+      </div>
+      <div class="flex flex-col gap-1">
+        <ColorSwatch name="Warning" cssVar="--monarch-warning" />
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">Dark: #F59E0B</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">Light: #B45309</p>
+      </div>
+      <div class="flex flex-col gap-1">
+        <ColorSwatch name="Danger" cssVar="--monarch-danger" />
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">Dark: #EF4444</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">Light: #B91C1C</p>
+      </div>
+      <div class="flex flex-col gap-1">
+        <ColorSwatch name="Info" cssVar="--monarch-info" />
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">Dark: #3B82F6</p>
+        <p class="text-xs text-[var(--monarch-text-muted)] font-mono">Light: #4338CA</p>
+      </div>
     </div>
   </section>
 
@@ -43,7 +59,7 @@ import ColorSwatch from '../../components/ColorSwatch.astro';
         </div>
         <p class="text-sm font-medium">Base</p>
         <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-bg-base</p>
-        <p class="text-xs text-[var(--monarch-text-muted)]">Dark: #0D0F1A · Light: #FAFBFC</p>
+        <p class="text-xs text-[var(--monarch-text-muted)]">Dark: #14141E · Light: #F7F5F3</p>
       </div>
       <div class="flex flex-col gap-2">
         <div class="w-full h-24 rounded-lg border border-[var(--monarch-border-subtle)] bg-[var(--monarch-bg-surface)] flex items-center justify-center">
@@ -51,7 +67,7 @@ import ColorSwatch from '../../components/ColorSwatch.astro';
         </div>
         <p class="text-sm font-medium">Surface</p>
         <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-bg-surface</p>
-        <p class="text-xs text-[var(--monarch-text-muted)]">Dark: #131525 · Light: #FFFFFF</p>
+        <p class="text-xs text-[var(--monarch-text-muted)]">Dark: #1A1A29 · Light: #FFFEFE</p>
       </div>
       <div class="flex flex-col gap-2">
         <div class="w-full h-24 rounded-lg border border-[var(--monarch-border-subtle)] bg-[var(--monarch-bg-elevated)] flex items-center justify-center">
@@ -59,7 +75,7 @@ import ColorSwatch from '../../components/ColorSwatch.astro';
         </div>
         <p class="text-sm font-medium">Elevated</p>
         <p class="text-xs text-[var(--monarch-text-muted)] font-mono">--monarch-bg-elevated</p>
-        <p class="text-xs text-[var(--monarch-text-muted)]">Dark: #1A1D2E · Light: #F1F5F9</p>
+        <p class="text-xs text-[var(--monarch-text-muted)]">Dark: #212232 · Light: #F2F0EC</p>
       </div>
     </div>
   </section>
@@ -67,17 +83,26 @@ import ColorSwatch from '../../components/ColorSwatch.astro';
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Text</h2>
     <div class="space-y-4">
-      <div class="flex items-center gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
-        <span class="text-lg font-semibold text-[var(--monarch-text-primary)]">Primary</span>
-        <span class="text-xs font-mono text-[var(--monarch-text-muted)]">--monarch-text-primary</span>
+      <div class="flex items-center justify-between gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+        <div class="flex items-center gap-4">
+          <span class="text-lg font-semibold text-[var(--monarch-text-primary)]">Primary</span>
+          <span class="text-xs font-mono text-[var(--monarch-text-muted)]">--monarch-text-primary</span>
+        </div>
+        <span class="text-xs text-[var(--monarch-text-muted)]">Dark: #F7F5F3 · Light: #1C1917</span>
       </div>
-      <div class="flex items-center gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
-        <span class="text-lg font-semibold text-[var(--monarch-text-secondary)]">Secondary</span>
-        <span class="text-xs font-mono text-[var(--monarch-text-muted)]">--monarch-text-secondary</span>
+      <div class="flex items-center justify-between gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+        <div class="flex items-center gap-4">
+          <span class="text-lg font-semibold text-[var(--monarch-text-secondary)]">Secondary</span>
+          <span class="text-xs font-mono text-[var(--monarch-text-muted)]">--monarch-text-secondary</span>
+        </div>
+        <span class="text-xs text-[var(--monarch-text-muted)]">Dark: #A09AB5 · Light: #57534E</span>
       </div>
-      <div class="flex items-center gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
-        <span class="text-lg font-semibold text-[var(--monarch-text-muted)]">Muted</span>
-        <span class="text-xs font-mono text-[var(--monarch-text-muted)]">--monarch-text-muted</span>
+      <div class="flex items-center justify-between gap-4 p-4 rounded-lg bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)]">
+        <div class="flex items-center gap-4">
+          <span class="text-lg font-semibold text-[var(--monarch-text-muted)]">Muted</span>
+          <span class="text-xs font-mono text-[var(--monarch-text-muted)]">--monarch-text-muted</span>
+        </div>
+        <span class="text-xs text-[var(--monarch-text-muted)]">Dark: #807A93 · Light: #6B6560</span>
       </div>
     </div>
   </section>
