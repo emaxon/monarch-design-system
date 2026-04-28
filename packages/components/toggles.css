@@ -16,7 +16,7 @@
 }
 
 .monarch-toggle--active {
-  background: var(--monarch-brand-purple);
+  background: var(--monarch-brand-violet);
 }
 
 .monarch-toggle__thumb {
@@ -24,7 +24,7 @@
   width: 16px;
   height: 16px;
   border-radius: var(--monarch-radius-full);
-  background: #fff;
+  background: #F7F5F3;
   transition: transform var(--monarch-duration-base) var(--monarch-ease-default);
   transform: translateX(4px);
   box-shadow: var(--monarch-shadow-sm);
@@ -94,8 +94,8 @@
 }
 
 .monarch-checkbox__box--checked {
-  background: var(--monarch-brand-purple);
-  border-color: var(--monarch-brand-purple);
+  background: var(--monarch-brand-violet);
+  border-color: var(--monarch-brand-violet);
 }
 
 .monarch-checkbox__box--checked svg {
@@ -110,7 +110,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: #F7F5F3;
 }
 
 .monarch-checkbox__label {
@@ -120,7 +120,7 @@
 }
 
 .monarch-checkbox:hover .monarch-checkbox__label {
-  color: var(--monarch-brand-purple-light);
+  color: var(--monarch-brand-lavender);
 }
 
 .monarch-checkbox__label--unchecked {
@@ -128,5 +128,5 @@
 }
 
 .monarch-checkbox:hover .monarch-checkbox__box {
-  border-color: var(--monarch-brand-purple);
+  border-color: var(--monarch-brand-violet);
 }

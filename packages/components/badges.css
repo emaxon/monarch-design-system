@@ -36,13 +36,13 @@
 }
 
 .monarch-badge-purple {
-  background: rgba(99, 102, 241, 0.15);
-  color: var(--monarch-brand-purple-light);
+  background: rgba(124, 85, 245, 0.15);
+  color: var(--monarch-brand-lavender);
 }
 
 .monarch-badge-pink {
-  background: rgba(167, 139, 250, 0.15);
-  color: var(--monarch-brand-violet);
+  background: rgba(224, 178, 179, 0.15);
+  color: var(--monarch-brand-blush);
 }
 
 .monarch-badge-neutral {
@@ -95,12 +95,12 @@
   font-size: 9px;
   font-weight: var(--monarch-font-bold);
   line-height: 1;
-  color: #fff;
+  color: #F7F5F3;
   background: var(--monarch-danger);
 }
 
 .monarch-badge-count-purple {
-  background: var(--monarch-brand-purple);
+  background: var(--monarch-brand-violet);
 }
 
 .monarch-badge-count-success {

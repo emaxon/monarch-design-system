@@ -73,7 +73,7 @@
 }
 
 .monarch-command-palette__item--selected {
-  background: rgba(99, 102, 241, 0.08);
+  background: rgba(124, 85, 245, 0.08);
   color: var(--monarch-text-primary);
 }
 

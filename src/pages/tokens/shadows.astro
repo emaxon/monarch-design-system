@@ -38,11 +38,11 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
     <ComponentPreview title="Glow Variants">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="p-6 rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] text-center" style="box-shadow: var(--monarch-glow-purple);">
-          <p class="text-sm font-medium mb-1 text-[#818cf8]">Purple Glow</p>
+          <p class="text-sm font-medium mb-1 text-[#AB76E2]">Purple Glow</p>
           <p class="text-xs text-[var(--monarch-text-muted)] font-mono">glow-purple</p>
         </div>
         <div class="p-6 rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] text-center" style="box-shadow: var(--monarch-glow-pink);">
-          <p class="text-sm font-medium mb-1 text-[#a78bfa]">Pink Glow</p>
+          <p class="text-sm font-medium mb-1 text-[#E0B2B3]">Pink Glow</p>
           <p class="text-xs text-[var(--monarch-text-muted)] font-mono">glow-pink</p>
         </div>
         <div class="p-6 rounded-xl bg-[var(--monarch-bg-surface)] border border-[var(--monarch-border-subtle)] text-center" style="box-shadow: var(--monarch-glow-brand);">
@@ -58,8 +58,8 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
     <p class="text-[var(--monarch-text-secondary)] mb-6">Frosted glass effects for overlays, modals, and floating elements. Uses backdrop-filter for depth without opacity.</p>
 
     <ComponentPreview title="Glass Card">
-      <div class="relative p-8 rounded-xl overflow-hidden" style="background: linear-gradient(135deg, #6366f120, #a78bfa20);">
-        <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 30% 50%, #6366f1, transparent 70%), radial-gradient(circle at 70% 50%, #a78bfa, transparent 70%);"></div>
+      <div class="relative p-8 rounded-xl overflow-hidden" style="background: linear-gradient(135deg, #7C55F520, #E0B2B320);">
+        <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 30% 50%, #7C55F5, transparent 70%), radial-gradient(circle at 70% 50%, #E0B2B3, transparent 70%);"></div>
         <div class="relative monarch-glass rounded-xl p-6">
           <h4 class="text-lg font-semibold mb-2">Glass Card</h4>
           <p class="text-sm text-[var(--monarch-text-secondary)]">This card uses backdrop-filter blur with a semi-transparent background and subtle border. The content behind shows through with a frosted effect.</p>
@@ -72,7 +72,7 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
   <section class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Gradient Border</h2>
     <ComponentPreview title="Gradient Border Card" code='<div class="monarch-gradient-border p-6">Content here</div>'>
-      <div class="p-6 rounded-xl" style="border: 2px solid transparent; background-image: linear-gradient(#131525, #131525), linear-gradient(135deg, #6366f1, #818cf8, #a78bfa); background-origin: border-box; background-clip: padding-box, border-box;">
+      <div class="p-6 rounded-xl" style="border: 2px solid transparent; background-image: linear-gradient(var(--monarch-bg-surface), var(--monarch-bg-surface)), linear-gradient(135deg, #7C55F5, #AB76E2, #E0B2B3); background-origin: border-box; background-clip: padding-box, border-box;">
         <h4 class="text-lg font-semibold mb-2">Featured Content</h4>
         <p class="text-sm text-[var(--monarch-text-secondary)]">Hover over this card to see the gradient border. Uses background-clip with the brand gradient applied to the border-box.</p>
       </div>
@@ -83,14 +83,14 @@ import ComponentPreview from '../../components/ComponentPreview.astro';
     <h2 class="text-2xl font-semibold mb-4">Skeleton Loading</h2>
     <ComponentPreview title="Loading States">
       <div class="space-y-4 max-w-sm">
-        <div class="rounded-md h-4 w-3/4" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite;"></div>
-        <div class="rounded-md h-4 w-full" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.1s;"></div>
-        <div class="rounded-md h-4 w-5/6" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.2s;"></div>
+        <div class="rounded-md h-4 w-3/4" style="background: linear-gradient(90deg, #212232 25%, #363648 50%, #212232 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite;"></div>
+        <div class="rounded-md h-4 w-full" style="background: linear-gradient(90deg, #212232 25%, #363648 50%, #212232 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.1s;"></div>
+        <div class="rounded-md h-4 w-5/6" style="background: linear-gradient(90deg, #212232 25%, #363648 50%, #212232 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.2s;"></div>
         <div class="flex gap-3 mt-6">
-          <div class="w-10 h-10 rounded-full shrink-0" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite;"></div>
+          <div class="w-10 h-10 rounded-full shrink-0" style="background: linear-gradient(90deg, #212232 25%, #363648 50%, #212232 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite;"></div>
           <div class="flex-1 space-y-2">
-            <div class="rounded-md h-3 w-1/2" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.15s;"></div>
-            <div class="rounded-md h-3 w-3/4" style="background: linear-gradient(90deg, #1A1D2E 25%, #334155 50%, #1A1D2E 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.25s;"></div>
+            <div class="rounded-md h-3 w-1/2" style="background: linear-gradient(90deg, #212232 25%, #363648 50%, #212232 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.15s;"></div>
+            <div class="rounded-md h-3 w-3/4" style="background: linear-gradient(90deg, #212232 25%, #363648 50%, #212232 75%); background-size: 200% 100%; animation: monarch-shimmer 1.5s ease-in-out infinite; animation-delay: 0.25s;"></div>
           </div>
         </div>
       </div>

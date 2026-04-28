@@ -22,10 +22,10 @@
 }
 
 .monarch-nav-item--active {
-  background: rgba(99, 102, 241, 0.1);
-  color: var(--monarch-brand-purple);
+  background: rgba(124, 85, 245, 0.1);
+  color: var(--monarch-brand-violet);
   font-weight: var(--monarch-font-medium);
-  border-left: 2px solid var(--monarch-brand-purple);
+  border-left: 2px solid var(--monarch-brand-violet);
 }
 
 .monarch-nav-item__icon {
@@ -43,7 +43,7 @@
   border-radius: var(--monarch-radius-full);
   font-size: 9px;
   font-weight: var(--monarch-font-bold);
-  color: #fff;
+  color: #F7F5F3;
   background: var(--monarch-danger);
   line-height: 1;
 }

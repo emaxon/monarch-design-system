@@ -1,0 +1,190 @@
+/* Monarch Design System — Blueprint Layout */
+
+/*
+ * Patterned margin rails that live in the actual padding of a container.
+ * The rails ARE the gutters — not an overlay. Apply to the outermost
+ * content wrapper (e.g. <main>) so the pattern fills the real margin zones.
+ *
+ * Usage:
+ *   <main class="monarch-blueprint">
+ *     <div class="max-w-4xl mx-auto px-6">
+ *       <div class="monarch-blueprint-rule"></div>
+ *       <div class="monarch-blueprint-content">...</div>
+ *     </div>
+ *   </main>
+ */
+
+.monarch-blueprint {
+  --bp-margin: clamp(8px, 2vw, 32px);
+  --bp-line: var(--monarch-border-subtle);
+  --bp-marker: var(--monarch-border-medium);
+  --bp-marker-size: 4px;
+  --bp-pattern-color: color-mix(in srgb, var(--bp-line) 55%, transparent);
+  --bp-pattern: conic-gradient(var(--bp-pattern-color) 90deg, transparent 90deg 180deg, var(--bp-pattern-color) 180deg 270deg, transparent 270deg);
+
+  position: relative;
+  padding-left: calc(var(--bp-margin) + 1px);
+  padding-right: calc(var(--bp-margin) + 1px);
+}
+
+/* ── Margin rails ───────────────────────────────────── */
+
+.monarch-blueprint::before,
+.monarch-blueprint::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--bp-margin);
+  background-image: var(--bp-pattern);
+  background-size: 4px 4px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.monarch-blueprint::before {
+  left: 0;
+  border-right: 1px solid var(--bp-line);
+}
+
+.monarch-blueprint::after {
+  right: 0;
+  border-left: 1px solid var(--bp-line);
+}
+
+/* Lift all direct children above the rails */
+.monarch-blueprint > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Crossing rule ─────────────────────────────────── */
+/*
+ * A full-width horizontal divider that bleeds through both rails,
+ * with a small square intersection marker at each crossing point.
+ */
+
+.monarch-blueprint-rule {
+  position: relative;
+  z-index: 2;
+  margin-left: calc(-1 * (var(--bp-margin) + 1px));
+  margin-right: calc(-1 * (var(--bp-margin) + 1px));
+  border-top: 1px solid var(--bp-line);
+}
+
+.monarch-blueprint-rule::before,
+.monarch-blueprint-rule::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--bp-marker-size) / -2 - 0.5px);
+  width: var(--bp-marker-size);
+  height: var(--bp-marker-size);
+  background: var(--bp-marker);
+  z-index: 3;
+}
+
+.monarch-blueprint-rule::before {
+  left: calc(var(--bp-margin) + 1px - var(--bp-marker-size) / 2);
+}
+
+.monarch-blueprint-rule::after {
+  right: calc(var(--bp-margin) + 1px - var(--bp-marker-size) / 2);
+}
+
+/* ── Content area ───────────────────────────────────── */
+
+.monarch-blueprint-content {
+  padding-top: var(--monarch-space-8);
+  padding-bottom: var(--monarch-space-8);
+}
+
+/* ── Corner markers (optional) ──────────────────────── */
+
+.monarch-blueprint-corners {
+  position: relative;
+}
+
+.monarch-blueprint-corners::before,
+.monarch-blueprint-corners::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--bp-marker);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.monarch-blueprint-corners::before {
+  top: -1px;
+  left: -1px;
+  border-width: 1px 0 0 1px;
+}
+
+.monarch-blueprint-corners::after {
+  top: -1px;
+  right: -1px;
+  border-width: 1px 1px 0 0;
+}
+
+/* ── Hero Grid ──────────────────────────────────────── */
+/*
+ * Dot-grid background pattern for hero / full-bleed sections.
+ * The grid lives in ::before so mask-image only clips the pattern —
+ * not the section's children. Content sits above it naturally.
+ *
+ * Usage:
+ *   <section class="monarch-hero-grid relative">
+ *     <div class="relative z-10">...</div>
+ *   </section>
+ */
+
+.monarch-hero-grid {
+  position: relative;
+}
+
+.monarch-hero-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(229, 231, 235, 0.1) 1px, transparent 0);
+  background-size: 20px 20px;
+  mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="light"] .monarch-hero-grid::before {
+  background-image: radial-gradient(rgba(28, 25, 23, 0.15) 1px, transparent 0);
+}
+
+/* ── Light mode ─────────────────────────────────────── */
+
+[data-theme="light"] .monarch-blueprint {
+  --bp-line: var(--monarch-border-subtle);
+  --bp-marker: var(--monarch-border-medium);
+  --bp-pattern-color: color-mix(in srgb, var(--bp-line) 35%, transparent);
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+
+@media (max-width: 360px) {
+  .monarch-blueprint {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .monarch-blueprint::before,
+  .monarch-blueprint::after,
+  .monarch-blueprint-rule::before,
+  .monarch-blueprint-rule::after {
+    display: none;
+  }
+
+  .monarch-blueprint-rule {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

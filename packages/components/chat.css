@@ -82,8 +82,8 @@
 }
 
 .monarch-chat__bubble--user .monarch-chat__bubble-body {
-  background: var(--monarch-brand-gradient);
-  color: #fff;
+  background: var(--monarch-brand-violet);
+  color: #F7F5F3;
   border-top-right-radius: var(--monarch-radius-sm);
   max-width: 85%;
 }
@@ -160,8 +160,8 @@
 }
 
 .monarch-chat__prompt-chip:hover {
-  border-color: var(--monarch-brand-purple);
-  color: var(--monarch-brand-purple);
+  border-color: var(--monarch-brand-violet);
+  color: var(--monarch-brand-violet);
 }
 
 /* --- Input Area --- */
@@ -185,8 +185,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--monarch-brand-gradient);
-  color: #fff;
+  background: var(--monarch-brand-violet);
+  color: #F7F5F3;
   border: none;
   cursor: pointer;
   flex-shrink: 0;
@@ -194,5 +194,15 @@
 }
 
 .monarch-chat__send-btn:hover {
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 15px rgba(124, 85, 245, 0.3);
+}
+
+/* ── Light mode ─────────────────────────────────────── */
+
+[data-theme="light"] .monarch-chat {
+  background: var(--monarch-bg-base);
+}
+
+[data-theme="light"] .monarch-chat__bubble--agent .monarch-chat__bubble-body {
+  background: var(--monarch-bg-surface);
 }

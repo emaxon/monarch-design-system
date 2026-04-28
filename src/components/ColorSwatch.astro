@@ -1,21 +1,22 @@
 ---
 interface Props {
   name: string;
-  value: string;
+  value?: string;
   cssVar?: string;
 }
 
 const { name, value, cssVar } = Astro.props;
+const bg = cssVar ? `var(${cssVar})` : value ?? 'transparent';
 ---
 
 <div class="flex flex-col gap-2 group">
   <div
     class="w-full h-20 rounded-lg border border-[var(--monarch-border-subtle)] transition-transform duration-200 group-hover:scale-105"
-    style={`background-color: ${value};`}
+    style={`background-color: ${bg};`}
   ></div>
   <div>
     <p class="text-sm font-medium text-[var(--monarch-text-primary)]">{name}</p>
-    <p class="text-xs text-[var(--monarch-text-muted)] font-mono">{value}</p>
     {cssVar && <p class="text-xs text-[var(--monarch-text-muted)] font-mono">{cssVar}</p>}
+    {value && <p class="text-xs text-[var(--monarch-text-muted)] font-mono">{value}</p>}
   </div>
 </div>

@@ -1,0 +1,201 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+---
+
+<DocsLayout title="Decorative Utilities" description="Atmospheric, page-level effects that give Monarch its tactile depth — blueprint rails, noise grain, and other non-functional visual treatments.">
+
+  <!-- ── Blueprint Layout ─────────────────────────── -->
+  <section class="mb-4">
+    <h2 class="text-2xl font-semibold mb-3">Blueprint Layout</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">
+      Patterned margin rails applied as the <em>actual</em> padding of a layout container — not a decorative overlay. Used on <code class="font-mono text-[var(--monarch-brand-lavender)]">&lt;main&gt;</code> in DocsLayout so the pattern fills the real gutters on every page. Crossing rules bleed through both rails with square intersection markers at each join.
+    </p>
+
+    <ComponentPreview title="Blueprint with Crossing Rules" background="elevated">
+      <div class="monarch-blueprint rounded-lg border border-[var(--monarch-border-subtle)] overflow-hidden bg-[var(--monarch-bg-base)]" style="--bp-margin: 24px;">
+        <div class="monarch-blueprint-rule"></div>
+        <div class="monarch-blueprint-content px-8">
+          <div class="grid grid-cols-3 gap-4">
+            <div class="monarch-card p-4">
+              <p class="text-xs text-[var(--monarch-text-muted)] mb-1">Pipeline</p>
+              <p class="text-xl font-bold">$144.8M</p>
+            </div>
+            <div class="monarch-card p-4">
+              <p class="text-xs text-[var(--monarch-text-muted)] mb-1">Accounts</p>
+              <p class="text-xl font-bold">433</p>
+            </div>
+            <div class="monarch-card p-4">
+              <p class="text-xs text-[var(--monarch-text-muted)] mb-1">Health</p>
+              <p class="text-xl font-bold text-[var(--monarch-success)]">81</p>
+            </div>
+          </div>
+        </div>
+        <div class="monarch-blueprint-rule"></div>
+        <div class="monarch-blueprint-content px-8 space-y-3">
+          <div class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--monarch-brand-violet)] mt-1.5 shrink-0"></span>
+            <p class="text-sm text-[var(--monarch-text-primary)]">Intelligence agent detected 11 accounts with renewal signals</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--monarch-danger)] mt-1.5 shrink-0"></span>
+            <p class="text-sm text-[var(--monarch-text-primary)]">Revenue agent flagged deal risk on Baltix Construction</p>
+          </div>
+        </div>
+        <div class="monarch-blueprint-rule"></div>
+      </div>
+    </ComponentPreview>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Usage</h2>
+
+    <div class="space-y-6">
+      <div>
+        <p class="text-sm font-semibold text-[var(--monarch-text-primary)] mb-3">Layout wrapper (e.g. &lt;main&gt;)</p>
+        <pre class="rounded-lg text-sm overflow-x-auto"><code>&lt;main class="monarch-blueprint"&gt;
+  &lt;div class="max-w-4xl mx-auto px-8"&gt;
+    &lt;!-- inner padding keeps content clear of the rail line --&gt;
+  &lt;/div&gt;
+&lt;/main&gt;</code></pre>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-[var(--monarch-text-primary)] mb-3">With crossing rules</p>
+        <pre class="rounded-lg text-sm overflow-x-auto"><code>&lt;div class="monarch-blueprint"&gt;
+  &lt;div class="monarch-blueprint-rule"&gt;&lt;/div&gt;
+  &lt;div class="monarch-blueprint-content px-8"&gt;
+    &lt;!-- content --&gt;
+  &lt;/div&gt;
+  &lt;div class="monarch-blueprint-rule"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Custom Properties</h2>
+    <div class="rounded-lg border border-[var(--monarch-border-subtle)] overflow-hidden">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-[var(--monarch-border-subtle)] bg-[var(--monarch-bg-elevated)]">
+            <th class="px-4 py-2.5 text-left text-xs font-semibold text-[var(--monarch-text-muted)] uppercase tracking-wider">Property</th>
+            <th class="px-4 py-2.5 text-left text-xs font-semibold text-[var(--monarch-text-muted)] uppercase tracking-wider">Default</th>
+            <th class="px-4 py-2.5 text-left text-xs font-semibold text-[var(--monarch-text-muted)] uppercase tracking-wider">Description</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-[var(--monarch-border-subtle)]">
+          <tr>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-brand-lavender)]">--bp-margin</td>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-text-muted)]">clamp(8px, 2vw, 32px)</td>
+            <td class="px-4 py-3 text-xs text-[var(--monarch-text-secondary)]">Rail width — fluid by default</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-brand-lavender)]">--bp-line</td>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-text-muted)]">--monarch-border-subtle</td>
+            <td class="px-4 py-3 text-xs text-[var(--monarch-text-secondary)]">Vertical border and crossing rule color</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-brand-lavender)]">--bp-marker</td>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-text-muted)]">--monarch-border-medium</td>
+            <td class="px-4 py-3 text-xs text-[var(--monarch-text-secondary)]">Intersection marker fill color</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-brand-lavender)]">--bp-marker-size</td>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-text-muted)]">4px</td>
+            <td class="px-4 py-3 text-xs text-[var(--monarch-text-secondary)]">Size of each intersection marker square</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-brand-lavender)]">--bp-pattern</td>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-text-muted)]">2×2 checker SVG</td>
+            <td class="px-4 py-3 text-xs text-[var(--monarch-text-secondary)]">Background-image for the margin rails</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── Hero Grid ───────────────────────────────── -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-3">Hero Grid</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">
+      A dot-grid pattern for hero and full-bleed sections. The grid renders in a <code class="font-mono text-[var(--monarch-brand-lavender)]">::before</code> pseudo-element so <code class="font-mono text-[var(--monarch-brand-lavender)]">mask-image</code> only clips the pattern — not the section's children. The fade-to-transparent bottom edge blends the grid into the page canvas below.
+    </p>
+
+    <ComponentPreview title="Hero Grid" background="elevated">
+      <div class="monarch-hero-grid relative rounded-lg overflow-hidden" style="height: 220px; background: var(--monarch-bg-base);">
+        <div class="relative z-10 flex flex-col items-center justify-center h-full gap-3">
+          <p class="text-5xl monarch-display">Design with <em class="monarch-gradient-text">intention.</em></p>
+          <p class="text-sm text-[var(--monarch-text-muted)]">Grid fades behind content — not over it</p>
+        </div>
+      </div>
+    </ComponentPreview>
+
+    <div class="mt-8">
+      <p class="text-sm font-semibold text-[var(--monarch-text-primary)] mb-3">Usage</p>
+      <pre class="rounded-lg text-sm overflow-x-auto"><code>&lt;section class="monarch-hero-grid relative"&gt;
+  &lt;div class="relative z-10"&gt;
+    &lt;!-- content sits above the grid --&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+  </section>
+
+  <!-- ── Noise Grain ──────────────────────────────── -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-3">Noise Grain</h2>
+    <p class="text-[var(--monarch-text-secondary)] mb-6">
+      A fixed, full-viewport noise texture overlay applied at <code class="font-mono text-[var(--monarch-brand-lavender)]">z-index: 9999</code> via <code class="font-mono text-[var(--monarch-brand-lavender)]">pointer-events: none</code>. It adds subtle grain depth to flat gradients and solid backgrounds — the effect is most visible on the dark theme's deep purple surfaces. Both themes ship with a separate optimised <code class="font-mono text-[var(--monarch-brand-lavender)]">.webp</code> file.
+    </p>
+
+    <ComponentPreview title="Noise Grain (exaggerated)" background="elevated">
+      <div class="relative rounded-lg overflow-hidden h-32" style="background: var(--monarch-bg-surface);">
+        <!-- Noise layer at higher opacity so it's visible in the preview -->
+        <div class="absolute inset-0 pointer-events-none" style="background-image: var(--noise-image); background-size: var(--noise-size); opacity: 0.18; z-index: 1;"></div>
+        <div class="relative z-10 flex items-center justify-center h-full gap-2">
+          <span class="text-sm text-[var(--monarch-text-muted)]">Opacity exaggerated for visibility</span>
+        </div>
+      </div>
+    </ComponentPreview>
+
+    <div class="mt-8 space-y-6">
+      <div>
+        <p class="text-sm font-semibold text-[var(--monarch-text-primary)] mb-3">Add to <code class="font-mono font-normal text-[var(--monarch-brand-lavender)]">&lt;body&gt;</code> once per layout</p>
+        <pre class="rounded-lg text-sm overflow-x-auto"><code>&lt;body&gt;
+  &lt;div class="noise-overlay"&gt;&lt;/div&gt;
+  &lt;!-- rest of your app --&gt;
+&lt;/body&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-lg border border-[var(--monarch-border-subtle)] overflow-hidden">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-[var(--monarch-border-subtle)] bg-[var(--monarch-bg-elevated)]">
+            <th class="px-4 py-2.5 text-left text-xs font-semibold text-[var(--monarch-text-muted)] uppercase tracking-wider">Property</th>
+            <th class="px-4 py-2.5 text-left text-xs font-semibold text-[var(--monarch-text-muted)] uppercase tracking-wider">Default</th>
+            <th class="px-4 py-2.5 text-left text-xs font-semibold text-[var(--monarch-text-muted)] uppercase tracking-wider">Description</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-[var(--monarch-border-subtle)]">
+          <tr>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-brand-lavender)]">--noise-image</td>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-text-muted)]">url('/background-noise.webp')</td>
+            <td class="px-4 py-3 text-xs text-[var(--monarch-text-secondary)]">Texture asset — swapped per theme</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-brand-lavender)]">--noise-size</td>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-text-muted)]">200px 200px / 256px 256px</td>
+            <td class="px-4 py-3 text-xs text-[var(--monarch-text-secondary)]">Tile size — dark uses 200px, light 256px</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-brand-lavender)]">--noise-opacity</td>
+            <td class="px-4 py-3 font-mono text-xs text-[var(--monarch-text-muted)]">0.034</td>
+            <td class="px-4 py-3 text-xs text-[var(--monarch-text-secondary)]">Global opacity — intentionally subtle</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</DocsLayout>

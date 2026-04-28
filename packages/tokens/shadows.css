@@ -8,9 +8,9 @@
   --monarch-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
 
   /* === Glow Shadows === */
-  --monarch-glow-purple: 0 0 20px rgba(99, 102, 241, 0.3), 0 0 60px rgba(99, 102, 241, 0.1);
-  --monarch-glow-pink: 0 0 20px rgba(167, 139, 250, 0.3), 0 0 60px rgba(167, 139, 250, 0.1);
-  --monarch-glow-brand: 0 0 30px rgba(99, 102, 241, 0.2), 0 0 80px rgba(129, 140, 248, 0.1);
+  --monarch-glow-purple: 0 0 20px rgba(124, 85, 245, 0.3), 0 0 60px rgba(124, 85, 245, 0.1);
+  --monarch-glow-pink: 0 0 20px rgba(224, 178, 179, 0.3), 0 0 60px rgba(224, 178, 179, 0.1);
+  --monarch-glow-brand: 0 0 30px rgba(124, 85, 245, 0.2), 0 0 80px rgba(171, 118, 226, 0.1);
 
   /* === Glassmorphism === */
   --monarch-glass-blur: blur(16px);

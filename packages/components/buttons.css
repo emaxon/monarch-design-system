@@ -26,15 +26,15 @@
 }
 
 .monarch-btn:focus-visible {
-  outline: 2px solid var(--monarch-brand-purple);
+  outline: 2px solid var(--monarch-brand-violet);
   outline-offset: 2px;
 }
 
 /* --- Variants --- */
 
 .monarch-btn-primary {
-  background: var(--monarch-brand-gradient);
-  color: #fff;
+  background: var(--monarch-brand-violet);
+  color: #F7F5F3;
 }
 
 .monarch-btn-primary:hover {
@@ -43,13 +43,13 @@
 }
 
 .monarch-btn-secondary {
-  border: 1px solid var(--monarch-brand-purple);
-  color: var(--monarch-brand-purple);
+  border: 1px solid var(--monarch-brand-violet);
+  color: var(--monarch-brand-violet);
   background: transparent;
 }
 
 .monarch-btn-secondary:hover {
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(124, 85, 245, 0.1);
 }
 
 .monarch-btn-ghost {

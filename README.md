@@ -81,10 +81,10 @@ src/
 
 | Token | Dark | Light |
 |-------|------|-------|
-| Background Base | `#0D0F1A` | `#FAFBFC` |
-| Background Surface | `#131525` | `#FFFFFF` |
-| Brand Indigo | `#6366f1` | `#6366f1` |
-| Brand Gradient | `#6366f1 → #818cf8 → #a78bfa` | same |
+| Background Base | `#14141E` | `#F7F5F3` |
+| Background Surface | `#1A1A29` | `#FFFEFE` |
+| Brand Violet | `#7C55F5` | `#6940E8` |
+| Brand Gradient | `#7C55F5 → #AB76E2 → #E0B2B3` | same |
 
 ## Development
 
